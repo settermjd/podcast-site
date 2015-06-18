@@ -1,0 +1,19 @@
+{
+  "name": "settermjd/podcast-site",
+  "description": "Simple site to host my Podcast",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matthew Setter",
+      "email": "matthew@maltblue.com"
+    }
+  ],
+  "require": {
+    "slim/slim": "2.6.2",
+    "slim/extras": "2.0.3",
+    "slim/logger": "0.1.0",
+    "slim/views": "0.1.3",
+    "twig/twig": "1.18.1"
+  }
+}
