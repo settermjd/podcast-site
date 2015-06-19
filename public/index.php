@@ -31,4 +31,12 @@ $app->get('/', function () use ($app) {
     );
 });
 
+$app->notFound(function () use ($app) {
+    $app->render('404.twig');
+});
+
+$app->error(function (\Exception $e) use ($app) {
+    $app->render('500.twig');
+});
+
 $app->run();
