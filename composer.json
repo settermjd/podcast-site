@@ -15,7 +15,8 @@
     "slim/logger": "0.1.0",
     "slim/views": "0.1.3",
     "twig/twig": "1.18.1",
-    "codeception/codeception": "*"
+    "codeception/codeception": "*",
+    "mnapoli/front-yaml": "^1.5"
   },
   "autoload": {
     "psr-4": {
