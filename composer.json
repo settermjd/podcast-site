@@ -14,6 +14,12 @@
     "slim/extras": "2.0.3",
     "slim/logger": "0.1.0",
     "slim/views": "0.1.3",
-    "twig/twig": "1.18.1"
+    "twig/twig": "1.18.1",
+    "codeception/codeception": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PodcastSite\\": "src/PodcastSite"
+    }
   }
 }
