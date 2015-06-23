@@ -13,8 +13,10 @@ use \PodcastSite\Entity\Episode;
 class SortByReverseDateOrder
 {
     /**
-     * @param Episode $a
-     * @param Episode $b
+     * Sort the entries in reverse date order
+     *
+     * @param \PodcastSite\Entity\Episode $a
+     * @param \PodcastSite\Entity\Episode $b
      * @return int
      */
     public function __invoke(Episode $a, Episode $b)

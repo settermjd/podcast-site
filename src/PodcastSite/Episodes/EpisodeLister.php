@@ -3,6 +3,10 @@ namespace PodcastSite\Episodes;
 
 use PodcastSite\Episodes\Adapter\EpisodeListerFilesystem;
 
+/**
+ * Class EpisodeLister
+ * @package PodcastSite\Episodes
+ */
 class EpisodeLister
 {
     /**
