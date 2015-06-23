@@ -43,10 +43,11 @@ $app->get('/', function () use ($app) {
  * Get a listing of all episodes
  */
 $app->get('/episodes', function () use ($app) {
-    /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-    $app->episodeLister->getPosts();
     $app->render(
-        'home.twig', []
+        'episodes.twig', [
+            /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
+            'episodes' => $app->episodeLister->getPosts()
+        ]
     );
 });
 

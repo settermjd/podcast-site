@@ -24,7 +24,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      */
     public function getPosts()
     {
-        $postListing = [];
+        $episodeListing = [];
 
         // get the available files, then order them based on the Yaml front matter
         $dir = new \DirectoryIterator($this->postDirectory);
@@ -34,13 +34,21 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
                     $fileContent = file_get_contents($fileinfo->getPathname());
                     /** @var \Mni\FrontYAML\Document $document */
                     $document = $this->fileParser->parse($fileContent);
-                    $postListing[] = [
-                        'frontMatter' => $document->getYAML(),
-                        'content' => $document->getContent(),
-                    ];
+                    $episodeListing[] = new \PodcastSite\Entity\Episode(
+                        $document->getYAML()['publish_date'],
+                        $document->getYAML()['slug'],
+                        $document->getYAML()['title'],
+                        $document->getContent()
+                    );
                 }
             }
         }
+
+        // Sort the records in reverse date order
+        $sorter = new \PodcastSite\Sorter\SortByReverseDateOrder();
+        usort($episodeListing, $sorter);
+
+        return $episodeListing;
     }
 
     /**
