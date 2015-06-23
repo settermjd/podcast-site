@@ -1,7 +1,7 @@
 ---
-publish_date: 21.06.2015
-slug: episode-0001
-title: Episode 1
+publish_date: 25.06.2015
+slug: episode-0002
+title: Episode 2
 ---
 Bacon ipsum dolor amet short loin leberkas kielbasa flank, doner chicken swine salami pastrami landjaeger kevin. Ham kielbasa beef, bresaola brisket drumstick turkey swine prosciutto jowl pig pancetta beef ribs meatball short ribs. Porchetta salami bresaola filet mignon landjaeger shoulder, cow venison tri-tip frankfurter ham hock. Drumstick chicken swine strip steak cow capicola chuck sausage, pork tenderloin short ribs beef ribs kevin.
 
