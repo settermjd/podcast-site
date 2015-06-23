@@ -51,6 +51,22 @@ $app->get('/episodes', function () use ($app) {
     );
 });
 
+/**
+ * Get an episode
+ */
+$app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
+    $episode = $app->episodeLister->getEpisode($episodeSlug);
+    if (is_null($episode)) {
+        $app->notFound();
+    } else {
+        $app->render(
+            'episode.twig', [
+                'episode' => $episode
+            ]
+        );
+    }
+});
+
 $app->notFound(function () use ($app) {
     $app->render('404.twig');
 });

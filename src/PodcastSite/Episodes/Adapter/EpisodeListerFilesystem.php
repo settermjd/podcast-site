@@ -4,9 +4,20 @@ namespace PodcastSite\Episodes\Adapter;
 
 use PodcastSite\Episodes\EpisodeListerInterface;
 
+/**
+ * Class EpisodeListerFilesystem
+ * @package PodcastSite\Episodes\Adapter
+ */
 class EpisodeListerFilesystem implements EpisodeListerInterface
 {
+    /**
+     * @var string
+     */
     protected $postDirectory;
+
+    /**
+     * @var object
+     */
     protected $fileParser;
 
     /**
@@ -52,13 +63,33 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Sort the retrieved content based on the criteria supplied
+     * Get details of one episode
      *
-     * @param string $sortBy
-     * @param string $sortDir
+     * @param \PodcastSite\Entity\Episode|null $episode
      */
-    protected function sortListingContent($sortBy, $sortDir)
+    public function getEpisode($episodeSlug)
     {
+        // get the available files, then order them based on the Yaml front matter
+        $dir = new \DirectoryIterator($this->postDirectory);
+        foreach ($dir as $fileinfo) {
+            if (!$fileinfo->isDot() && $fileinfo->isFile() && $fileinfo->isReadable()) {
+                if (in_array($fileinfo->getExtension(), ["md", "markdown"])) {
+                    $fileContent = file_get_contents($fileinfo->getPathname());
+                    /** @var \Mni\FrontYAML\Document $document */
+                    $document = $this->fileParser->parse($fileContent);
+                    if ($document->getYAML()['slug'] === $episodeSlug) {
+                        return new \PodcastSite\Entity\Episode(
+                            $document->getYAML()['publish_date'],
+                            $document->getYAML()['slug'],
+                            $document->getYAML()['title'],
+                            $document->getContent()
+                        );
+                    }
+                }
+            }
+        }
 
+        return null;
     }
+
 }
