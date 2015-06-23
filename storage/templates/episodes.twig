@@ -1,0 +1,24 @@
+{% include "core/header.twig" %}
+
+<body id="page-top">
+
+{% include "core/main-nav.twig" %}
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Episodes</h2>
+                <hr class="light">
+                {% for episode in episodes %}
+                <p>
+                    <a href="/episode/{{ episode.getSlug() }}">{{ episode.getPublishDate() }} / {{ episode.getTitle() }}</a><br />
+                </p>
+                {% endfor %}
+                <a href="#" class="btn btn-default btn-xl">Subscribe!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "core/footer.twig" %}
