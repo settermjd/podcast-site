@@ -16,6 +16,11 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     /**
      * @var string
      */
+    const CACHE_KEY_EPISODES_LIST = 'episodes_';
+
+    /**
+     * @var string
+     */
     protected $postDirectory;
 
     /**
@@ -29,13 +34,21 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     protected $episodeIterator;
 
     /**
+     * @var object
+     */
+    protected $cache;
+
+    /**
      * @param string $postDirectory
      * @param object $fileParser Yaml/Markdown parser
      */
-    public function __construct($postDirectory, $fileParser)
+    public function __construct($postDirectory, $fileParser, $cache = null)
     {
         $this->postDirectory = $postDirectory;
         $this->fileParser = $fileParser;
+        if (!is_null($cache)) {
+            $this->cache = $cache;
+        }
         $this->episodeIterator = new ActiveEpisodeFilterIterator(
             new \DirectoryIterator($this->postDirectory)
         );
@@ -45,6 +58,22 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      * Return the current available podcast episodes
      */
     public function getEpisodeList()
+    {
+        if ($this->cache) {
+            $result = $this->cache->getItem(self::CACHE_KEY_EPISODES_LIST);
+            if ($result) {
+                return $result;
+            } else {
+                $result = $this->buildEpisodesList();
+                $ret = $this->cache->setItem(self::CACHE_KEY_EPISODES_LIST, $result);
+                return $result;
+            }
+        } else {
+            return $this->buildEpisodesList();
+        }
+    }
+
+    protected function buildEpisodesList()
     {
         $episodeListing = [];
         foreach ($this->episodeIterator as $file) {

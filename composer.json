@@ -16,7 +16,8 @@
     "slim/views": "0.1.3",
     "twig/twig": "1.18.1",
     "codeception/codeception": "*",
-    "mnapoli/front-yaml": "^1.5"
+    "mnapoli/front-yaml": "^1.5",
+    "zendframework/zend-cache": "^2.5"
   },
   "autoload": {
     "psr-4": {

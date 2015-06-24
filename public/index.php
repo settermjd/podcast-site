@@ -7,6 +7,23 @@ date_default_timezone_set('Europe/Berlin');
 use Slim\Slim;
 use PodcastSite\Episodes\EpisodeLister;
 use Mni\FrontYAML\Parser;
+use Zend\Cache\StorageFactory;
+
+// Create a cache object, via factory:
+$cache = StorageFactory::factory(array(
+    'adapter' => array(
+        'name'    => 'filesystem',
+        'options' => array(
+            'ttl' => 3600,
+            'cacheDir' => dirname(__FILE__) . '/../storage/cache/app-cache'
+        ),
+    ),
+    'plugins' => array(
+        'exception_handler' => array('throw_exceptions' => false),
+        'serializer'
+    ),
+));
+
 
 // Initialise a Slim app
 $app = new Slim(array(
@@ -16,10 +33,13 @@ $app = new Slim(array(
     'templates.path' => dirname(__FILE__) . '/../storage/templates'
 ));
 
+$app->cache = $cache;
+
 $app->episodeLister = EpisodeLister::factory([
     'type' => 'filesystem',
     'path' => dirname(__FILE__) . '/../storage/posts',
-    'parser' => new Parser()
+    'parser' => new Parser(),
+    'cache' => $app->cache
 ]);
 
 // Setup the app views

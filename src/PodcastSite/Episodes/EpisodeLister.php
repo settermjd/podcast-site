@@ -21,7 +21,8 @@ class EpisodeLister
             default:
                 return new EpisodeListerFilesystem(
                     $options['path'],
-                    $options['parser']
+                    $options['parser'],
+                    $options['cache']
                 );
         }
     }
