@@ -92,4 +92,25 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         return null;
     }
 
+    /**
+     * Create an episode value object from the contents of an acceptable markdown file
+     *
+     * @param \SplFileInfo $file
+     * @return \PodcastSite\Entity\Episode
+     */
+    protected function buildEpisode(\SplFileInfo $file)
+    {
+        $fileContent = file_get_contents($file->getPathname());
+
+        /** @var \Mni\FrontYAML\Document $document */
+        $document = $this->fileParser->parse($fileContent);
+
+        return new Episode(
+            $document->getYAML()['publish_date'],
+            $document->getYAML()['slug'],
+            $document->getYAML()['title'],
+            $document->getContent()
+        );
+    }
+
 }
