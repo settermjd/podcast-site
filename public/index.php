@@ -47,7 +47,7 @@ $view = $app->view();
 
 $view->parserOptions = array(
     'debug' => true,
-    'cache' => dirname(__FILE__) . '/../storage/cache'
+    'cache' => dirname(__FILE__) . '/../storage/cache/template-cache'
 );
 
 /**
