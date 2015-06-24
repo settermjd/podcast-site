@@ -8,14 +8,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Episodes</h2>
+                <h2 class="section-heading">{{ episode.getTitle() }}</h2>
                 <hr class="light">
-                <p>{{ episode.getPublishDate() }} / {{ episode.getTitle() }}</a></p>
-                <p>{{ episode.getContent() }}</p>
+                <p>{{ episode.getPublishDate() }}</p>
+                <p>{{ episode.getContent()|raw }}</p>
                 <a href="#" class="btn btn-default btn-xl">Subscribe!</a>
             </div>
         </div>
     </div>
 </section>
+
+{% include "core/contact.twig" %}
 
 {% include "core/footer.twig" %}

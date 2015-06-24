@@ -1,0 +1,11 @@
+div.episodes h3 {
+    margin-bottom: 20px;
+}
+
+h3 a {
+    color: #fff;
+}
+
+h3 a:hover, h3 a.focus {
+    color: #e4e4e4;
+}
