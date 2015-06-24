@@ -3,6 +3,7 @@
 namespace PodcastSite\Episodes\Adapter;
 
 use PodcastSite\Episodes\EpisodeListerInterface;
+use PodcastSite\Iterator\ActiveEpisodeFilterIterator;
 
 /**
  * Class EpisodeListerFilesystem
@@ -21,6 +22,11 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     protected $fileParser;
 
     /**
+     * @var ActiveEpisodeFilterIterator
+     */
+    protected $episodeIterator;
+
+    /**
      * @param string $postDirectory
      * @param object $fileParser Yaml/Markdown parser
      */
@@ -28,6 +34,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     {
         $this->postDirectory = $postDirectory;
         $this->fileParser = $fileParser;
+        $this->episodeIterator = new ActiveEpisodeFilterIterator(
+            new \DirectoryIterator($this->postDirectory)
+        );
     }
 
     /**
@@ -36,23 +45,8 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     public function getPosts()
     {
         $episodeListing = [];
-
-        // get the available files, then order them based on the Yaml front matter
-        $dir = new \DirectoryIterator($this->postDirectory);
-        foreach ($dir as $fileinfo) {
-            if (!$fileinfo->isDot() && $fileinfo->isFile() && $fileinfo->isReadable()) {
-                if (in_array($fileinfo->getExtension(), ["md", "markdown"])) {
-                    $fileContent = file_get_contents($fileinfo->getPathname());
-                    /** @var \Mni\FrontYAML\Document $document */
-                    $document = $this->fileParser->parse($fileContent);
-                    $episodeListing[] = new \PodcastSite\Entity\Episode(
-                        $document->getYAML()['publish_date'],
-                        $document->getYAML()['slug'],
-                        $document->getYAML()['title'],
-                        $document->getContent()
-                    );
-                }
-            }
+        foreach ($this->episodeIterator as $file) {
+            $episodeListing[] = $this->buildEpisode($file);
         }
 
         // Sort the records in reverse date order
@@ -69,23 +63,17 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      */
     public function getEpisode($episodeSlug)
     {
-        // get the available files, then order them based on the Yaml front matter
-        $dir = new \DirectoryIterator($this->postDirectory);
-        foreach ($dir as $fileinfo) {
-            if (!$fileinfo->isDot() && $fileinfo->isFile() && $fileinfo->isReadable()) {
-                if (in_array($fileinfo->getExtension(), ["md", "markdown"])) {
-                    $fileContent = file_get_contents($fileinfo->getPathname());
-                    /** @var \Mni\FrontYAML\Document $document */
-                    $document = $this->fileParser->parse($fileContent);
-                    if ($document->getYAML()['slug'] === $episodeSlug) {
-                        return new \PodcastSite\Entity\Episode(
-                            $document->getYAML()['publish_date'],
-                            $document->getYAML()['slug'],
-                            $document->getYAML()['title'],
-                            $document->getContent()
-                        );
-                    }
-                }
+        foreach ($this->episodeIterator as $file) {
+            $fileContent = file_get_contents($file->getPathname());
+            /** @var \Mni\FrontYAML\Document $document */
+            $document = $this->fileParser->parse($fileContent);
+            if ($document->getYAML()['slug'] === $episodeSlug) {
+                return new Episode(
+                    $document->getYAML()['publish_date'],
+                    $document->getYAML()['slug'],
+                    $document->getYAML()['title'],
+                    $document->getContent()
+                );
             }
         }
 
