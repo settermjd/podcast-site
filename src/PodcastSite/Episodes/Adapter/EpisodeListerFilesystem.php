@@ -4,6 +4,8 @@ namespace PodcastSite\Episodes\Adapter;
 
 use PodcastSite\Episodes\EpisodeListerInterface;
 use PodcastSite\Iterator\ActiveEpisodeFilterIterator;
+use PodcastSite\Sorter\SortByReverseDateOrder;
+use PodcastSite\Entity\Episode;
 
 /**
  * Class EpisodeListerFilesystem
@@ -50,7 +52,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         }
 
         // Sort the records in reverse date order
-        $sorter = new \PodcastSite\Sorter\SortByReverseDateOrder();
+        $sorter = new SortByReverseDateOrder();
         usort($episodeListing, $sorter);
 
         return $episodeListing;
