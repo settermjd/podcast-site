@@ -1,5 +1,4 @@
 vendor
 .idea
-storage/cache
 
 tests/_output/*
