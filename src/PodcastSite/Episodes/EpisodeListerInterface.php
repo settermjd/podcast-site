@@ -8,7 +8,7 @@ interface EpisodeListerInterface
      * Get the current post listing
      * @return array|\Traversable|\Iterator
      */
-    public function getPosts();
+    public function getEpisodeList();
 
     /**
      * Get an individual episode

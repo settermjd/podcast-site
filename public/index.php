@@ -46,7 +46,7 @@ $app->get('/episodes', function () use ($app) {
     $app->render(
         'episodes.twig', [
             /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-            'episodes' => $app->episodeLister->getPosts()
+            'episodes' => $app->episodeLister->getEpisodeList()
         ]
     );
 });

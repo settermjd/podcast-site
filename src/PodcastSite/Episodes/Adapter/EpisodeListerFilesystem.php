@@ -40,9 +40,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Return the current posts available
+     * Return the current available podcast episodes
      */
-    public function getPosts()
+    public function getEpisodeList()
     {
         $episodeListing = [];
         foreach ($this->episodeIterator as $file) {
