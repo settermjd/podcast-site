@@ -2,3 +2,4 @@ vendor
 .idea
 
 tests/_output/*
+storage/cache/template-cache/*
