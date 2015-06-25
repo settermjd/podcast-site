@@ -8,8 +8,12 @@ use Slim\Slim;
 use PodcastSite\Episodes\EpisodeLister;
 use Mni\FrontYAML\Parser;
 use Zend\Cache\StorageFactory;
+use Zend\Config\Config;
 
 // Create a cache object, via factory:
+
+// Add Middleware
+$app->add(new \PodcastSite\Middleware\Analytics\GoogleAnalytics());
 $cache = StorageFactory::factory(array(
     'adapter' => array(
         'name'    => 'filesystem',
@@ -35,6 +39,10 @@ $app = new Slim(array(
 
 $app->cache = $cache;
 
+$config = new Config(
+    require_once(dirname(__FILE__) . '/../config/application.php')
+);
+$app->config = $config;
 $app->episodeLister = EpisodeLister::factory([
     'type' => 'filesystem',
     'path' => dirname(__FILE__) . '/../storage/posts',
