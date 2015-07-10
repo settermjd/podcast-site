@@ -2,10 +2,43 @@ div.episodes h3 {
     margin-bottom: 20px;
 }
 
+a {
+    color: #67A502;
+}
+
+a:hover, a:focus {
+    color: #436800;
+}
+
 h3 a {
     color: #fff;
 }
 
 h3 a:hover, h3 a.focus {
     color: #e4e4e4;
+}
+
+.bg-primary {
+    background-color: #315361;
+}
+
+hr {
+    border-color: #315361;
+}
+
+@media(min-width:768px) {
+    .navbar-default.affix .navbar-header .navbar-brand {
+        font-size: 14px;
+        color: #67A502;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: #436800;
+    }
+
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: #67A502;
+    }
 }
