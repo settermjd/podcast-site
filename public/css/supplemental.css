@@ -42,3 +42,7 @@ hr {
         color: #67A502;
     }
 }
+
+div.content {
+    text-align: left;
+}

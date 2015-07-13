@@ -11,7 +11,7 @@
                 <h2 class="section-heading">{{ episode.getTitle() }}</h2>
                 <hr class="light">
                 <p>{{ episode.getPublishDate() }}</p>
-                <p>{{ episode.getContent()|raw }}</p>
+                <div class="content">{{ episode.getContent()|raw }}</div>
                 <a href="#" id="subscribe-button" class="btn btn-default btn-xl">Subscribe!</a>
             </div>
         </div>
