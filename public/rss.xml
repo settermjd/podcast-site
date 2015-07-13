@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
+    <channel>
+        <title>Free the Geek.fm - The podcast about the business of freelancing as a software
+            developer, writer, content producer, and all round PHP lover.
+        </title>
+        <description>A fireside chat on the ins and outs of being a freelance writer, screencaster,
+            teacher, and software developer. Looking at what it’s like to do it, warts and all, as
+            well as how to get started, what to expect, the good, the bad, and the ugly. When we’re
+            not talking that, we’re talking tech, code, apps, development, and of course PHP.
+        </description>
+        <link>http://www.freethegeek.fm</link>
+        <language>en-us</language>
+        <copyright>Copyright 2015</copyright>
+        <lastBuildDate>Mon, 13 Jul 2015 18:00:00 +0200</lastBuildDate>
+        <pubDate>Fri, 13 Jul 2015 18:00:00 +0200</pubDate>
+        <itunes:author>FreetheGeek.fm with Matthew Setter</itunes:author>
+        <itunes:subtitle>The podcast about the business of freelancing as a software developer,
+            writer, content producer, and all round PHP lover
+        </itunes:subtitle>
+        <itunes:summary>A fireside chat on the ins and outs of being a freelance writer,
+            screencaster, teacher, and software developer. Looking at what it’s like to do it, warts
+            and all, as well as how to get started, what to expect, the good, the bad, and the ugly.
+            When we’re not talking that, we’re talking tech, code, apps, development, and of course
+            PHP.
+        </itunes:summary>
+        <itunes:owner>
+            <itunes:name>FreetheGeek.fm with Matthew Setter</itunes:name>
+            <itunes:email>matthew@freethegeek.fm</itunes:email>
+        </itunes:owner>
+        <itunes:explicit>No</itunes:explicit>
+        <itunes:image href="http://assets.libsyn.com/item/3671441"/>
+        <itunes:category text="Technology">
+            <itunes:category text="Podcasting"/>
+        </itunes:category>
+        <item>
+            <title>
+                Episode 001 – Getting Underway, The E-Myth Revisited, and Networking For Success
+            </title>
+            <link>
+                http://freethegeek.fm/episode/episode-0001
+            </link>
+            <itunes:image href="http://assets.libsyn.com/item/3671441"/>
+            <comments>
+                http://freethegeek.fm/episode/episode-0001/#comments
+            </comments>
+            <pubDate>Thu, 13 Jul 2015 18:00:00 +0200</pubDate>
+            <dc:creator>
+                <![CDATA[ settermjd ]]>
+            </dc:creator>
+            <category>
+                <![CDATA[ freelancing ]]>
+            </category>
+            <category>
+                <![CDATA[ software development ]]>
+            </category>
+            <category>
+                <![CDATA[ technical writing ]]>
+            </category>
+            <category>
+                <![CDATA[ php ]]>
+            </category>
+            <category>
+                <![CDATA[ the e-myth revisited ]]>
+            </category>
+            <category>
+                <![CDATA[ networking for success ]]>
+            </category>
+            <guid isPermaLink="false">http://freethegeek.fm/episode/episode-0001</guid>
+            <description>
+                <![CDATA[
+<p>
+In this, the first episode, Matt talks about what lead to the podcast getting started who motivated him and inspired him to get started. After that, he discusses a fantastic book that all freelancers should read, one which explains how you need to approach freelancing if you want to succeed, and you want to keep your sanity; it's called the E-Myth Revisited. Finally, Matt discusses why networking is essential to success, and some of the mistakes that some of techies make.
+</p>
+]]>
+            </description>
+            <content:encoded>
+                <![CDATA[
+<p style="text-align: justify;">
+In this, the first episode, Matt talks about what lead to the podcast getting started who motivated him and inspired him to get started. After that, he discusses a fantastic book that all freelancers should read, one which explains how you need to approach freelancing if you want to succeed, and you want to keep your sanity; it's called the E-Myth Revisited. Finally, Matt discusses why networking is essential to success, and some of the mistakes that some of techies make.
+</p>
+]]>
+            </content:encoded>
+            <wfw:commentRss>
+                http://freethegeek.fm/episode/episode-0001/feed/
+            </wfw:commentRss>
+            <slash:comments>0</slash:comments>
+            <enclosure
+                    url="http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3"
+                    length="37676715" type="audio/mpeg"/>
+            <itunes:subtitle>
+                In this, the first episode, Matt talks about what lead to the podcast getting started, an excellent book for Freelancers, called the E-Myth Revisited, and why networking is essential to freelancing success.
+            </itunes:subtitle>
+            <itunes:summary>
+                In this, the first episode, Matt talks about what lead to the podcast getting started who motivated him and inspired him to get started. After that, he discusses a fantastic book that all freelancers should read, one which explains how you need to approach freelancing if you want to succeed, and you want to keep your sanity; it's called the E-Myth Revisited. Finally, Matt discusses why networking is essential to success, and some of the mistakes that some of techies make.
+            </itunes:summary>
+            <itunes:author>FreetheGeek.fm with Matthew Setter</itunes:author>
+            <itunes:explicit>clean</itunes:explicit>
+            <itunes:duration>26:06</itunes:duration>
+        </item>
+    </channel>
+
+</rss>
+
