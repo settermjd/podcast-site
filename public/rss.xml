@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
     <channel>
-        <title>Free the Geek.fm - The podcast about the business of freelancing as a software
-            developer, writer, content producer, and all round PHP lover.
-        </title>
+        <title>Free the Geek.fm with Matthew Setter</title>
         <description>A fireside chat on the ins and outs of being a freelance writer, screencaster,
             teacher, and software developer. Looking at what it’s like to do it, warts and all, as
             well as how to get started, what to expect, the good, the bad, and the ugly. When we’re
