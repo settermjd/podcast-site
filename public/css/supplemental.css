@@ -43,6 +43,10 @@ hr {
     }
 }
 
-div.content {
+div.content, div.podcast-options, div.subscribe {
     text-align: left;
+}
+
+div.podcast-options, div.subscribe {
+    margin-top: 20px;
 }
