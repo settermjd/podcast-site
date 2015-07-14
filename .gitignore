@@ -3,3 +3,4 @@ vendor
 
 tests/_output/*
 storage/cache/template-cache/*
+node_modules/
