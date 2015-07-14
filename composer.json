@@ -20,7 +20,8 @@
     "zendframework/zend-cache": "^2.5",
     "zendframework/zend-config": "^2.5",
     "martijnc/php-csp": "dev-master",
-    "mikey179/vfsStream": "^1.5"
+    "mikey179/vfsStream": "^1.5",
+    "zendframework/zend-feed": "^2.5"
   },
   "autoload": {
     "psr-4": {

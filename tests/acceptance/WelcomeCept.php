@@ -12,6 +12,8 @@ $I->see('Got Questions');
 $I->see("If you want to get in touch with me you'll, find all the contact details you need below");
 $I->see("settermjd (skype)");
 $I->see("matthew@freethegeek.fm");
+$I->seeLink("Matthew Setter", "http://www.matthewsetter.com");
+$I->seeLink("the Slim Framework", "http://slimframework.com");
 // Test the links
 $I->seeLink("Free The Geek.fm", "/");
 $I->seeLink("About", "/#about");
