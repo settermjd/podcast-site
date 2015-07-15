@@ -50,3 +50,13 @@ div.content, div.podcast-options, div.subscribe {
 div.podcast-options, div.subscribe {
     margin-top: 20px;
 }
+
+.subscribe-button-rss {
+    background-color: #FF8800;
+    color: #ffffff;
+}
+
+.subscribe-button-itunes {
+    background-color: #b23cbe;
+    color: #ffffff;
+}
