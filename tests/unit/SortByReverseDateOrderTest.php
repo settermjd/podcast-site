@@ -29,7 +29,10 @@ class SortByReverseDateOrderTest extends \PHPUnit_Framework_TestCase
 
         /** @var \PodcastSite\Entity\Episode $episode */
         $episode = array_shift($episodeListing);
-        $this->assertEquals('2015-01-01', $episode->getPublishDate('2015-01-01'));
-
+        $this->assertEquals('2015-01-01', $episode->getPublishDate());
+        $episode = array_shift($episodeListing);
+        $this->assertEquals('2014-01-01', $episode->getPublishDate());
+        $episode = array_shift($episodeListing);
+        $this->assertEquals('2013-01-01', $episode->getPublishDate());
     }
 }
