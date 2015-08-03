@@ -1,13 +1,15 @@
 ---
-publish_date: 31.07.2015
+publish_date: 03.08.2015
 slug: episode-0002
 title: Episode 2 - Discussing the Mythical Man Month with Paul M. Jones; plus speaking at php[world] and Nomad PHP.
+link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
+download: FreeTheGeek-Episode0002.mp3
 ---
 ### Synopsis
 
 In this episode, I have a fireside chat with internationally recognized PHP expert, and all around good fella [Paul M. Jones](http://paul-m-jones.com), about one of his all-time favorite books - [The Mythical Man Month](http://www.amazon.co.uk/The-Mythical-Man-month-Software-Engineering/dp/0201835959).
 
-We talk about why the book is so valuable to him, how it's helped shape his career over the years, and the lessons it can teach all of us as software developers, lessons still relevant over 50 years after it was first published, in 1965.
+We talk about why the book is so valuable to him, how it's helped shape his career over the years, and the lessons it can teach all of us as software developers, lessons still relevant over 50 years after it was first published, in 1975.
 
 I've also got updates on what's been happening for me personally in my freelancing business; including speaking at php[world], attending the inaugural PHP South Coast, **and much, much more**.
 
@@ -15,7 +17,7 @@ I've also got updates on what's been happening for me personally in my freelanci
 
 - [Paul M. Jones](http://paul-m-jones.com/)
 - Paul's Books:
-  - [Modernizing Legacy Applications in PHP](https://leanpub.com/mlaphp?utm_campaign=mlaphp&utm_medium=embed&utm_source=paul-m-jones.com)
+  - [Modernizing Legacy Applications in PHP](http://mlaphp.com/)
   - [Solving the N+1 Problem in PHP](https://leanpub.com/sn1php?utm_campaign=sn1php&utm_medium=embed&utm_source=paul-m-jones.com)
   
 - [The Mythical Man Month, by Frederick P. Brooks. Jr](http://www.amazon.co.uk/The-Mythical-Man-month-Software-Engineering/dp/0201835959)

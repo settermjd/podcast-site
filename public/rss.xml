@@ -9,9 +9,9 @@
         </description>
         <link>http://www.freethegeek.fm</link>
         <language>en-us</language>
-        <copyright>Copyright 2015</copyright>
-        <lastBuildDate>Mon, 13 Jul 2015 12:00:00 +0200</lastBuildDate>
-        <pubDate>Mon, 13 Jul 2015 18:00:00 +0200</pubDate>
+        <copyright>Copyright Matthew Setter 2015</copyright>
+        <lastBuildDate>Mon, 03 Aug 2015 16:00:00 +0200</lastBuildDate>
+        <pubDate>Mon, 03 Aug 2015 16:00:00 +0200</pubDate>
         <itunes:author>FreetheGeek.fm with Matthew Setter</itunes:author>
         <itunes:subtitle>The podcast about the business of freelancing as a software developer,
             writer, content producer, and all round PHP lover
@@ -95,6 +95,83 @@ In this, the first episode, Matt talks about what lead to the podcast getting st
             <itunes:author>FreetheGeek.fm with Matthew Setter</itunes:author>
             <itunes:explicit>clean</itunes:explicit>
             <itunes:duration>26:06</itunes:duration>
+        </item>
+        <item>
+            <title>
+                Episode 002 – Discussing the Mythical Man Month with Paul M. Jones; plus speaking at php[world] and Nomad PHP.
+            </title>
+            <link>
+                http://freethegeek.fm/episode/episode-0002
+            </link>
+            <itunes:image href="http://traffic.libsyn.com/thegeekyfreelancer/itunes.png"/>
+            <comments>
+                http://freethegeek.fm/episode/episode-0002/#comments
+            </comments>
+            <pubDate>Mon, 03 Aug 2015 16:00:00 +0200</pubDate>
+            <dc:creator>
+                <![CDATA[ settermjd ]]>
+            </dc:creator>
+            <category>
+                <![CDATA[ freelancing ]]>
+            </category>
+            <category>
+                <![CDATA[ software development ]]>
+            </category>
+            <category>
+                <![CDATA[ technical writing ]]>
+            </category>
+            <category>
+                <![CDATA[ php ]]>
+            </category>
+            <category>
+                <![CDATA[ The Mythical Man Month ]]>
+            </category>
+            <category>
+                <![CDATA[ Paul M. Jones ]]>
+            </category>
+            <category>
+                <![CDATA[ PHP South Coast ]]>
+            </category>
+            <category>
+                <![CDATA[ Nomad PHP ]]>
+            </category>
+            <category>
+                <![CDATA[ PHP[World] ]]>
+            </category>
+            <category>
+                <![CDATA[ Outliers by Malcolm Gladwell ]]>
+            </category>
+            <guid isPermaLink="false">http://freethegeek.fm/episode/episode-0002</guid>
+            <description>
+                <![CDATA[
+<p>
+In this, the first episode, Matt talks about what lead to the podcast getting started who motivated him and inspired him to get started. After that, he discusses a fantastic book that all freelancers should read, one which explains how you need to approach freelancing if you want to succeed, and you want to keep your sanity; it's called the E-Myth Revisited. Finally, Matt discusses why networking is essential to success, and some of the mistakes that some of techies make.
+</p>
+]]>
+            </description>
+            <content:encoded>
+                <![CDATA[
+<p style="text-align: justify;">
+In this, the first episode, Matt talks about what lead to the podcast getting started who motivated him and inspired him to get started. After that, he discusses a fantastic book that all freelancers should read, one which explains how you need to approach freelancing if you want to succeed, and you want to keep your sanity; it's called the E-Myth Revisited. Finally, Matt discusses why networking is essential to success, and some of the mistakes that some of techies make.
+</p>
+]]>
+            </content:encoded>
+            <wfw:commentRss>
+                http://freethegeek.fm/episode/episode-0002/feed/
+            </wfw:commentRss>
+            <slash:comments>0</slash:comments>
+            <enclosure
+                    url="http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3"
+                    length="103516655" type="audio/mpeg"/>
+            <itunes:subtitle>
+                In this episode, I have a fireside chat with internationally recognized PHP expert, and all around good fella Paul M. Jones, about one of his all-time favorite books - The Mythical Man Month. We talk about why the book is so valuable to him, how it's helped shape his career over the years, and the lessons it can teach all of us as software developers, lessons still relevant over 40 years after it was first published, in 1975.
+            </itunes:subtitle>
+            <itunes:summary>
+                In this episode, I have a fireside chat with internationally recognized PHP expert, and all around good fella Paul M. Jones, about one of his all-time favorite books - The Mythical Man Month. We talk about why the book is so valuable to him, how it's helped shape his career over the years, and the lessons it can teach all of us as software developers, lessons still relevant over 40 years after it was first published, in 1975. I've also got updates on what's been happening for me personally in my freelancing business; including speaking at php[world], attending the inaugural PHP South Coast, and much, much more.
+            </itunes:summary>
+            <itunes:author>FreetheGeek.fm with Matthew Setter</itunes:author>
+            <itunes:explicit>clean</itunes:explicit>
+            <itunes:duration>53:52</itunes:duration>
         </item>
     </channel>
 
