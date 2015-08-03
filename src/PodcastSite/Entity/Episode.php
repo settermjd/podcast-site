@@ -31,17 +31,29 @@ class Episode
     protected $content;
 
     /**
+     * @var string
+     */
+    protected $link;
+
+    /**
+     * @var string
+     */
+    protected $download;
+
+    /**
      * @param string $publishDate
      * @param string $slug
      * @param string $title
      * @param string $content
      */
-    public function __construct($publishDate, $slug, $title, $content)
+    public function __construct($publishDate, $slug, $title, $content, $link, $download)
     {
         $this->publishDate = $publishDate;
         $this->slug = $slug;
         $this->title = $title;
         $this->content = $content;
+        $this->link = $link;
+        $this->download = $download;
     }
 
     /**
@@ -76,5 +88,21 @@ class Episode
     public function getContent()
     {
        return $this->content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDownload()
+    {
+        return $this->download;
     }
 }

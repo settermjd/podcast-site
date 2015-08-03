@@ -21,15 +21,19 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
         $slug = '/episode-001';
         $title = 'Episode 001';
         $content = 'Lorem ipsum dolar';
+        $link = 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3';
+        $download = 'FreeTheGeek-Episode0002.mp3';
 
         $episode = new \PodcastSite\Entity\Episode(
-            $publishDate, $slug, $title, $content
+            $publishDate, $slug, $title, $content, $link, $download
         );
 
         $this->assertEquals($publishDate, $episode->getPublishDate());
         $this->assertEquals($slug, $episode->getSlug());
         $this->assertEquals($title, $episode->getTitle());
         $this->assertEquals($content, $episode->getContent());
+        $this->assertEquals($link, $episode->getLink());
+        $this->assertEquals($download, $episode->getDownload());
     }
 
     public function testHydratedMarkdownDataIsCorrectlyFiltered()
@@ -54,9 +58,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.';
+        $link = 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3';
+        $download = 'FreeTheGeek-Episode0002.mp3';
 
         $episode = new \PodcastSite\Entity\Episode(
-            $publishDate, $slug, $title, $content
+            $publishDate, $slug, $title, $content, $link, $download
         );
 
         //$this->assertTrue((strlen($episode->getTitle()) <= 150), strlen($episode->getTitle()));

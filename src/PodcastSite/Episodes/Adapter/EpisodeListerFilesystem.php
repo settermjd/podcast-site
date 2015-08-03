@@ -103,7 +103,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
                     $document->getYAML()['publish_date'],
                     $document->getYAML()['slug'],
                     $document->getYAML()['title'],
-                    $document->getContent()
+                    $document->getContent(),
+                    $document->getYAML()['link'],
+                    $document->getYAML()['download']
                 );
             }
         }
@@ -128,7 +130,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             $document->getYAML()['publish_date'],
             $document->getYAML()['slug'],
             $document->getYAML()['title'],
-            $document->getContent()
+            $document->getContent(),
+            $document->getYAML()['link'],
+            $document->getYAML()['download']
         );
     }
 

@@ -11,15 +11,16 @@
                 <h2 class="section-heading">{{ episode.getTitle() }}</h2>
                 <hr class="light">
                 <p>{{ episode.getPublishDate() }}</p>
+
                 <div class="content">
                     {{ episode.getContent()|raw }}
                 </div>
 
-                <audio src="http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3"></audio>
+                <audio src="{{ episode.link }}"></audio>
                 <div class="podcast-options">
                     <strong>Podcast:</strong>
-                    <a href="http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3" target="_blank">Play in new window</a> |
-                    <a href="http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3" download="FreeTheGeek-Episode0001.mp3">Download</a>
+                    <a href="{{ episode.link }}" target="_blank">Play in new window</a> |
+                    <a href="{{ episode.link }}" download="{{ episode.download }}">Download</a>
                 </div>
                 <div class="subscribe">
                     {% include "core/subscribe-buttons.twig" %}
