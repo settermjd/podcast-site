@@ -20,7 +20,10 @@ I've also got updates on what's been happening for me personally in my freelanci
   - [Modernizing Legacy Applications in PHP](http://mlaphp.com/)
   - [Solving the N+1 Problem in PHP](https://leanpub.com/sn1php?utm_campaign=sn1php&utm_medium=embed&utm_source=paul-m-jones.com)
   
+- [The Action Domain Responder Pattern](http://pmjones.io/adr/)
 - [The Mythical Man Month, by Frederick P. Brooks. Jr](http://www.amazon.co.uk/The-Mythical-Man-month-Software-Engineering/dp/0201835959)
+- [Peopleware: Productive Projects and Teams](http://www.amazon.co.uk/Peopleware-Productive-Projects-Tom-DeMarco/dp/0932633439)
+- [The Inmates are Running the Asylum](http://www.amazon.co.uk/The-Inmates-are-Running-Asylum/dp/0672326140)
 - [Outliers by Malcolm Gladwell](http://gladwell.com/outliers/)
 - [PHP South Coast Conference](http://2015.phpsouthcoast.co.uk/)
 - [PHP[World] Conference](http://world.phparch.com)
