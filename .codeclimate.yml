@@ -6,3 +6,5 @@ languages:
   Python: false
 exclude_paths:
   - "public/js/dist/*"
+  - "tests/_support/_generated/AcceptanceTesterActions.php"
+  - "tests/acceptance/AcceptanceTester.php"
