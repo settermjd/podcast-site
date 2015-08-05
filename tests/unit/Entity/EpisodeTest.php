@@ -17,23 +17,23 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
 
     public function testCanSetAndRetrieveUserProperties()
     {
-        $publishDate = '2015-01-01';
-        $slug = '/episode-001';
-        $title = 'Episode 001';
-        $content = 'Lorem ipsum dolar';
-        $link = 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3';
-        $download = 'FreeTheGeek-Episode0002.mp3';
+        $options = [
+            'publishDate' => '2015-01-01',
+            'slug' => '/episode-001',
+            'title' => 'Episode 001',
+            'content' => 'Lorem ipsum dolar',
+            'link' => 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3',
+            'download' => 'FreeTheGeek-Episode0002.mp3'
+        ];
 
-        $episode = new \PodcastSite\Entity\Episode(
-            $publishDate, $slug, $title, $content, $link, $download
-        );
+        $episode = new \PodcastSite\Entity\Episode($options);
 
-        $this->assertEquals($publishDate, $episode->getPublishDate());
-        $this->assertEquals($slug, $episode->getSlug());
-        $this->assertEquals($title, $episode->getTitle());
-        $this->assertEquals($content, $episode->getContent());
-        $this->assertEquals($link, $episode->getLink());
-        $this->assertEquals($download, $episode->getDownload());
+        $this->assertEquals($options['publishDate'], $episode->getPublishDate());
+        $this->assertEquals($options['slug'], $episode->getSlug());
+        $this->assertEquals($options['title'], $episode->getTitle());
+        $this->assertEquals($options['content'], $episode->getContent());
+        $this->assertEquals($options['link'], $episode->getLink());
+        $this->assertEquals($options['download'], $episode->getDownload());
     }
 
     public function testHydratedMarkdownDataIsCorrectlyFiltered()
@@ -61,9 +61,7 @@ SOFTWARE.';
         $link = 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3';
         $download = 'FreeTheGeek-Episode0002.mp3';
 
-        $episode = new \PodcastSite\Entity\Episode(
-            $publishDate, $slug, $title, $content, $link, $download
-        );
+        $episode = new \PodcastSite\Entity\Episode(array());
 
         //$this->assertTrue((strlen($episode->getTitle()) <= 150), strlen($episode->getTitle()));
         //$this->assertTrue((strlen($episode->getContent()) <= 500), strlen($episode->getContent()));

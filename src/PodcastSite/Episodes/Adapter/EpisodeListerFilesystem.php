@@ -99,14 +99,14 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             /** @var \Mni\FrontYAML\Document $document */
             $document = $this->fileParser->parse($fileContent);
             if ($document->getYAML()['slug'] === $episodeSlug) {
-                return new Episode(
-                    $document->getYAML()['publish_date'],
-                    $document->getYAML()['slug'],
-                    $document->getYAML()['title'],
-                    $document->getContent(),
-                    $document->getYAML()['link'],
-                    $document->getYAML()['download']
-                );
+                return new Episode([
+                    'publishDate' => $document->getYAML()['publish_date'],
+                    'slug' => $document->getYAML()['slug'],
+                    'title' => $document->getYAML()['title'],
+                    'content' => $document->getContent(),
+                    'link' => $document->getYAML()['link'],
+                    'download' => $document->getYAML()['download']
+                ]);
             }
         }
 
@@ -126,14 +126,14 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         /** @var \Mni\FrontYAML\Document $document */
         $document = $this->fileParser->parse($fileContent);
 
-        return new Episode(
-            $document->getYAML()['publish_date'],
-            $document->getYAML()['slug'],
-            $document->getYAML()['title'],
-            $document->getContent(),
-            $document->getYAML()['link'],
-            $document->getYAML()['download']
-        );
+        return new Episode([
+            'publishDate' => $document->getYAML()['publish_date'],
+            'slug' => $document->getYAML()['slug'],
+            'title' => $document->getYAML()['title'],
+            'content' => $document->getContent(),
+            'link' => $document->getYAML()['link'],
+            'download' => $document->getYAML()['download']
+        ]);
     }
 
 }

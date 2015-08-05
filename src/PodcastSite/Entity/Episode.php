@@ -41,19 +41,18 @@ class Episode
     protected $download;
 
     /**
-     * @param string $publishDate
-     * @param string $slug
-     * @param string $title
-     * @param string $content
+     * @param array|\Traversable $options
      */
-    public function __construct($publishDate, $slug, $title, $content, $link, $download)
+    public function __construct($options = array())
     {
-        $this->publishDate = $publishDate;
-        $this->slug = $slug;
-        $this->title = $title;
-        $this->content = $content;
-        $this->link = $link;
-        $this->download = $download;
+        if (!empty($options)) {
+            $memberVariables = get_class_vars(__CLASS__);
+            foreach ($options as $key => $value) {
+               if (array_key_exists($key, $memberVariables) && !empty($value)) {
+                   $this->$key = $value;
+               }
+            }
+        }
     }
 
     /**

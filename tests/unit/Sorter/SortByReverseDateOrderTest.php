@@ -18,9 +18,15 @@ class SortByReverseDateOrderTest extends \PHPUnit_Framework_TestCase
     public function testResultsAreSortedInTheCorrectOrder()
     {
         $episodeListing = [
-            new \PodcastSite\Entity\Episode('2013-01-01', '', '', '', '', ''),
-            new \PodcastSite\Entity\Episode('2015-01-01', '', '', '', '', ''),
-            new \PodcastSite\Entity\Episode('2014-01-01', '', '', '', '', ''),
+            new \PodcastSite\Entity\Episode([
+                'publishDate' => '2013-01-01'
+            ]),
+            new \PodcastSite\Entity\Episode([
+                'publishDate' => '2015-01-01'
+            ]),
+            new \PodcastSite\Entity\Episode([
+                'publishDate' => '2014-01-01'
+            ]),
         ];
 
         // Sort the records in reverse date order
