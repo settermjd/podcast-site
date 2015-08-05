@@ -7,4 +7,6 @@ languages:
 exclude_paths:
   - "public/js/dist/*"
   - "tests/_support/_generated/AcceptanceTesterActions.php"
+  - "tests/unit/UnitTester.php"
+  - "tests/functional/FunctionalTester.php"
   - "tests/acceptance/AcceptanceTester.php"
