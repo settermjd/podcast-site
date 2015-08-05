@@ -5,4 +5,4 @@ languages:
   PHP: true
   Python: false
 exclude_paths:
-  - "public/js/dist/"
+  - "public/js/dist/*"
