@@ -2,6 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/settermjd/podcast-site/badges/gpa.svg)](https://codeclimate.com/github/settermjd/podcast-site)
 [![Test Coverage](https://codeclimate.com/github/settermjd/podcast-site/badges/coverage.svg)](https://codeclimate.com/github/settermjd/podcast-site/coverage)
+[![Build Status](https://travis-ci.org/settermjd/podcast-site.svg?branch=develop)](https://travis-ci.org/settermjd/podcast-site)
 
 The aim of this codebase is to provide a simple package for creating a 
 website to host a podcast. At the moment it's specific to FreeTheGeek.fm.
