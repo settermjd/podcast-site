@@ -32,5 +32,8 @@
     "post-install-cmd": [
       "./bin/post-install.sh"
     ]
+  },
+  "require-dev": {
+    "codeclimate/php-test-reporter": "^0.1.2"
   }
 }
