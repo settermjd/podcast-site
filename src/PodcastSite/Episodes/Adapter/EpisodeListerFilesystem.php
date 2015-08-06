@@ -132,7 +132,8 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             'title' => $document->getYAML()['title'],
             'content' => $document->getContent(),
             'link' => $document->getYAML()['link'],
-            'download' => $document->getYAML()['download']
+            'download' => $document->getYAML()['download'],
+            'guests' => $document->getYAML()['guests']
         ]);
     }
 

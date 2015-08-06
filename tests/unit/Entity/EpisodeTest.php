@@ -32,7 +32,7 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
             'content' => 'Lorem ipsum dolar',
             'link' => 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3',
             'download' => 'FreeTheGeek-Episode0002.mp3',
-            'guests' => 'pmjones,coderabbi,calevans'
+            'guests' => ["Matthew Setter" => ["email" => "matthew@matthewsetter.com", "twitter" => "settermjd"]]
         ];
 
         $episode = new \PodcastSite\Entity\Episode($options);

@@ -111,15 +111,13 @@ class Episode
     }
 
     /**
-     * Returns a comma-separated list of guests
-     *
-     * Each entry is a twitter handle, minus the preceding `@`.
+     * Returns a comma-separated list of guests' email addresses
      *
      * @return string
      */
     public function getGuests()
     {
-        return $this->guests;
+        return (!empty($this->guests)) ? $this->guests : false;
     }
 
     /**
