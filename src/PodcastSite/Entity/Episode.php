@@ -104,4 +104,21 @@ class Episode
     {
         return $this->download;
     }
+
+    /**
+     * Retrieves the synopsis from the Markdown content
+     *
+     * @return string|bool
+     */
+    public function getSynopsis()
+    {
+        // Attempt to extract just the synopsis section, with no other content
+        // If you're curious about the regex, use https://regex101.com/ with some
+        // sample content to see an breakdown of how it works.
+        if (preg_match('/^### Synopsis\n\n.*/m', $this->content, $matches)) {
+            return $matches[0];
+        }
+
+        return false;
+    }
 }
