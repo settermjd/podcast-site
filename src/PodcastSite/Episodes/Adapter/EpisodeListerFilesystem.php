@@ -127,13 +127,13 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         $document = $this->fileParser->parse($fileContent, false);
 
         return new Episode([
-            'publishDate' => $document->getYAML()['publish_date'],
-            'slug' => $document->getYAML()['slug'],
-            'title' => $document->getYAML()['title'],
+            'publishDate' => (array_key_exists('publishDate', $document->getYAML())) ?: $document->getYAML()['publish_date'],
+            'slug' => (array_key_exists('slug', $document->getYAML())) ?: $document->getYAML()['slug'],
+            'title' => (array_key_exists('title', $document->getYAML())) ?: $document->getYAML()['title'],
             'content' => $document->getContent(),
-            'link' => $document->getYAML()['link'],
-            'download' => $document->getYAML()['download'],
-            'guests' => $document->getYAML()['guests']
+            'link' => (array_key_exists('link', $document->getYAML())) ?: $document->getYAML()['link'],
+            'download' => (array_key_exists('download', $document->getYAML())) ?: $document->getYAML()['download'],
+            'guests' => (array_key_exists('guests', $document->getYAML())) ?: $document->getYAML()['guests']
         ]);
     }
 
