@@ -31,7 +31,8 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
             'title' => 'Episode 001',
             'content' => 'Lorem ipsum dolar',
             'link' => 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3',
-            'download' => 'FreeTheGeek-Episode0002.mp3'
+            'download' => 'FreeTheGeek-Episode0002.mp3',
+            'guests' => 'pmjones,coderabbi,calevans'
         ];
 
         $episode = new \PodcastSite\Entity\Episode($options);
@@ -42,6 +43,7 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($options['content'], $episode->getContent());
         $this->assertEquals($options['link'], $episode->getLink());
         $this->assertEquals($options['download'], $episode->getDownload());
+        $this->assertEquals($options['guests'], $episode->getGuests());
     }
 
     /**

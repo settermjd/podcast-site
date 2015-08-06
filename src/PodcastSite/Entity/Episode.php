@@ -41,6 +41,11 @@ class Episode
     protected $download;
 
     /**
+     * @var string
+     */
+    protected $guests;
+
+    /**
      * @param array|\Traversable $options
      */
     public function __construct($options = array())
@@ -103,6 +108,18 @@ class Episode
     public function getDownload()
     {
         return $this->download;
+    }
+
+    /**
+     * Returns a comma-separated list of guests
+     *
+     * Each entry is a twitter handle, minus the preceding `@`.
+     *
+     * @return string
+     */
+    public function getGuests()
+    {
+        return $this->guests;
     }
 
     /**
