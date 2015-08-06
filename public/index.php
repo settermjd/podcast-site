@@ -1,5 +1,6 @@
 <?php
 
+require_once '../c3.php';
 require_once '../vendor/autoload.php';
 
 date_default_timezone_set('Europe/Berlin');
@@ -9,6 +10,8 @@ use PodcastSite\Episodes\EpisodeLister;
 use Mni\FrontYAML\Parser;
 use Zend\Cache\StorageFactory;
 use Zend\Config\Config;
+use Aptoma\Twig\Extension\MarkdownExtension;
+use Aptoma\Twig\Extension\MarkdownEngine;
 
 
 // Initialise a Slim app
@@ -56,6 +59,11 @@ $view = $app->view();
 $view->parserOptions = array(
     'debug' => true,
     'cache' => dirname(__FILE__) . '/../storage/cache/template-cache'
+);
+
+$engine = new MarkdownEngine\MichelfMarkdownEngine();
+$view->parserExtensions = array(
+    new MarkdownExtension($engine),
 );
 
 // Add in the routes for the application

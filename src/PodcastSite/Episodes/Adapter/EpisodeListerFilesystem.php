@@ -124,7 +124,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         $fileContent = file_get_contents($file->getPathname());
 
         /** @var \Mni\FrontYAML\Document $document */
-        $document = $this->fileParser->parse($fileContent);
+        $document = $this->fileParser->parse($fileContent, false);
 
         return new Episode([
             'publishDate' => $document->getYAML()['publish_date'],

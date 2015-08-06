@@ -2,6 +2,8 @@
 
 <body id="page-top">
 
+<div class="container">
+
 {% include "core/main-nav.twig" %}
 
 <header>
@@ -10,21 +12,72 @@
     </div>
 </header>
 
-<section class="bg-primary" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">What's It About?</h2>
-                <hr class="light">
-                <p>The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.<br /></p>
-                <p>It's a fireside chat on the ins and outs of being a freelance writer, screencaster, teacher, and software developer. Looking at what it’s like to do it, warts and all, as well as how to get started, what to expect, the good, the bad, and the ugly. When we’re not talking that, we’re talking tech, code, apps, development, and of course PHP.</p>
-                {% include "core/subscribe-buttons.twig" %}
+<div class="row">
+    <div class="col-md-8">
+        <p class="lead">The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.</p>
+    </div>
+    <div class="col-md-4" style="text-align: right;">
+        <a href="https://twitter.com/@freeingthegeek" target="_blank"><img src="/img/social-media/twitter.png" style="padding: 5px;"></a>
+        <a href="https://plus.google.com/b/115002379460010233732/115002379460010233732/posts" target="_blank" data-toggle="tooltip" data-original-title="Another one here too" title="Join in the conversation on Google+"><img src="/img/social-media/google-plus.png" style="padding: 5px;"></a>
+        <a href="https://www.facebook.com/pages/Free-The-Geek/899450083436065" target="_blank"><img src="/img/social-media/facebook.png" style="padding: 5px;"></a>
+        <a href="http://freethegeek.fm/rss.xml" target="_blank"><img src="/img/social-media/itunes.jpg" style="padding: 5px;"></a>
+        <a href="https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2" target="_blank"><img src="/img/social-media/rss.png" style="padding: 5px;"></a>
+    </div>
+</div>
+
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron"></div>
+
+    <div class="well">
+        <form class="form-inline">
+            <div class="form-group form-group-lg col-sm-10">
+                <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="Enter your email address, to get the latest updates and community news."
+                        style="width:100%;">
+            </div>
+            <button type="submit" class="btn btn-success input-lg">Sign Up!</button>
+        </form>
+    </div>
+
+{% for episode in episodes %}
+    <div class="well">
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">{{ episode.getTitle() }}</h4>
+                <h5>Published: {{ episode.getPublishDate() }}</h5>
+                <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
+                <h4>Guest(s)</h4>
+                <a href="https://twitter.com/coderabbi" target="_blank">
+                    <img src="https://secure.gravatar.com/avatar/737023cf85d780c0b07bc0b5d97d6d6a?s=200&amp;d=https%3A%2F%2Fwww.phproundtable.com%2Fimages%2Flogo-round-no-text.png" class="img-circle" style="width: 64px; height: 64px;" alt="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Yitzchok Willroth">
+                </a>
             </div>
         </div>
     </div>
-</section>
+{% endfor %}
 
-{% include "core/contact.twig" %}
+<nav style="text-align: center;">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+</div>
+</div>
+<!-- /container -->
+
 
 {% include "core/footer.twig" %}
 

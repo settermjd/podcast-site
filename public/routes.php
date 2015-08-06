@@ -5,7 +5,10 @@
  */
 $app->get('/', function () use ($app) {
     $app->render(
-        'home.twig', []
+        'home.twig', [
+            /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
+            'episodes' => $app->episodeLister->getEpisodeList()
+        ]
     );
 });
 
