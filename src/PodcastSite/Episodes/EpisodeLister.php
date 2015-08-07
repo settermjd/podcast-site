@@ -22,7 +22,7 @@ class EpisodeLister
                 return new EpisodeListerFilesystem(
                     $options['path'],
                     $options['parser'],
-                    $options['cache']
+                    (array_key_exists('cache', $options)) ? $options['cache'] : ''
                 );
         }
     }

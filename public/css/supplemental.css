@@ -1,62 +1,107 @@
-div.episodes h3 {
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar {
     margin-bottom: 20px;
 }
 
-a {
-    color: #67A502;
+.jumbotron {
+    background-image: url('/img/header-smaller.jpg');
+    height: 418px;
 }
 
-a:hover, a:focus {
-    color: #436800;
+.jumbotron.about {
+    background-image: url('/img/logo1-extended.png');
+    height: 108px;
+    width: 418px;
+    background-repeat: no-repeat;
+
 }
 
-h3 a {
-    color: #fff;
+.center-pills {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-h3 a:hover, h3 a.focus {
-    color: #e4e4e4;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-.bg-primary {
-    background-color: #315361;
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 
-hr {
-    border-color: #315361;
-}
-
-@media(min-width:768px) {
-    .navbar-default.affix .navbar-header .navbar-brand {
-        font-size: 14px;
-        color: #67A502;
-    }
-
-    .navbar-default.affix .navbar-header .navbar-brand:hover,
-    .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #436800;
-    }
-
-    .navbar-default.affix .nav > li>a:hover,
-    .navbar-default.affix .nav>li>a:focus:hover {
-        color: #67A502;
-    }
-}
-
-div.content, div.podcast-options, div.subscribe {
-    text-align: left;
-}
-
-div.podcast-options, div.subscribe {
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
     margin-top: 20px;
+    padding-top: 15px;
 }
 
-.subscribe-button-rss {
-    background-color: #FF8800;
-    color: #ffffff;
+.container {
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+.container .text-muted {
+    margin: 20px 0;
 }
 
-.subscribe-button-itunes {
-    background-color: #b23cbe;
-    color: #ffffff;
+p.lead {
+    text-align: center;
+    margin-right: 10%;
+}
+
+.container .content p, div.media-body p {
+    font-family: Chaparral-Pro, sans-serif;
+    font-weight: 100;
+    font-size: 22px;
+    color: #4C4949;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    color: #4C4949;
+}
+
+.publish-date {
+    text-align: center;
+    font-weight: normal;
+    font-family: Chaparral-Pro, sans-serif;
+    font-size: 22px;
+    color: #4C4949;
+}
+
+@media (max-width: 768px) {
+    .jumbotron, div.full-pretext, div.full {
+        display: none;
+    }
+    div.mobile-pretext, div.mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .jumbotron, div.full-pretext, div.full {
+        display: block;
+    }
+    div.mobile-pretext, div.mobile {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    background-image: url('/img/logo1-extended.png');
+    width: 193px;
+    height: 50px;
 }

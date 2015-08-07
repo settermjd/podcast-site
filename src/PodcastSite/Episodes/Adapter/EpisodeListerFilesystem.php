@@ -99,14 +99,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             /** @var \Mni\FrontYAML\Document $document */
             $document = $this->fileParser->parse($fileContent);
             if ($document->getYAML()['slug'] === $episodeSlug) {
-                return new Episode([
-                    'publishDate' => $document->getYAML()['publish_date'],
-                    'slug' => $document->getYAML()['slug'],
-                    'title' => $document->getYAML()['title'],
-                    'content' => $document->getContent(),
-                    'link' => $document->getYAML()['link'],
-                    'download' => $document->getYAML()['download']
-                ]);
+                return new Episode($this->getEpisodeData($document));
             }
         }
 
@@ -119,22 +112,33 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      * @param \SplFileInfo $file
      * @return \PodcastSite\Entity\Episode
      */
-    protected function buildEpisode(\SplFileInfo $file)
+    public function buildEpisode(\SplFileInfo $file)
     {
         $fileContent = file_get_contents($file->getPathname());
 
         /** @var \Mni\FrontYAML\Document $document */
         $document = $this->fileParser->parse($fileContent, false);
 
-        return new Episode([
-            'publishDate' => $document->getYAML()['publish_date'],
-            'slug' => $document->getYAML()['slug'],
-            'title' => $document->getYAML()['title'],
+        return new Episode($this->getEpisodeData($document));
+    }
+
+    /**
+     * Create an episode value object from the contents of an acceptable markdown file
+     *
+     * @param \Mni\FrontYAML\Document $document
+     * @return \PodcastSite\Entity\Episode
+     */
+    public function getEpisodeData($document)
+    {
+        return [
+            'publishDate' => (array_key_exists('publish_date', $document->getYAML())) ? $document->getYAML()['publish_date'] : '',
+            'slug' => (array_key_exists('slug', $document->getYAML())) ? $document->getYAML()['slug'] : '',
+            'title' => (array_key_exists('title', $document->getYAML())) ? $document->getYAML()['title'] : '',
             'content' => $document->getContent(),
-            'link' => $document->getYAML()['link'],
-            'download' => $document->getYAML()['download'],
-            'guests' => $document->getYAML()['guests']
-        ]);
+            'link' => (array_key_exists('link', $document->getYAML())) ? $document->getYAML()['link'] : '',
+            'download' => (array_key_exists('download', $document->getYAML())) ? $document->getYAML()['download'] : '',
+            'guests' => (array_key_exists('guests', $document->getYAML())) ? $document->getYAML()['guests'] : ''
+        ];
     }
 
 }
