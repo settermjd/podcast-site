@@ -17,8 +17,6 @@ $I->seeLink('', "https://www.facebook.com/pages/Free-The-Geek/899450083436065");
 $I->seeLink('', "http://freethegeek.fm/rss.xml");
 $I->seeLink('', "https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2");
 
-$I->see("settermjd (skype)");
-$I->see("matthew@freethegeek.fm");
 $I->seeLink("Matthew Setter", "http://www.matthewsetter.com");
 $I->seeLink("the Slim Framework", "http://slimframework.com");
 
