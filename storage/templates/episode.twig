@@ -1,4 +1,4 @@
-{% include "core/header.twig" %}
+{% include "core/episode-header.twig" %}
 
 <body id="page-top">
 
@@ -7,7 +7,7 @@
 {% include "core/main-nav.twig" %}
 
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-12">
                 <h2 class="section-heading">{{ episode.getTitle() }}</h2>
                 <hr class="light">
                 <p class="publish-date">{{ episode.getPublishDate() }}</p>

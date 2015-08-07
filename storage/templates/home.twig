@@ -17,11 +17,7 @@
         <p class="lead">The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.</p>
     </div>
     <div class="col-md-4" style="text-align: right;">
-        <a href="https://twitter.com/@freeingthegeek" target="_blank"><img src="/img/social-media/twitter.png" style="padding: 5px;"></a>
-        <a href="https://plus.google.com/b/115002379460010233732/115002379460010233732/posts" target="_blank" data-toggle="tooltip" data-original-title="Another one here too" title="Join in the conversation on Google+"><img src="/img/social-media/google-plus.png" style="padding: 5px;"></a>
-        <a href="https://www.facebook.com/pages/Free-The-Geek/899450083436065" target="_blank"><img src="/img/social-media/facebook.png" style="padding: 5px;"></a>
-        <a href="http://freethegeek.fm/rss.xml" target="_blank"><img src="/img/social-media/itunes.jpg" style="padding: 5px;"></a>
-        <a href="https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2" target="_blank"><img src="/img/social-media/rss.png" style="padding: 5px;"></a>
+        {% include "core/social-media-links.twig" %}
     </div>
 </div>
 
@@ -34,11 +30,7 @@
 
     <div class="row mobile-pretext">
         <div class="col-md-12" style="text-align: center;">
-            <a href="https://twitter.com/@freeingthegeek" target="_blank"><img src="/img/social-media/twitter.png" style="padding: 5px;"></a>
-            <a href="https://plus.google.com/b/115002379460010233732/115002379460010233732/posts" target="_blank" data-toggle="tooltip" data-original-title="Another one here too" title="Join in the conversation on Google+"><img src="/img/social-media/google-plus.png" style="padding: 5px;"></a>
-            <a href="https://www.facebook.com/pages/Free-The-Geek/899450083436065" target="_blank"><img src="/img/social-media/facebook.png" style="padding: 5px;"></a>
-            <a href="http://freethegeek.fm/rss.xml" target="_blank"><img src="/img/social-media/itunes.jpg" style="padding: 5px;"></a>
-            <a href="https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2" target="_blank"><img src="/img/social-media/rss.png" style="padding: 5px;"></a>
+            {% include "core/social-media-links.twig" %}
         </div>
     </div>
 
@@ -46,12 +38,13 @@
 <div class="jumbotron"></div>
 
     <div class="well full">
-        <form class="form-inline">
+        <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">
             <div class="form-group form-group-lg col-sm-10">
-                <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="Enter your email address, to get the latest updates and community news."
-                        style="width:100%;">
+                <input type="email" class="form-control input-lg" name="EMAIL" id="email" placeholder="Enter your email address, to get the latest updates and community news."
+                       style="width:100%;">
+                <input type="hidden" name="b_daba1ae6c6f01f207afaf7402_932a5500ab" tabindex="-1" value="">
             </div>
-            <button type="submit" class="btn btn-success input-lg">Sign Up!</button>
+            <input type="submit" class="btn btn-success input-lg" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
         </form>
     </div>
 
@@ -79,12 +72,13 @@
 {% endfor %}
 
     <div class="well mobile">
-        <form class="form-inline">
+        <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">
             <div class="form-group form-group-lg col-sm-10">
-                <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="Enter your email address, to get the latest updates and community news."
+                <input type="email" class="form-control input-lg" name="EMAIL" id="email" placeholder="Enter your email address, to get the latest updates and community news."
                        style="width:100%;">
+                <input type="hidden" name="b_daba1ae6c6f01f207afaf7402_932a5500ab" tabindex="-1" value="">
             </div>
-            <button type="submit" class="btn btn-success input-lg">Sign Up!</button>
+            <input type="submit" class="btn btn-success input-lg" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
         </form>
     </div>
 
