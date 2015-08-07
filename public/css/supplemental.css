@@ -12,6 +12,14 @@ body {
     height: 418px;
 }
 
+.jumbotron.about {
+    background-image: url('/img/logo1-extended.png');
+    height: 108px;
+    width: 418px;
+    background-repeat: no-repeat;
+
+}
+
 .center-pills {
     display: flex;
     justify-content: center;
@@ -53,4 +61,47 @@ p.lead {
     margin-right: 10%;
 }
 
+.container .content p, div.media-body p {
+    font-family: Chaparral-Pro, sans-serif;
+    font-weight: 100;
+    font-size: 22px;
+    color: #4C4949;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    color: #4C4949;
+}
+
+.publish-date {
+    text-align: center;
+    font-weight: normal;
+    font-family: Chaparral-Pro, sans-serif;
+    font-size: 22px;
+    color: #4C4949;
+}
+
+@media (max-width: 768px) {
+    .jumbotron, div.full-pretext, div.full {
+        display: none;
+    }
+    div.mobile-pretext, div.mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .jumbotron, div.full-pretext, div.full {
+        display: block;
+    }
+    div.mobile-pretext, div.mobile {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    background-image: url('/img/logo1-extended.png');
+    width: 193px;
+    height: 50px;
+}

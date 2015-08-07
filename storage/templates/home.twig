@@ -12,7 +12,7 @@
     </div>
 </header>
 
-<div class="row">
+<div class="row full-pretext">
     <div class="col-md-8">
         <p class="lead">The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.</p>
     </div>
@@ -25,10 +25,27 @@
     </div>
 </div>
 
+    <div class="row mobile-pretext">
+        <div class="col-md-12">
+            <p class="lead">The podcast about the business of freelancing as a software developer,
+                writer, content producer, and all round PHP lover.</p>
+        </div>
+    </div>
+
+    <div class="row mobile-pretext">
+        <div class="col-md-12" style="text-align: center;">
+            <a href="https://twitter.com/@freeingthegeek" target="_blank"><img src="/img/social-media/twitter.png" style="padding: 5px;"></a>
+            <a href="https://plus.google.com/b/115002379460010233732/115002379460010233732/posts" target="_blank" data-toggle="tooltip" data-original-title="Another one here too" title="Join in the conversation on Google+"><img src="/img/social-media/google-plus.png" style="padding: 5px;"></a>
+            <a href="https://www.facebook.com/pages/Free-The-Geek/899450083436065" target="_blank"><img src="/img/social-media/facebook.png" style="padding: 5px;"></a>
+            <a href="http://freethegeek.fm/rss.xml" target="_blank"><img src="/img/social-media/itunes.jpg" style="padding: 5px;"></a>
+            <a href="https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2" target="_blank"><img src="/img/social-media/rss.png" style="padding: 5px;"></a>
+        </div>
+    </div>
+
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron"></div>
 
-    <div class="well">
+    <div class="well full">
         <form class="form-inline">
             <div class="form-group form-group-lg col-sm-10">
                 <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="Enter your email address, to get the latest updates and community news."
@@ -42,8 +59,8 @@
     <div class="well">
         <div class="media">
             <div class="media-body">
-                <h3 class="media-heading">{{ episode.getTitle() }}</h3>
-                <h5>Published: {{ episode.getPublishDate() }}</h5>
+                <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
+                <p class="publish-date">{{ episode.getPublishDate() }}</p>
                 <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
                 {% if episode.getGuests() %}
                     <h4>Guest(s)</h4>
@@ -60,6 +77,16 @@
         </div>
     </div>
 {% endfor %}
+
+    <div class="well mobile">
+        <form class="form-inline">
+            <div class="form-group form-group-lg col-sm-10">
+                <input type="text" class="form-control input-lg" id="exampleInputAmount" placeholder="Enter your email address, to get the latest updates and community news."
+                       style="width:100%;">
+            </div>
+            <button type="submit" class="btn btn-success input-lg">Sign Up!</button>
+        </form>
+    </div>
 
 </div>
 <!-- /container -->
