@@ -1,7 +1,7 @@
 <?php
 
 /**
- * List all calls on the account
+ * The default route
  */
 $app->get('/', function () use ($app) {
     $app->render(
@@ -9,6 +9,24 @@ $app->get('/', function () use ($app) {
             /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
             'episodes' => $app->episodeLister->getEpisodeList()
         ]
+    );
+});
+
+/**
+ * The about page
+ */
+$app->get('/about', function () use ($app) {
+    $app->render(
+        'about.twig', []
+    );
+});
+
+/**
+ * The contact page
+ */
+$app->get('/contact', function () use ($app) {
+    $app->render(
+        'contact.twig', []
     );
 });
 
