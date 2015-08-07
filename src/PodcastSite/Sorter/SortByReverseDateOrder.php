@@ -21,9 +21,12 @@ class SortByReverseDateOrder
      */
     public function __invoke(Episode $a, Episode $b)
     {
-        if ($a->getPublishDate() == $b->getPublishDate()) {
+        $firstDate = new \DateTime($a->getPublishDate());
+        $secondDate = new \DateTime($b->getPublishDate());
+
+        if ($firstDate == $secondDate) {
             return 0;
         }
-        return ($a->getPublishDate() > $b->getPublishDate()) ? -1 : 1;
+        return ($firstDate > $secondDate) ? -1 : 1;
     }
 }
