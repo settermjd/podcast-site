@@ -1,9 +1,14 @@
 ---
 publish_date: 03.08.2015
 slug: episode-0002
-title: Episode 2 - Discussing the Mythical Man Month with Paul M. Jones; plus speaking at php[world] and Nomad PHP.
+title: Episode 2 - The Mythical Man Month with Paul M. Jones / Speaking at php[world] and Nomad PHP
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
 download: FreeTheGeek-Episode0002.mp3
+guests: 
+    "Paul M. Jones":
+        email: pmjones88@gmail.com 
+        twitter: pmjones
+
 ---
 ### Synopsis
 
@@ -16,10 +21,8 @@ I've also got updates on what's been happening for me personally in my freelanci
 ### Related Links
 
 - [Paul M. Jones](http://paul-m-jones.com/)
-- Paul's Books:
-  - [Modernizing Legacy Applications in PHP](http://mlaphp.com/)
-  - [Solving the N+1 Problem in PHP](https://leanpub.com/sn1php?utm_campaign=sn1php&utm_medium=embed&utm_source=paul-m-jones.com)
-  
+- [Modernizing Legacy Applications in PHP](http://mlaphp.com/)
+- [Solving the N+1 Problem in PHP](https://leanpub.com/sn1php?utm_campaign=sn1php&utm_medium=embed&utm_source=paul-m-jones.com)
 - [The Action Domain Responder Pattern](http://pmjones.io/adr/)
 - [The Mythical Man Month, by Frederick P. Brooks. Jr](http://www.amazon.co.uk/The-Mythical-Man-month-Software-Engineering/dp/0201835959)
 - [Peopleware: Productive Projects and Teams](http://www.amazon.co.uk/Peopleware-Productive-Projects-Tom-DeMarco/dp/0932633439)

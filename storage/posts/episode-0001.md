@@ -4,6 +4,8 @@ slug: episode-0001
 title: Episode 1 - Getting Underway, The E-Myth Revisited, and Networking For Success
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3
 download: FreeTheGeek-Episode0001.mp3
+guests: 
+        
 ---
 ### Synopsis
 
