@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class EpisodeTest
+ * Class \PodcastSite\Entity\EpisodeTest
  *
  * @coversDefaultClass \PodcastSite\Entity\Episode
  */
