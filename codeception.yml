@@ -17,3 +17,9 @@ modules:
             dump: tests/_data/dump.sql
 coverage:
     enabled: true
+    whitelist:
+        include:
+            - src/*
+        exclude:
+            - storage/cache/*
+            - storage/posts/*
