@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class SortByReverseDateOrderTest
+ *
+ * @coversDefaultClass \PodcastSite\Sorter\SortByReverseDateOrder
+ */
 class SortByReverseDateOrderTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
@@ -15,6 +20,9 @@ class SortByReverseDateOrderTest extends \PHPUnit_Framework_TestCase
     {
     }
 
+    /**
+     * @covers ::__invoke
+     */
     public function testResultsAreSortedInTheCorrectOrder()
     {
         $episodeListing = [
