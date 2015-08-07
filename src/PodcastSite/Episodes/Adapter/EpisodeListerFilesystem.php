@@ -119,7 +119,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      * @param \SplFileInfo $file
      * @return \PodcastSite\Entity\Episode
      */
-    protected function buildEpisode(\SplFileInfo $file)
+    public function buildEpisode(\SplFileInfo $file)
     {
         $fileContent = file_get_contents($file->getPathname());
 
@@ -127,13 +127,13 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         $document = $this->fileParser->parse($fileContent, false);
 
         return new Episode([
-            'publishDate' => (array_key_exists('publishDate', $document->getYAML())) ?: $document->getYAML()['publish_date'],
-            'slug' => (array_key_exists('slug', $document->getYAML())) ?: $document->getYAML()['slug'],
-            'title' => (array_key_exists('title', $document->getYAML())) ?: $document->getYAML()['title'],
+            'publishDate' => (array_key_exists('publish_date', $document->getYAML())) ? $document->getYAML()['publish_date'] : '',
+            'slug' => (array_key_exists('slug', $document->getYAML())) ? $document->getYAML()['slug'] : '',
+            'title' => (array_key_exists('title', $document->getYAML())) ? $document->getYAML()['title'] : '',
             'content' => $document->getContent(),
-            'link' => (array_key_exists('link', $document->getYAML())) ?: $document->getYAML()['link'],
-            'download' => (array_key_exists('download', $document->getYAML())) ?: $document->getYAML()['download'],
-            'guests' => (array_key_exists('guests', $document->getYAML())) ?: $document->getYAML()['guests']
+            'link' => (array_key_exists('link', $document->getYAML())) ? $document->getYAML()['link'] : '',
+            'download' => (array_key_exists('download', $document->getYAML())) ? $document->getYAML()['download'] : '',
+            'guests' => (array_key_exists('guests', $document->getYAML())) ? $document->getYAML()['guests'] : ''
         ]);
     }
 
