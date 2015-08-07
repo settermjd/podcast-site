@@ -1,6 +1,8 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-image: url('/img/crossword.png');
+    background-repeat: repeat;
 }
 
 .navbar {
