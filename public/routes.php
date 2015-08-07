@@ -52,8 +52,9 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
     } else {
         $app->render(
             'episode.twig', [
-                'episode' => $episode
-            ]
+                'episode' => $episode,
+                'route' => sprintf('http://%s', $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri())
+        ]
         );
     }
 });

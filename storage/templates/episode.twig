@@ -47,19 +47,19 @@
             </div>
             <div class="col-md-6">
                     <h3>Share</h3>
-                <div class="social-sharing is-large" data-permalink="http://www.matthewsetter.com/how-to-prepare-an-online-training-environment/">
+                <div class="social-sharing is-large" data-permalink="{{ route }}">
                     <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                    <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://www.matthewsetter.com/how-to-prepare-an-online-training-environment/" class="share-facebook">
+                    <a target="_blank" href="http://www.facebook.com/sharer.php?u={{ route }}" class="share-facebook">
                         <span class="icon icon-facebook"></span>
                         <span class="share-title">Share</span>
 
                     </a>
-                    <a target="_blank" href="http://twitter.com/share?url=http://www.matthewsetter.com/how-to-prepare-an-online-training-environment/&amp;text=How To Prepare an Online Training Environment by @settermjd " class="share-twitter">
+                    <a target="_blank" href="http://twitter.com/share?url={{ route }}&amp;text=Check out {{ episode.title }}" class="share-twitter">
                         <span class="icon icon-twitter"></span>
                         <span class="share-title">Tweet</span>
                         <span class="share-count is-loaded">1</span>
                     </a>
-                    <a target="_blank" href="http://plus.google.com/share?url=http://www.matthewsetter.com/how-to-prepare-an-online-training-environment/" class="share-google">
+                    <a target="_blank" href="http://plus.google.com/share?url={{ route }}" class="share-google">
                         <!-- Cannot get Google+ share count with JS yet -->
                         <span class="icon icon-google"></span>
                         <span class="share-count is-loaded">+1</span>
