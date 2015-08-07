@@ -82,6 +82,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Chaparral-Pro, sans-serif;
     font-size: 22px;
     color: #4C4949;
+    background-color: #F7F7F7;
+    padding-top: 6px;
 }
 
 @media (max-width: 768px) {
