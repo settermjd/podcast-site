@@ -7,6 +7,7 @@ date_default_timezone_set('Europe/Berlin');
 
 use Slim\Slim;
 use PodcastSite\Episodes\EpisodeLister;
+use PodcastSite\Extensions\Twig\GravatarExtension;
 use Mni\FrontYAML\Parser;
 use Zend\Cache\StorageFactory;
 use Zend\Config\Config;
@@ -64,6 +65,7 @@ $view->parserOptions = array(
 $engine = new MarkdownEngine\MichelfMarkdownEngine();
 $view->parserExtensions = array(
     new MarkdownExtension($engine),
+    new GravatarExtension(),
 );
 
 // Add in the routes for the application
