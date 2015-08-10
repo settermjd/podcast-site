@@ -40,4 +40,13 @@
     <link rel="stylesheet" href="/css/social-buttons.css">
     <link rel="alternate" type="application/rss+xml" href="/rss.xml"
           title="Free the Geek RSS Feed"/>
+
+    <script src="/js/dist/mediaelement-and-player.min.js"></script>
+
+    <script>
+        // using jQuery
+        $('audio').mediaelementplayer({success: function(mediaElement, originalNode) {
+            // do things
+        }});
+    </script>
 </head>
