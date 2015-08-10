@@ -1,7 +1,7 @@
 ---
 publish_date: 03.08.2015
 slug: episode-0002
-title: Episode 2 - The Mythical Man Month with Paul M. Jones / Speaking at php[world] and Nomad PHP
+title: The Mythical Man Month with Paul M. Jones & Speaking Engagements
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
 download: FreeTheGeek-Episode0002.mp3
 guests: 
