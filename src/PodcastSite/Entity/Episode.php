@@ -131,7 +131,22 @@ class Episode
         // If you're curious about the regex, use https://regex101.com/ with some
         // sample content to see an breakdown of how it works.
         if (preg_match('/^### Synopsis(\n\n.*)*(?=###)/m', $this->content, $matches)) {
-            return $matches[0];
+            // Strip the header
+            return trim(preg_replace('/^### Synopsis(\n*)/', '', $matches[0]));
+        }
+
+        return false;
+    }
+
+    /**
+     * Retrieves the a short version of the synopsis from the Markdown content
+     *
+     * @return string|bool
+     */
+    public function getShortSynopsis()
+    {
+        if (preg_match('/.*/m', $this->getSynopsis(), $matches)) {
+            return trim($matches[0]);
         }
 
         return false;
