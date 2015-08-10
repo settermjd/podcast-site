@@ -54,7 +54,12 @@
             <div class="media-body">
                 <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
                 <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
+                <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                {% if loop.first %}
+                    <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
+                {% else %}
+                    <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
+                {% endif %}
                 {% if episode.getGuests() %}
                     <h4>Guest(s)</h4>
                     {% for guestName, guestData in episode.getGuests() %}

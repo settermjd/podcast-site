@@ -9,8 +9,23 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="section-heading">{{ episode.getTitle() }}</h2>
-                <hr class="light">
                 <p class="publish-date">{{ episode.getPublishDate() }}</p>
+
+                <hr />
+
+                <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                <div class="podcast-options">
+                    <a href="{{ episode.link }}" target="_blank">
+                        <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                        Play in new window
+                    </a> |
+                    <a href="{{ episode.link }}" download="{{ episode.download }}">
+                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                        Download
+                    </a>
+                </div>
+
+                <hr class="light">
 
                 <div class="content">
                     {{ episode.getContent()|raw }}
@@ -27,16 +42,6 @@
                         </a>
                     {% endfor %}
                 {% endif %}
-
-                <hr />
-
-                <h3>Listen</h3>
-                <audio src="{{ episode.link }}"></audio>
-                <div class="podcast-options">
-                    <strong>Podcast:</strong>
-                    <a href="{{ episode.link }}" target="_blank">Play in new window</a> |
-                    <a href="{{ episode.link }}" download="{{ episode.download }}">Download</a>
-                </div>
                 <hr />
 
             </div>
