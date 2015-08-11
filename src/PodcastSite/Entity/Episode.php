@@ -10,6 +10,12 @@ namespace PodcastSite\Entity;
  */
 class Episode
 {
+    /** @var string */
+    const HEADER_RELATED_LINKS = 'Related Links';
+
+    /** @var string */
+    const HEADER_SYNOPSIS = 'Synopsis';
+
     /**
      * @var string
      */
@@ -147,6 +153,26 @@ class Episode
     {
         if (preg_match('/.*/m', $this->getSynopsis(), $matches)) {
             return trim($matches[0]);
+        }
+
+        return false;
+    }
+
+    /**
+     * Retrieves the related links section from the Markdown content
+     *
+     * @return string|bool
+     */
+    public function getRelatedLinks()
+    {
+        // Attempt to extract just the synopsis section, with no other content
+        // If you're curious about the regex, use https://regex101.com/ with some
+        // sample content to see an breakdown of how it works.
+        if (preg_match("/^### Related Links\n\n.*(\n.*)*/mi", $this->content, $matches)) {
+            // Strip the header
+            return trim(
+                preg_replace("/^### Related Links(\n*)/", '', $matches[0])
+            );
         }
 
         return false;
