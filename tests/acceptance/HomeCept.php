@@ -10,6 +10,10 @@ $I->seeLink("About", "/about");
 $I->seeLink("Contact", "/contact");
 $I->seeLink("Episodes", "/episodes");
 
+$I->see("Latest Episode");
+$I->see("Upcoming Episodes");
+$I->see("Past Episodes");
+
 // Test the subscribe buttons
 $I->seeLink('', "https://twitter.com/@freeingthegeek");
 $I->seeLink('', "https://plus.google.com/b/115002379460010233732/115002379460010233732/posts");
