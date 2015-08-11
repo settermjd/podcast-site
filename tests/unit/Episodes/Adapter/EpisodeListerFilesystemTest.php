@@ -129,4 +129,32 @@ EOF;
         $this->assertEquals($episodeData['guests'], $episode->getGuests()
         );
     }
+
+    public function testEpisodeListerImplementsCorrectInterface()
+    {
+        $filePath = dirname(__FILE__) . '/../../../_data/posts';
+        $episodeLister = EpisodeLister::factory([
+            'type' => 'filesystem',
+            'path' => $filePath,
+            'parser' => new Parser()
+        ]);
+        $this->assertInstanceOf('\PodcastSite\Episodes\EpisodeListerInterface', $episodeLister);
+    }
+
+    /**
+     * @covers ::__construct
+     */
+    public function testEpisodeListerSearchCorrectDirectory()
+    {
+        $filePath = dirname(__FILE__) . '/../../../_data/posts';
+        $episodeLister = EpisodeLister::factory([
+            'type' => 'filesystem',
+            'path' => $filePath,
+            'parser' => new Parser()
+        ]);
+        $this->assertEquals(
+            $episodeLister->getDataDirectory(),
+            dirname(__FILE__) . '/../../../_data/posts'
+        );
+    }
 }
