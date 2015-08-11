@@ -37,6 +37,8 @@
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron"></div>
 
+    <hr />
+
     <div class="well full">
         <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">
             <div class="form-group form-group-lg col-sm-10">
@@ -48,33 +50,91 @@
         </form>
     </div>
 
-{% for episode in episodes %}
-    <div class="well">
-        <div class="media">
-            <div class="media-body">
-                <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
-                <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
-                {% if loop.first %}
-                    <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
-                {% else %}
-                    <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
-                {% endif %}
-                {% if episode.getGuests() %}
-                    <h4>Guest(s)</h4>
-                    {% for guestName, guestData in episode.getGuests() %}
-                        <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
-                            <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                 style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
-                                 data-placement="bottom" title=""
-                                 data-original-title="{{ guestName }}">
-                        </a>
-                    {% endfor %}
-                {% endif %}
-            </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Latest Episode</h2>
+                <div class="well">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="media-heading"><a href="/episode/{{ latestEpisode.getSlug() }}">{{ latestEpisode.getTitle() }}</a></h3>
+                            <p class="publish-date">{{ latestEpisode.getPublishDate() }}</p>
+                            <audio style="width: 100%;" src="{{ latestEpisode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                            <p>{% markdown %}{{ latestEpisode.getSynopsis() }}{% endmarkdown %}</p>
+                            {% if latestEpisode.getGuests() %}
+                                <h4>Guest(s)</h4>
+                                {% for guestName, guestData in latestEpisode.getGuests() %}
+                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
+                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
+                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                             data-placement="bottom" title=""
+                                             data-original-title="{{ guestName }}">
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-{% endfor %}
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Upcoming Episodes</h3>
+            {% for episode in upcomingEpisodes %}
+                <div class="well">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
+                            <p class="publish-date">{{ episode.getPublishDate() }}</p>
+                            <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
+                            {% if episode.getGuests() %}
+                                <h4>Guest(s)</h4>
+                                {% for guestName, guestData in episode.getGuests() %}
+                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
+                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
+                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                             data-placement="bottom" title=""
+                                             data-original-title="{{ guestName }}">
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-6">
+            <h3>Past Episodes</h3>
+            {% for episode in pastEpisodes %}
+                <div class="well">
+                    <div class="media">
+                        <div class="media-body">
+                            <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
+                            <p class="publish-date">{{ episode.getPublishDate() }}</p>
+                            <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                            <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
+                            {% if episode.getGuests() %}
+                                <h4>Guest(s)</h4>
+                                {% for guestName, guestData in episode.getGuests() %}
+                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
+                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
+                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                             data-placement="bottom" title=""
+                                             data-original-title="{{ guestName }}">
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <div class="well mobile">
         <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">

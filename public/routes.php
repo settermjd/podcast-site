@@ -7,7 +7,9 @@ $app->get('/', function () use ($app) {
     $app->render(
         'home.twig', [
             /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-            'episodes' => $app->episodeLister->getEpisodeList()
+            'latestEpisode' => $app->episodeLister->getLatestEpisode(),
+            'pastEpisodes' => $app->episodeLister->getPastEpisodes(false),
+            'upcomingEpisodes' => $app->episodeLister->getUpcomingEpisodes(),
         ]
     );
 });
