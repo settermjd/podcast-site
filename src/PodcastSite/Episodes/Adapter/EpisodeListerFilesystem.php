@@ -170,7 +170,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         foreach ($this->episodeIterator as $file) {
             $fileContent = file_get_contents($file->getPathname());
             /** @var \Mni\FrontYAML\Document $document */
-            $document = $this->fileParser->parse($fileContent);
+            $document = $this->fileParser->parse($fileContent, false);
             if ($document->getYAML()['slug'] === $episodeSlug) {
                 return new Episode($this->getEpisodeData($document));
             }
