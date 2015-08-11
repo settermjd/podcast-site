@@ -6,7 +6,6 @@
 $app->get('/', function () use ($app) {
     $app->render(
         'home.twig', [
-            /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
             'latestEpisode' => $app->episodeLister->getLatestEpisode(),
             'pastEpisodes' => $app->episodeLister->getPastEpisodes(false),
             'upcomingEpisodes' => $app->episodeLister->getUpcomingEpisodes(),
@@ -35,14 +34,14 @@ $app->get('/contact', function () use ($app) {
 /**
  * Get a listing of all episodes
  */
-$app->get('/episodes', function () use ($app) {
-    $app->render(
-        'episodes.twig', [
+//$app->get('/episodes', function () use ($app) {
+//    $app->render(
+//        'episodes.twig', [
             /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-            'episodes' => $app->episodeLister->getEpisodeList()
-        ]
-    );
-});
+//            'episodes' => $app->episodeLister->getEpisodeList()
+//        ]
+//    );
+//});
 
 /**
  * Get an episode
