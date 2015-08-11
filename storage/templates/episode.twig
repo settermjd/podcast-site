@@ -28,20 +28,33 @@
                 <hr class="light">
 
                 <div class="content">
-                    {{ episode.getContent()|raw }}
+                    {% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}
                 </div>
 
-                {% if episode.getGuests() %}
-                    <h3>Guests</h3>
-                    {% for guestName, guestData in episode.getGuests() %}
-                        <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
-                            <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                 style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
-                                 data-placement="bottom" title=""
-                                 data-original-title="{{ guestName }}">
-                        </a>
-                    {% endfor %}
-                {% endif %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Guests</h3>
+                        {% if episode.getGuests() %}
+                            {% for guestName, guestData in episode.getGuests() %}
+                                <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
+                                    <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
+                                         style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                         data-placement="bottom" title=""
+                                         data-original-title="{{ guestName }}">
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                            <p>No Guests this episode.</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        {% if episode.getRelatedLinks() %}
+                        <h3>&nbsp;Related Links</h3>
+                        {% markdown %}{{ episode.getRelatedLinks() }}{% endmarkdown %}
+                        {% endif %}
+                    </div>
+                </div>
+
                 <hr />
 
             </div>
