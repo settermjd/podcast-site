@@ -10,6 +10,12 @@ interface EpisodeListerInterface
      */
     public function getEpisodeList();
 
+    public function getUpcomingEpisodes();
+
+    public function getPastEpisodes();
+
+    public function getLatestEpisode();
+
     /**
      * Get an individual episode
      * @param string $episodeSlug

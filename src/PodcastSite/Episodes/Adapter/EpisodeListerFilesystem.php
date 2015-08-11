@@ -6,6 +6,8 @@ use PodcastSite\Episodes\EpisodeListerInterface;
 use PodcastSite\Iterator\ActiveEpisodeFilterIterator;
 use PodcastSite\Sorter\SortByReverseDateOrder;
 use PodcastSite\Entity\Episode;
+use PodcastSite\Iterator\UpcomingEpisodeFilterIterator;
+use PodcastSite\Iterator\PastEpisodeFilterIterator;
 
 /**
  * Class EpisodeListerFilesystem
@@ -56,6 +58,8 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
 
     /**
      * Return the current available podcast episodes
+     *
+     * @return array|\Traversable
      */
     public function getEpisodeList()
     {
@@ -73,6 +77,62 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         }
     }
 
+    public function getUpcomingEpisodes()
+    {
+        $list = [];
+        $upcomingEpisodeIterator = new UpcomingEpisodeFilterIterator(
+            new \ArrayIterator($this->getEpisodeList())
+        );
+        foreach ($upcomingEpisodeIterator as $upcomingEpisode) {
+            $list[] = $upcomingEpisode;
+        }
+
+        return $list;
+    }
+
+    /**
+     * Get all but the first episode
+     *
+     * @return array
+     */
+    public function getPastEpisodes()
+    {
+        $iterator = new \LimitIterator(
+            new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())), 1
+        );
+        $list = [];
+        foreach ($iterator as $episode) {
+            $list[] = $episode;
+        }
+        return $list;
+    }
+
+    /**
+     * Get just the first episode
+     *
+     * @return array
+     */
+    public function getLatestEpisode()
+    {
+        $list = [];
+
+        // just get the first one
+        $iterator = new \LimitIterator(
+            new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())),
+            0, 1
+        );
+        foreach ($iterator as $episode) {
+            $list[] = $episode;
+        }
+
+        return $list;
+    }
+
+    /**
+     * Build a list of all episodes, based on the data available in the filesystem
+     *
+     * @return array|\Traversable
+     */
     protected function buildEpisodesList()
     {
         $episodeListing = [];
@@ -85,6 +145,19 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         usort($episodeListing, $sorter);
 
         return $episodeListing;
+    }
+
+    /**
+     * Returns the directory being searched by the episode lister
+     *
+     * @return string
+     */
+    public function getDataDirectory()
+    {
+        /** @var \DirectoryIterator $iterator */
+        $iterator = $this->episodeIterator->getInnerIterator();
+
+        return $iterator->getPath();
     }
 
     /**
