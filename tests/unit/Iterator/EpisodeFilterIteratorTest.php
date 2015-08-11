@@ -133,10 +133,10 @@ EOF;
     }
 
     // tests
-    public function testCanFilterPastEpisodes()
+    public function testCanGetAllPastEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
-        $directory = vfsStream::setup('root', null, $this->structure);
+        vfsStream::setup('root', null, $this->structure);
 
         $episodeLister = EpisodeLister::factory([
             'type' => 'filesystem',
@@ -144,7 +144,22 @@ EOF;
             'parser' => new Parser()
         ]);
 
-        $this->assertTrue(count($episodeLister->getPastEpisodes()) == 1, "Incorrect past episode count retrieved");
+        $this->assertTrue(count($episodeLister->getPastEpisodes()) == 2, "Incorrect past episode count retrieved");
+    }
+
+    // tests
+    public function testCanGetAllPastEpisodesMinusLatest()
+    {
+        /** @var vfsStreamDirectory $directory */
+        vfsStream::setup('root', null, $this->structure);
+
+        $episodeLister = EpisodeLister::factory([
+            'type' => 'filesystem',
+            'path' => vfsStream::url('root/posts'),
+            'parser' => new Parser()
+        ]);
+
+        $this->assertTrue(count($episodeLister->getPastEpisodes(false)) == 1, "Incorrect past episode count retrieved");
     }
 
     // tests
@@ -159,6 +174,10 @@ EOF;
             'parser' => new Parser()
         ]);
 
-        $this->assertTrue(count($episodeLister->getPastEpisodes()) == 1, "Incorrect past episode count retrieved");
+        $this->assertInstanceOf(
+            '\PodcastSite\Entity\Episode',
+            $episodeLister->getLatestEpisode(),
+            "Incorrect past episode count retrieved"
+        );
     }
 }

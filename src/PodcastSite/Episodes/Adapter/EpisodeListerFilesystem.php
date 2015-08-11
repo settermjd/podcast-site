@@ -93,17 +93,24 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     /**
      * Get all but the first episode
      *
+     * @param bool $includeLatest Whether to include the latest episode as well
      * @return array
      */
-    public function getPastEpisodes()
+    public function getPastEpisodes($includeLatest = true)
     {
-        $iterator = new \LimitIterator(
-            new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())), 1
-        );
         $list = [];
+        if ($includeLatest) {
+            $iterator = new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList()));
+        } else {
+            $iterator = new \LimitIterator(
+                new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())), 1
+            );
+        }
+
         foreach ($iterator as $episode) {
             $list[] = $episode;
         }
+
         return $list;
     }
 
