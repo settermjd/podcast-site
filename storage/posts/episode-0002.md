@@ -18,7 +18,7 @@ We talk about why the book is so valuable to him, how it's helped shape his care
 
 I've also got updates on what's been happening for me personally in my freelancing business; including speaking at php[world], attending the inaugural PHP South Coast, **and much, much more**.
 
-### Related Links
+### Related Links
 
 - [Paul M. Jones](http://paul-m-jones.com/)
 - [Modernizing Legacy Applications in PHP](http://mlaphp.com/)
