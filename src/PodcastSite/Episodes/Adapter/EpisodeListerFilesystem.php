@@ -117,22 +117,15 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     /**
      * Get just the first episode
      *
-     * @return array
+     * @return Episode
      */
     public function getLatestEpisode()
     {
-        $list = [];
-
         // just get the first one
-        $iterator = new \LimitIterator(
-            new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())),
-            0, 1
-        );
-        foreach ($iterator as $episode) {
-            $list[] = $episode;
+        $episodes = $this->getPastEpisodes();
+        if (!empty($episodes)) {
+           return $episodes[0];
         }
-
-        return $list;
     }
 
     /**
