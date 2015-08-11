@@ -118,7 +118,7 @@ EOF;
     public function testCanFilterUpcomingEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
-        $directory = vfsStream::setup('root', null, $this->structure);
+        vfsStream::setup('root', null, $this->structure);
 
         $episodeLister = EpisodeLister::factory([
             'type' => 'filesystem',
@@ -166,7 +166,7 @@ EOF;
     public function testCanFilterLatestEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
-        $directory = vfsStream::setup('root', null, $this->structure);
+        vfsStream::setup('root', null, $this->structure);
 
         $episodeLister = EpisodeLister::factory([
             'type' => 'filesystem',
