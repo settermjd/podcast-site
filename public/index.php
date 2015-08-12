@@ -24,7 +24,7 @@ $app = new Slim(array(
 ));
 
 // Add Middleware
-//$app->add(new \PodcastSite\Middleware\Analytics\GoogleAnalytics());
+$app->add(new \PodcastSite\Middleware\Analytics\GoogleAnalytics());
 
 // Add Cache support
 $cache = StorageFactory::factory(array(
