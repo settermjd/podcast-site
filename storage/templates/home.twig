@@ -90,7 +90,7 @@
                         <div class="media-body">
                             <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
                             <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                            <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
+                            <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
                             {% if episode.getGuests() %}
                                 <h4>Guest(s)</h4>
                                 {% for guestName, guestData in episode.getGuests() %}
