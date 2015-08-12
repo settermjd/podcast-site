@@ -23,4 +23,4 @@ $I->seeLink('', "https://itunes.apple.com/de/podcast/free-geek.fm-matthew-setter
 
 $I->seeLink("Matthew Setter", "http://www.matthewsetter.com");
 $I->seeLink("the Slim Framework", "http://slimframework.com");
-
+$I->dontSeeElement("//div[@id='upcoming-episodes']//h3[@class='media-heading']/a");
