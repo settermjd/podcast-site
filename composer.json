@@ -22,7 +22,8 @@
     "mikey179/vfsStream": "^1.5",
     "zendframework/zend-feed": "^2.5",
     "aptoma/twig-markdown": "^1.2",
-    "michelf/php-markdown": "^1.5"
+    "michelf/php-markdown": "^1.5",
+    "zetacomponents/feed": "^1.4"
   },
   "require-dev": {
     "codeception/codeception": "2.*",
