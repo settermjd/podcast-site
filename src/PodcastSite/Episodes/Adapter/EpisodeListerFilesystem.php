@@ -111,6 +111,10 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             $list[] = $episode;
         }
 
+        // Sort the records in reverse date order
+        $sorter = new SortByReverseDateOrder();
+        usort($list, $sorter);
+
         return $list;
     }
 
@@ -139,10 +143,6 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         foreach ($this->episodeIterator as $file) {
             $episodeListing[] = $this->buildEpisode($file);
         }
-
-        // Sort the records in reverse date order
-        $sorter = new SortByReverseDateOrder();
-        usort($episodeListing, $sorter);
 
         return $episodeListing;
     }

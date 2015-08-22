@@ -75,7 +75,7 @@ EOF;
 
         $episode003Content = <<<EOF
 ---
-publish_date: 17.08.2015
+publish_date: 24.08.2015
 slug: episode-0003
 title: The Mythical Man Month with Paul M. Jones & Speaking Engagements
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
@@ -99,6 +99,33 @@ I've also got updates on what's been happening for me personally in my freelanci
 - [Paul M. Jones](http://paul-m-jones.com/)
 EOF;
 
+        $episode004Content = <<<EOF
+---
+publish_date: 31.08.2015
+slug: episode-0004
+title: Wisdom as a Service World Tour and Human Skills - with Yitzchok Willroth
+link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0004.mp3
+download: FreeTheGeek-Episode0004.mp3
+guests:
+    "Yitzchok Willroth":
+        email: yitz@coderabbi.me
+        twitter: coderabbi
+
+---
+### Synopsis
+
+In this episode, I have a fireside chat with Yitzchok Willroth, the one and only [coderabbi](https://twitter.com/@coderabbi), about a his [Wisdom as a Service World Tour](http://wisdomworldtour.com/).
+
+We talk about what it's like to run the tour, the time involved, the energy required, and how it's been received. We also talk about the value of human skills (otherwise known as soft skills), the value of getting up and sharing your knowledge with the community, via public speaking, **and much, much more**.
+
+### Related Links
+
+- [Wisdom as a Service World Tour](http://wisdomworldtour.com/)
+- [coderabbi](https://twitter.com/@coderabbi)
+- [ShorePHP User Group](http://shorephp.org/)
+- [NYPHP User Group](http://nyphp.org/)
+EOF;
+
         $this->root = vfsStream::setup();
         // setup the directory structure
         $this->structure = [
@@ -106,6 +133,7 @@ EOF;
                 'episode-0001.md' => $episode001Content,
                 'episode-0002.md' => $episode002Content,
                 'episode-0003.md' => $episode003Content,
+                'episode-0004.md' => $episode004Content,
             ],
         ];
     }
@@ -114,7 +142,6 @@ EOF;
     {
     }
 
-    // tests
     public function testCanFilterUpcomingEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
@@ -127,12 +154,31 @@ EOF;
         ]);
 
         $this->assertTrue(
-            count($episodeLister->getUpcomingEpisodes()) == 1,
+            count($episodeLister->getUpcomingEpisodes()) == 2,
             "Incorrect upcoming episode count retrieved"
         );
     }
 
-    // tests
+    public function testCanRenderUpcomingEpisodesOrderedByDate()
+    {
+        /** @var vfsStreamDirectory $directory */
+        vfsStream::setup('root', null, $this->structure);
+
+        $episodeLister = EpisodeLister::factory([
+            'type' => 'filesystem',
+            'path' => vfsStream::url('root/posts'),
+            'parser' => new Parser()
+        ]);
+
+        /** @var \PodcastSite\Entity\Episode[] $upcomingEpisodes */
+        $upcomingEpisodes = $episodeLister->getUpcomingEpisodes();
+
+        $this->assertTrue(
+            $upcomingEpisodes[0]->getPublishDate() < $upcomingEpisodes[1]->getPublishDate(),
+            "The upcoming episodes are not sorted in ascending publish date order"
+        );
+    }
+
     public function testCanGetAllPastEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
@@ -147,7 +193,6 @@ EOF;
         $this->assertTrue(count($episodeLister->getPastEpisodes()) == 2, "Incorrect past episode count retrieved");
     }
 
-    // tests
     public function testCanGetAllPastEpisodesMinusLatest()
     {
         /** @var vfsStreamDirectory $directory */
@@ -162,7 +207,6 @@ EOF;
         $this->assertTrue(count($episodeLister->getPastEpisodes(false)) == 1, "Incorrect past episode count retrieved");
     }
 
-    // tests
     public function testCanFilterLatestEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
