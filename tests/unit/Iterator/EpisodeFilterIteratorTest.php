@@ -142,7 +142,6 @@ EOF;
     {
     }
 
-    // tests
     public function testCanFilterUpcomingEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
@@ -194,7 +193,6 @@ EOF;
         $this->assertTrue(count($episodeLister->getPastEpisodes()) == 2, "Incorrect past episode count retrieved");
     }
 
-    // tests
     public function testCanGetAllPastEpisodesMinusLatest()
     {
         /** @var vfsStreamDirectory $directory */
@@ -209,7 +207,6 @@ EOF;
         $this->assertTrue(count($episodeLister->getPastEpisodes(false)) == 1, "Incorrect past episode count retrieved");
     }
 
-    // tests
     public function testCanFilterLatestEpisodes()
     {
         /** @var vfsStreamDirectory $directory */
