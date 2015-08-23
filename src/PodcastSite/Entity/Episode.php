@@ -2,6 +2,8 @@
 
 namespace PodcastSite\Entity;
 
+use PodcastSite\Entity\Traits\GetExplicit;
+
 /**
  * A simple value object for holding details about an Episode
  *
@@ -10,6 +12,9 @@ namespace PodcastSite\Entity;
  */
 class Episode
 {
+    // import the getExplicit trait
+    use GetExplicit;
+
     /** @var string */
     const HEADER_RELATED_LINKS = 'Related Links';
 
@@ -50,6 +55,21 @@ class Episode
      * @var string
      */
     protected $guests;
+
+    /**
+     * @var int
+     */
+    protected $fileSize;
+
+    /**
+     * @var string
+     */
+    protected $fileType;
+
+    /**
+     * @var string
+     */
+    protected $duration;
 
     /**
      * @param array|\Traversable $options
@@ -177,4 +197,29 @@ class Episode
 
         return false;
     }
+
+    /**
+     * @return int
+     */
+    public function getEpisodeFileSize()
+    {
+        return $this->fileSize;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEpisodeFileType()
+    {
+        return $this->fileType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShowDuration()
+    {
+        return $this->duration;
+    }
+
 }

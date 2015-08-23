@@ -2,20 +2,48 @@
 
 namespace PodcastSite\Entity;
 
+use PodcastSite\Entity\Traits\GetExplicit;
+
 class Show
 {
+    // import the getExplicit trait
+    use GetExplicit;
+
+    /** @var string */
+    const EPISODE_PREFIX = 'episodes/';
+
+    /** @var string */
+    protected $url;
+
+    /** @var string */
+    protected $episodePrefix;
+
     /** @var string */
     protected $title;
+
+    /** @var string */
+    protected $subtitle;
+
+    /** @var string */
+    protected $artwork;
+
     /** @var string */
     protected $description;
+
     /** @var string */
     protected $link;
+
     /** @var array|\Traversable */
     protected $author;
+
     /** @var array|\Traversable */
     protected $keywords;
-    /** @var array|\Traversable */
-    protected $categories;
+
+    /** @var string */
+    protected $category;
+
+    /** @var string */
+    protected $subcategory;
 
     /**
      * @param array|\Traversable $options
@@ -30,10 +58,32 @@ class Show
                 }
             }
         }
+
+        if (!isset($this->episodePrefix)) {
+            $this->episodePrefix = self::EPISODE_PREFIX;
+        }
     }
 
     /**
-     * @return mixed
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEpisodePrefix()
+    {
+        return $this->episodePrefix;
+    }
+
+    /**
+     * Returns the show title
+     *
+     * @return string
      */
     public function getTitle()
     {
@@ -41,7 +91,19 @@ class Show
     }
 
     /**
-     * @return mixed
+     * Returns the show's subtitle
+     *
+     * @return string
+     */
+    public function getSubtitle()
+    {
+        return $this->subtitle;
+    }
+
+    /**
+     * Returns the show description
+     *
+     * @return string
      */
     public function getDescription()
     {
@@ -49,7 +111,9 @@ class Show
     }
 
     /**
-     * @return mixed
+     * Get the show URL
+     *
+     * @return string
      */
     public function getLink()
     {
@@ -57,7 +121,13 @@ class Show
     }
 
     /**
-     * @return mixed
+     * Get the author information for the show
+     *
+     * At this stage I'm implementing it as a simple associative array.
+     * However I'm thinking of implementing this as a simple value object
+     * as well.
+     *
+     * @return array|\Traversable
      */
     public function getAuthor()
     {
@@ -65,7 +135,9 @@ class Show
     }
 
     /**
-     * @return mixed
+     * Get a list of keywords to tag the show with
+     *
+     * @return array|\Traversable
      */
     public function getKeywords()
     {
@@ -73,11 +145,31 @@ class Show
     }
 
     /**
-     * @return mixed
+     * Return the main categories for the show
+     *
+     * @return string
      */
-    public function getCategories()
+    public function getCategory()
     {
-        return $this->categories;
+        return $this->category;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubcategory()
+    {
+        return $this->subcategory;
+    }
+
+    /**
+     * Get the show's artwork URL
+     *
+     * @return string
+     */
+    public function getArtwork()
+    {
+        return $this->artwork;
     }
 
 }
