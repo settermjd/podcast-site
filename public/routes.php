@@ -50,8 +50,11 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
             'episode.twig', [
                 'show' => $app->show,
                 'episode' => $episode,
-                'route' => sprintf('http://%s', $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri())
-        ]
+                'route' => sprintf(
+                    'http://%s',
+                    $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri()
+                )
+            ]
         );
     }
 })->name('episode');
