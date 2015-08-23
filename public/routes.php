@@ -12,7 +12,7 @@ $app->get('/', function () use ($app) {
             'upcomingEpisodes' => $app->episodeLister->getUpcomingEpisodes(),
         ]
     );
-});
+})->name('home');
 
 /**
  * The about page
@@ -23,7 +23,7 @@ $app->get('/about', function () use ($app) {
             'show' => $app->show
         ]
     );
-});
+})->name('about');
 
 /**
  * The contact page
@@ -47,6 +47,7 @@ $app->get('/contact', function () use ($app) {
 //        ]
 //    );
 //});
+})->name('contact');
 
 /**
  * Get an episode
@@ -64,7 +65,7 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
         ]
         );
     }
-});
+})->name('episode');
 
 $app->get('/rss', function() use ($app) {
     /**
@@ -112,4 +113,4 @@ $app->get('/rss', function() use ($app) {
     $response = $app->response();
     $response['Content-Type'] = 'application/rss+xml';
     $response->body($feed->export('rss'));
-});
+})->name('rss/itunes');
