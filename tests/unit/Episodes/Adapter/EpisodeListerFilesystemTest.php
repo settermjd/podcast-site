@@ -113,7 +113,10 @@ EOF;
             'content' => $content,
             'link' => 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3',
             'download' => 'FreeTheGeek-Episode0002.mp3',
-            'guests' => ["Matthew Setter" => ["email" => "matthew@matthewsetter.com", "twitter" => "settermjd"]]
+            'guests' => ["Matthew Setter" => ["email" => "matthew@matthewsetter.com", "twitter" => "settermjd"]],
+            'fileSize' => '25925466',
+            'fileType' => 'audio/x-mp3',
+            'duration' => '53:50'
         ];
 
         $episode = $episodeLister->getEpisodeData($episodeData);
@@ -126,8 +129,10 @@ EOF;
         $this->assertEquals($episodeData['link'], $episode->getLink());
         $this->assertEquals($episodeData['download'], $episode->getDownload());
         $this->assertEquals($content, $episode->getContent());
-        $this->assertEquals($episodeData['guests'], $episode->getGuests()
-        );
+        $this->assertEquals($episodeData['guests'], $episode->getGuests());
+        $this->assertEquals($episodeData['duration'], $episode->getShowDuration());
+        $this->assertEquals($episodeData['fileSize'], $episode->getEpisodeFileSize());
+        $this->assertEquals($episodeData['fileType'], $episode->getEpisodeFileType());
     }
 
     public function testEpisodeListerImplementsCorrectInterface()
