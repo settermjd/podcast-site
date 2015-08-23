@@ -14,6 +14,7 @@ use PodcastSite\Iterator\PastEpisodeFilterIterator;
  * @package PodcastSite\Episodes\Adapter
  */
 class EpisodeListerFilesystem implements EpisodeListerInterface
+
 {
     /**
      * @var string
@@ -210,7 +211,11 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             'content' => $document->getContent(),
             'link' => (array_key_exists('link', $document->getYAML())) ? $document->getYAML()['link'] : '',
             'download' => (array_key_exists('download', $document->getYAML())) ? $document->getYAML()['download'] : '',
-            'guests' => (array_key_exists('guests', $document->getYAML())) ? $document->getYAML()['guests'] : ''
+            'guests' => (array_key_exists('guests', $document->getYAML())) ? $document->getYAML()['guests'] : '',
+            'duration' => (array_key_exists('duration', $document->getYAML())) ? $document->getYAML()['duration'] : '',
+            'fileSize' => (array_key_exists('fileSize', $document->getYAML())) ? $document->getYAML()['fileSize'] : '',
+            'fileType' => (array_key_exists('fileType', $document->getYAML())) ? $document->getYAML()['fileType'] : '',
+            'explicit' => (array_key_exists('explicit', $document->getYAML())) ? $document->getYAML()['explicit'] : ''
         ];
     }
 

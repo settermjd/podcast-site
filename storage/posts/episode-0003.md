@@ -1,7 +1,11 @@
 ---
-publish_date: 17.08.2015
+publish_date: 17.08.2015 03:00
 slug: episode-0003
 title: Being a Professional Developer - with Cal Evans
+fileSize: 39816586 
+fileType: audio/x-mp3
+duration: 41:23
+explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0003.mp3
 download: FreeTheGeek-Episode0003.mp3
 guests:

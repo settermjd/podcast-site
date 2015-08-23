@@ -1,7 +1,11 @@
 ---
-publish_date: 03.08.2015
+publish_date: 03.08.2015 03:00
 slug: episode-0002
 title: The Mythical Man Month with Paul M. Jones & Speaking Engagements
+fileSize: 25925466 
+fileType: audio/x-mp3
+duration: 53:50
+explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
 download: FreeTheGeek-Episode0002.mp3
 guests: 

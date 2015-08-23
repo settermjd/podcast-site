@@ -26,12 +26,16 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
     public function testCanSetAndRetrieveUserProperties()
     {
         $options = [
+            'fileSize' => '49099054',
+            'fileType' => 'audio/x-mp3',
+            'duration' => '29:20',
             'publishDate' => '2015-01-01',
             'slug' => '/episode-001',
             'title' => 'Episode 001',
             'content' => 'Lorem ipsum dolar',
             'link' => 'http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3',
             'download' => 'FreeTheGeek-Episode0002.mp3',
+            'explicit' => 'yes',
             'guests' => [
                 "Matthew Setter" => [
                     "email" => "matthew@matthewsetter.com",
@@ -49,6 +53,10 @@ class EpisodeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($options['link'], $episode->getLink());
         $this->assertEquals($options['download'], $episode->getDownload());
         $this->assertEquals($options['guests'], $episode->getGuests());
+        $this->assertEquals($options['fileSize'], $episode->getEpisodeFileSize());
+        $this->assertEquals($options['fileType'], $episode->getEpisodeFileType());
+        $this->assertEquals($options['duration'], $episode->getShowDuration());
+        $this->assertTrue($episode->getExplicit() == 'yes');
     }
 
     /**

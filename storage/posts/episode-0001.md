@@ -1,7 +1,11 @@
 ---
-publish_date: 13.07.2015
+publish_date: 13.07.2015 03:00
 slug: episode-0001
 title: Getting Underway, The E-Myth Revisited, and Networking For Success
+fileSize: 37676715 
+fileType: audio/x-mp3
+duration: 26:06
+explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0001.mp3
 download: FreeTheGeek-Episode0001.mp3
 guests: 

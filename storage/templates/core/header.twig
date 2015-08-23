@@ -4,19 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description"
-          content="Free The Geek.fm - The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.">
-    <meta name="author" content="Free the Geek (Matthew Setter)">
+    <meta name="description" content="{{ show.getTitle() }} - {{ show.getSubtitle() }}">
+    <meta name="author" content="{{ show.getTitle() }}">
+    <meta name='designer' content="{{ show.getTitle() }}">
+    <meta name="keywords" content="{{ show.getKeywords()|join(',') }}">
+    <meta name='HandheldFriendly' content='True'>
+    <title>{{ show.getTitle() }} - {{ show.getSubtitle() }}</title>
     <link rel="icon" href="/favicon.ico">
-
-    <title>Free The Geek.fm - The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.</title>
+    <link rel="alternate" type="application/rss+xml" href="/rss" title="Free the Geek RSS Feed"/>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/css/supplemental.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="/css/mediaelementplayer.css">
+    <link rel="stylesheet" href="/css/social-buttons.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]>
@@ -28,17 +33,11 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"
-          type="text/css">
     <script src="//use.typekit.net/mob8vdc.js"></script>
     <script>try {
             Typekit.load({async: true});
         } catch (e) {
         }</script>
-    <link rel="stylesheet" href="/css/mediaelementplayer.css">
-    <link rel="stylesheet" href="/css/social-buttons.css">
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml"
-          title="Free the Geek RSS Feed"/>
 
     <script src="/js/dist/mediaelement-and-player.min.js"></script>
 

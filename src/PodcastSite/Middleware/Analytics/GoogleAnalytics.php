@@ -17,16 +17,18 @@ class GoogleAnalytics extends Middleware
         // Run inner middleware and application
         $this->next->call();
 
-        // Render and retrieve the analytics template
-        $analytics = $this->app->view()->fetch(
-            'middleware/analytics/google-analytics.twig', [
-                'analytics_code' => $this->app->config->analytics->code
-            ]
-        );
+        if ($this->app->router->getCurrentRoute()->getName() !== 'rss/itunes') {
+            // Render and retrieve the analytics template
+            $analytics = $this->app->view()->fetch(
+                'middleware/analytics/google-analytics.twig', [
+                    'analytics_code' => $this->app->config->analytics->code
+                ]
+            );
 
-        // Append it to the response body
-        $res = $this->app->response;
-        $body = $res->getBody() . $analytics;
-        $res->setBody($body);
+            // Append it to the response body
+            $res = $this->app->response;
+            $body = $res->getBody() . $analytics;
+            $res->setBody($body);
+        }
     }
 }

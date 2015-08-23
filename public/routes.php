@@ -1,47 +1,42 @@
 <?php
 
+use \PodcastSite\Feed\FeedCreatorFactory;
+
 /**
  * The default route
  */
 $app->get('/', function () use ($app) {
     $app->render(
         'home.twig', [
+            'show' => $app->show,
             'latestEpisode' => $app->episodeLister->getLatestEpisode(),
             'pastEpisodes' => $app->episodeLister->getPastEpisodes(false),
             'upcomingEpisodes' => $app->episodeLister->getUpcomingEpisodes(),
         ]
     );
-});
+})->name('home');
 
 /**
  * The about page
  */
 $app->get('/about', function () use ($app) {
     $app->render(
-        'about.twig', []
+        'about.twig', [
+            'show' => $app->show
+        ]
     );
-});
+})->name('about');
 
 /**
  * The contact page
  */
 $app->get('/contact', function () use ($app) {
     $app->render(
-        'contact.twig', []
+        'contact.twig', [
+            'show' => $app->show
+        ]
     );
-});
-
-/**
- * Get a listing of all episodes
- */
-//$app->get('/episodes', function () use ($app) {
-//    $app->render(
-//        'episodes.twig', [
-            /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-//            'episodes' => $app->episodeLister->getEpisodeList()
-//        ]
-//    );
-//});
+})->name('contact');
 
 /**
  * Get an episode
@@ -53,57 +48,23 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
     } else {
         $app->render(
             'episode.twig', [
+                'show' => $app->show,
                 'episode' => $episode,
-                'route' => sprintf('http://%s', $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri())
-        ]
+                'route' => sprintf(
+                    'http://%s',
+                    $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri()
+                )
+            ]
         );
     }
-});
+})->name('episode');
 
 $app->get('/rss', function() use ($app) {
-    /**
-     * Create the parent feed
-     */
-    $feed = new Zend\Feed\Writer\Feed;
-    $feed->setTitle('Paddy\'s Blog');
-    $feed->setLink('http://www.freethegeek.fm');
-    $feed->setFeedLink('http://www.freethegeek.com/feed/rss', 'rss');
-    $feed->addAuthor(array(
-        'name'  => 'Matthew Setter',
-        'email' => 'matthew@freethegeek.fm',
-        'uri'   => 'http://www.freethegeek.fm',
-    ));
-    $feed->setDateModified(time());
-    $feed->setDescription("Here's a description");
-
-    /**
-     * Add one or more entries. Note that entries must
-     * be manually added once created.
-     */
-    $entry = $feed->createEntry();
-    $entry->setTitle('All Your Base Are Belong To Us');
-    $entry->setLink('http://www.example.com/all-your-base-are-belong-to-us');
-    $entry->addAuthor(array(
-        'name'  => 'Paddy',
-        'email' => 'paddy@example.com',
-        'uri'   => 'http://www.example.com',
-    ));
-    $entry->setDateModified(time());
-    $entry->setDateCreated(time());
-    $entry->setDescription('Exposing the difficultly of porting games to English.');
-    $entry->setContent(
-        'I am not writing the article. The example is long enough as is ;).'
+    $feedCreator = FeedCreatorFactory::factory('itunes');
+    $feed = $feedCreator->generateFeed(
+        $app->show,
+        $app->episodeLister->getEpisodeList()
     );
-    $feed->addEntry($entry);
-
-    /**
-     * Render the resulting feed to Atom 1.0 and assign to $out.
-     * You can substitute "atom" with "rss" to generate an RSS 2.0 feed.
-     */
-    $app->response()->header('Content-Type', 'application/rss+xml');
-    $app->render('rss-feed.twig');
-
-    $response = $app->response();
-    $response['Content-Type'] = 'application/rss+xml';
-    $response->body($feed->export('rss'));
-});
+    $app->contentType($feed->getContentType());
+    print $feed->generate('rss2');
+})->name('rss/itunes');

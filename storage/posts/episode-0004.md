@@ -1,7 +1,11 @@
 ---
-publish_date: 31.08.2015
+publish_date: 31.08.2015 03:00
 slug: episode-0004
 title: Wisdom as a Service World Tour and Human Skills - with Yitzchok Willroth
+fileSize: 
+fileType: audio/x-mp3
+duration: 41:23
+explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0004.mp3
 download: FreeTheGeek-Episode0004.mp3
 guests:
