@@ -6,6 +6,7 @@ require_once '../vendor/autoload.php';
 date_default_timezone_set('Europe/Berlin');
 
 use Slim\Slim;
+use PodcastSite\Entity\Show;
 use PodcastSite\Episodes\EpisodeLister;
 use PodcastSite\Extensions\Twig\GravatarExtension;
 use Mni\FrontYAML\Parser;
@@ -13,7 +14,6 @@ use Zend\Cache\StorageFactory;
 use Zend\Config\Config;
 use Aptoma\Twig\Extension\MarkdownExtension;
 use Aptoma\Twig\Extension\MarkdownEngine;
-
 
 // Initialise a Slim app
 $app = new Slim(array(
@@ -54,6 +54,8 @@ $app->episodeLister = EpisodeLister::factory([
     'parser' => new Parser(),
     'cache' => $app->cache
 ]);
+
+$app->show = new Show($app->config->application->toArray());
 
 // Setup the app views
 $view = $app->view();

@@ -6,6 +6,7 @@
 $app->get('/', function () use ($app) {
     $app->render(
         'home.twig', [
+            'show' => $app->show,
             'latestEpisode' => $app->episodeLister->getLatestEpisode(),
             'pastEpisodes' => $app->episodeLister->getPastEpisodes(false),
             'upcomingEpisodes' => $app->episodeLister->getUpcomingEpisodes(),
@@ -18,7 +19,9 @@ $app->get('/', function () use ($app) {
  */
 $app->get('/about', function () use ($app) {
     $app->render(
-        'about.twig', []
+        'about.twig', [
+            'show' => $app->show
+        ]
     );
 });
 
@@ -27,7 +30,9 @@ $app->get('/about', function () use ($app) {
  */
 $app->get('/contact', function () use ($app) {
     $app->render(
-        'contact.twig', []
+        'contact.twig', [
+            'show' => $app->show
+        ]
     );
 });
 
@@ -53,6 +58,7 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
     } else {
         $app->render(
             'episode.twig', [
+                'show' => $app->show,
                 'episode' => $episode,
                 'route' => sprintf('http://%s', $_SERVER['HTTP_HOST'] . $app->request()->getResourceUri())
         ]
