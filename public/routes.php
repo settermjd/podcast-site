@@ -34,19 +34,6 @@ $app->get('/contact', function () use ($app) {
             'show' => $app->show
         ]
     );
-});
-
-/**
- * Get a listing of all episodes
- */
-//$app->get('/episodes', function () use ($app) {
-//    $app->render(
-//        'episodes.twig', [
-            /** @var \PodcastSite\Episodes\EpisodeListerInterface $app->episodeLister */
-//            'episodes' => $app->episodeLister->getEpisodeList()
-//        ]
-//    );
-//});
 })->name('contact');
 
 /**
