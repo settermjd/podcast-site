@@ -3,7 +3,7 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('ensure that frontpage works');
 $I->amOnPage('/');
-$I->seeInTitle('Free The Geek.fm - The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.');
+$I->seeInTitle('Free The Geek.fm with Matthew Setter - The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover.');
 
 // Test the links
 $I->seeLink("About", "/about");
