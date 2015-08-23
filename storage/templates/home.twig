@@ -67,7 +67,7 @@
                                 {% for guestName, guestData in latestEpisode.getGuests() %}
                                     <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
                                         <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                             width="64px" height="64px" alt="" data-toggle="tooltip"
                                              data-placement="bottom" title=""
                                              data-original-title="{{ guestName }}">
                                     </a>
