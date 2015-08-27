@@ -86,6 +86,6 @@ class iTunesFeedCreator implements FeedCreatorInterface
      */
     public function cDataEncapsulate($data)
     {
-        return sprintf("<![CDATA[ %s ]]>", $data);
+        return sprintf("%s", htmlentities($data));
     }
 }
