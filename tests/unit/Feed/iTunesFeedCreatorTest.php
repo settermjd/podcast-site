@@ -94,6 +94,18 @@ EOF;
         $this->episodeList = [];
     }
 
+    public function testCanWrapDataInCDataTag()
+    {
+        $feedCreator = new iTunesFeedCreator();
+        $testString = "Here is a sample string";
+
+        $this->assertSame(
+            sprintf("<![CDATA[ %s ]]>", $testString),
+            $feedCreator->cDataEncapsulate($testString),
+            "String not properly enclosed in CDATA tag"
+        );
+    }
+
     /**
      * @covers ::generateFeed
      */

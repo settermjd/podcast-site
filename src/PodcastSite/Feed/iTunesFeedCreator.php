@@ -19,8 +19,8 @@ class iTunesFeedCreator implements FeedCreatorInterface
         $feed = new ezcFeed('rss2');
 
         // Setup the core show information
-        $feed->title = htmlentities($show->getTitle());
-        $feed->description = htmlentities($show->getDescription());
+        $feed->title = $this->cDataEncapsulate($show->getTitle());
+        $feed->description = $this->cDataEncapsulate($show->getDescription());
 
         // Add the author information.
         $author = $feed->add('author');
@@ -33,9 +33,9 @@ class iTunesFeedCreator implements FeedCreatorInterface
 
         // Add the iTunes-specific information.
         $iTunes = $feed->addModule('iTunes');
-        $iTunes->keywords = htmlentities(implode(',', $show->getKeywords()));
+        $iTunes->keywords = implode(',', $show->getKeywords());
         $iTunes->explicit = $show->getExplicit();
-        $iTunes->subtitle = htmlentities($show->getSubtitle());
+        $iTunes->subtitle = $show->getSubtitle();
 
         // Add the show's artwork
         $image = $iTunes->add('image');
@@ -50,8 +50,8 @@ class iTunesFeedCreator implements FeedCreatorInterface
         // Add show episodes
         foreach ($episodeList as $episode) {
             $item = $feed->add('item');
-            $item->title = htmlentities($episode->getTitle());
-            $item->description = htmlentities($episode->getShortSynopsis());
+            $item->title = $this->cDataEncapsulate($episode->getTitle());
+            $item->description = $this->cDataEncapsulate($episode->getShortSynopsis());
             $publishDate = new \DateTime($episode->getPublishDate());
             $item->published = $publishDate->format('r');
 
@@ -69,12 +69,23 @@ class iTunesFeedCreator implements FeedCreatorInterface
 
             $iTunes = $item->addModule( 'iTunes' );
             $iTunes->duration = $episode->getShowDuration();
-            $iTunes->keywords = htmlentities(implode(',', $show->getKeywords()));
+            $iTunes->keywords = $this->cDataEncapsulate(implode(',', $show->getKeywords()));
             $iTunes->subtitle = $episode->getShortSynopsis();
             $iTunes->summary = $episode->getShortSynopsis();
             $iTunes->explicit = $episode->getExplicit();
         }
 
         return $feed;
+    }
+
+    /**
+     * Simple encapsulation of string in CDATA tag
+     *
+     * @param $data
+     * @return string
+     */
+    public function cDataEncapsulate($data)
+    {
+        return sprintf("<![CDATA[ %s ]]>", $data);
     }
 }
