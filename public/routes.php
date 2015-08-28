@@ -59,11 +59,16 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
     }
 })->name('episode');
 
-$app->get('/rss', function() use ($app) {
+/**
+ * Auto-generate the RSS feed, using RSS2 format, which has support for iTunes
+ * Currently supports both /rss and /rss.xml whilst a migration from the older (.xml)
+ * route is underway.
+ */
+$app->get('/rss(\.xml)', function() use ($app) {
     $feedCreator = FeedCreatorFactory::factory('itunes');
     $feed = $feedCreator->generateFeed(
         $app->show,
-        $app->episodeLister->getEpisodeList()
+        $app->episodeLister->getPastEpisodes()
     );
     $app->contentType($feed->getContentType());
     print $feed->generate('rss2');
