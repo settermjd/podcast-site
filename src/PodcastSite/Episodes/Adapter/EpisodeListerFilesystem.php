@@ -14,12 +14,14 @@ use PodcastSite\Iterator\PastEpisodeFilterIterator;
  * @package PodcastSite\Episodes\Adapter
  */
 class EpisodeListerFilesystem implements EpisodeListerInterface
-
 {
     /**
      * @var string
      */
     const CACHE_KEY_EPISODES_LIST = 'episodes_';
+    const CACHE_KEY_SUFFIX_ALL = 'all';
+    const CACHE_KEY_SUFFIX_UPCOMING = 'upcoming';
+    const CACHE_KEY_SUFFIX_PAST = 'past';
 
     /**
      * @var string
@@ -62,15 +64,16 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      *
      * @return array|\Traversable
      */
-    public function getEpisodeList()
+    public function getEpisodeList($cacheKeySuffix = self::CACHE_KEY_SUFFIX_ALL)
     {
         if ($this->cache) {
-            $result = $this->cache->getItem(self::CACHE_KEY_EPISODES_LIST);
+            $cacheKey = self::CACHE_KEY_EPISODES_LIST . $cacheKeySuffix;
+            $result = $this->cache->getItem($cacheKey);
             if ($result) {
                 return $result;
             } else {
                 $result = $this->buildEpisodesList();
-                $ret = $this->cache->setItem(self::CACHE_KEY_EPISODES_LIST, $result);
+                $ret = $this->cache->setItem($cacheKey, $result);
                 return $result;
             }
         } else {
@@ -82,7 +85,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     {
         $list = [];
         $upcomingEpisodeIterator = new UpcomingEpisodeFilterIterator(
-            new \ArrayIterator($this->getEpisodeList())
+            new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_UPCOMING))
         );
         foreach ($upcomingEpisodeIterator as $upcomingEpisode) {
             $list[] = $upcomingEpisode;
@@ -92,21 +95,16 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Get all but the first episode
+     * Get all past episodes, optionally excluding the latest
      *
      * @param bool $includeLatest Whether to include the latest episode as well
+     * @todo Need to check the sort order of the episodes and limit them correctly. Currently it's starting oldest to latest, so removing from the wrong end
      * @return array
      */
     public function getPastEpisodes($includeLatest = true)
     {
         $list = [];
-        if ($includeLatest) {
-            $iterator = new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList()));
-        } else {
-            $iterator = new \LimitIterator(
-                new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList())), 1
-            );
-        }
+        $iterator = new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_PAST)));
 
         foreach ($iterator as $episode) {
             $list[] = $episode;
@@ -115,6 +113,10 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         // Sort the records in reverse date order
         $sorter = new SortByReverseDateOrder();
         usort($list, $sorter);
+
+        if (!$includeLatest) {
+           return array_splice($list, 1);
+        }
 
         return $list;
     }
