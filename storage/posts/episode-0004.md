@@ -1,5 +1,5 @@
 ---
-publish_date: 01.09.2015 15:00
+publish_date: 02.09.2015 15:00
 slug: episode-0004
 title: Wisdom as a Service World Tour and Human Skills - with Yitzchok Willroth
 fileSize: 
