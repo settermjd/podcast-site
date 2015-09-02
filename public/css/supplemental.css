@@ -115,3 +115,20 @@ h1, h2, h3, h4, h5, h6 {
 .podcast-options {
     margin-top: 5px;
 }
+
+/*
+ * Navigation styling
+ */
+ul.nav li.active {
+    font-weight: bold;
+    background-color: #DEDEDE;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+}
+
+/*
+ * List styling
+ */
+div.content ul li {
+    font-size: 18px;
+}

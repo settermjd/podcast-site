@@ -22,7 +22,8 @@ $app->get('/', function () use ($app) {
 $app->get('/about', function () use ($app) {
     $app->render(
         'about.twig', [
-            'show' => $app->show
+            'show' => $app->show,
+            'activePage' => 'about'
         ]
     );
 })->name('about');
@@ -33,7 +34,8 @@ $app->get('/about', function () use ($app) {
 $app->get('/contact', function () use ($app) {
     $app->render(
         'contact.twig', [
-            'show' => $app->show
+            'show' => $app->show,
+            'activePage' => 'contact'
         ]
     );
 })->name('contact');
