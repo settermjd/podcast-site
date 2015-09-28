@@ -1,5 +1,5 @@
 ---
-publish_date: 28.09.2015 15:00
+publish_date: 29.09.2015 15:00
 slug: episode-0006
 title: Building Your Brand as a Freelancer - with Gary Hockin (Part Two)
 fileSize:
