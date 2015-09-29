@@ -62,6 +62,13 @@ $app->get('/episode/:episodeSlug', function ($episodeSlug) use ($app) {
 })->name('episode');
 
 /**
+ * Convenience redirect to the iTunes show page, when /itunes is requested
+ */
+$app->get('/itunes', function() use ($app) {
+    $app->redirect('https://itunes.apple.com/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2');
+})->name('redirect/itunes');
+
+/**
  * Auto-generate the RSS feed, using RSS2 format, which has support for iTunes
  * Currently supports both /rss and /rss.xml whilst a migration from the older (.xml)
  * route is underway.
