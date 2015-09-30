@@ -63,7 +63,7 @@ p.lead {
     margin-right: 10%;
 }
 
-.container .content p, div.media-body p {
+.container .content p, div.media-body p, div#mailinglist_signup p {
     font-family: Chaparral-Pro, sans-serif;
     font-weight: 100;
     font-size: 20px;
@@ -131,4 +131,8 @@ ul.nav li.active {
  */
 div.content ul li {
     font-size: 18px;
+}
+
+div#mailinglist_signup form input[type=email] {
+    margin-bottom: 8px;
 }

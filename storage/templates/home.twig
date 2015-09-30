@@ -40,14 +40,19 @@
     <hr />
 
     <div class="well full">
-        <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">
-            <div class="form-group form-group-lg col-sm-10">
-                <input type="email" class="form-control input-lg" name="EMAIL" id="email" placeholder="Enter your email address, to get the latest updates and community news."
-                       style="width:100%;">
-                <input type="hidden" name="b_daba1ae6c6f01f207afaf7402_932a5500ab" tabindex="-1" value="">
-            </div>
-            <input type="submit" class="btn btn-success input-lg" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </form>
+        <div id="mailinglist_signup">
+            <h3>Don’t miss an episode!</h3>
+            <p>Drop your email in the box below and join the Free the Geek community. You'll get every episode straight to your inbox, <strong>PLUS exclusive content</strong> only available by email. No spam, and you can unsubscribe at any time.</p>
+            <form action="http://maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&id=932a5500ab"
+                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                  class="validate" target="_blank" novalidate>
+                <input type="email" class="form-control input-lg" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your Email Address" required>
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_daba1ae6c6f01f207afaf7402_ce7c0037c1" tabindex="-1"
+                                                                       value=""></div>
+                <div class="clear"><input type="submit" value="Sign Me Up!" name="subscribe"
+                                          id="mc-embedded-subscribe" class="btn btn-block btn-lg subscribe-button-itunes btn-success"></div>
+            </form>
+        </div>
     </div>
 
     <hr />
@@ -134,17 +139,6 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
-
-    <div class="well mobile">
-        <form class="form-inline" action="//maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&amp;id=932a5500ab" method="post">
-            <div class="form-group form-group-lg col-sm-10">
-                <input type="email" class="form-control input-lg" name="EMAIL" id="email" placeholder="Enter your email address, to get the latest updates and community news."
-                       style="width:100%;">
-                <input type="hidden" name="b_daba1ae6c6f01f207afaf7402_932a5500ab" tabindex="-1" value="">
-            </div>
-            <input type="submit" class="btn btn-success btn-block input-lg" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </form>
     </div>
 
 </div>
