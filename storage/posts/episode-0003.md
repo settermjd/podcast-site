@@ -20,7 +20,7 @@ In this episode, I have a fireside chat with voice of the PHP community, the one
 
 We talk about a range of things, including what motivated him to write the book, how the book's been received, people Cal believes are excellent examples of professional programmers, **and much, much more**. Join me for what is a truly excellent fireside chat about some of the key aspects of being a professional.
 
-### Related Links
+### Related Links
 
 - [Cal Evans](http://blog.calevans.com/)
 - [Going Pro](https://leanpub.com/goingpro)

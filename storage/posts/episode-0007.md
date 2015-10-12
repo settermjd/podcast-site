@@ -22,6 +22,11 @@ We talk about what it takes to build a brand, and an online profile, over the lo
 
 It's a very valuable chat, where Troy gives the benefit of what hears learned over the last 6+ years. So join us for this and, as always, **much, much more**.
 
-### Related Links
+### Related Links
 
--
+- [Troy's website](http://www.troyhunt.com)
+- [Dev Intersections Vegas](https://devintersection.com)
+- [NDC London](http://ndc-london.com)
+- [MXL 990 XLR Dynamic Microphone](http://www.amazon.com/MXL-990-Condenser-Microphone-Shockmount/dp/B0002GIRP2)
+- [Focusrite Scarlett Solo](http://us.focusrite.com/usb-audio-interfaces/scarlett-solo)
+- [The video where I discovered the Scarlett Solo - via the Scarlett Duo](http://moondogmarketing.com/rode-procaster-or-podcast-whats-better/)
