@@ -22,7 +22,7 @@ We talk about what it's like to run the tour, the time involved, the energy requ
 
 A big shout out to [Troy Hunt](http://www.troyhunt.com/) and [Lorna Jane](http://www.lornajane.net) for the excellent blog posts I drew on for this episode. Thanks folks!
 
-### Related Links
+### Related Links
 
 - [Wisdom as a Service World Tour](http://wisdomworldtour.com/)
 - [coderabbi](https://twitter.com/@coderabbi)

@@ -22,7 +22,7 @@ We talk about a range of tools freelancers, *as well as full time employees*, ca
 
 So join us for this and, as always, **much, much more**.
 
-### Related Links
+### Related Links
 
 - [geeh](https://twitter.com/@geeh)
 - [Gary's Blog](http://blog.hock.in/about/)

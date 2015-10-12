@@ -24,4 +24,9 @@ It's a very valuable chat, where Troy gives the benefit of what hears learned ov
 
 ### Related Links
 
--
+- [Troy's website](http://www.troyhunt.com)
+- [Dev Intersections Vegas](https://devintersection.com)
+- [NDC London](http://ndc-london.com)
+- [MXL 990 XLR Dynamic Microphone](http://www.amazon.com/MXL-990-Condenser-Microphone-Shockmount/dp/B0002GIRP2)
+- [Focusrite Scarlett Solo](http://us.focusrite.com/usb-audio-interfaces/scarlett-solo)
+- [The video where I discovered the Scarlett Solo - via the Scarlett Duo](http://moondogmarketing.com/rode-procaster-or-podcast-whats-better/)
