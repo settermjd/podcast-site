@@ -25,6 +25,7 @@ It's a very valuable chat, where Troy gives the benefit of what hears learned ov
 ### Related Links
 
 - [Troy's website](http://www.troyhunt.com)
+- [';--have i been pwned?](https://haveibeenpwned.com/)
 - [Dev Intersections Vegas](https://devintersection.com)
 - [NDC London](http://ndc-london.com)
 - [MXL 990 XLR Dynamic Microphone](http://www.amazon.com/MXL-990-Condenser-Microphone-Shockmount/dp/B0002GIRP2)
