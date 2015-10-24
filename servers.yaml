@@ -1,0 +1,6 @@
+prod:
+  host: freethegeek.fm
+  user: www-data
+  identity_file: ~
+  stage: production
+  deploy_path: /var/www/freethegeek.fm/
