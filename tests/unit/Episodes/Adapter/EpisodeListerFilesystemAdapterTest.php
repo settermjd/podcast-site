@@ -1,6 +1,5 @@
 <?php
 
-use PodcastSite\Episodes\Adapter\EpisodeListerFilesystem;
 use PodcastSite\Episodes\EpisodeLister;
 use Mni\FrontYAML\Parser;
 
@@ -9,7 +8,7 @@ use Mni\FrontYAML\Parser;
  *
  * @coversDefaultClass \PodcastSite\Episodes\Adapter\EpisodeListerFilesystem
  */
-class EpisodeListerFilesystemTest extends \PHPUnit_Framework_TestCase
+class EpisodeListerFilesystemAdapterTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
@@ -121,7 +120,9 @@ EOF;
 
         $episode = $episodeLister->getEpisodeData($episodeData);
 
-        $this->assertInstanceOf('\PodcastSite\Entity\Episode', $episode, 'Built episode is not an Episode instance');
+        $this->assertInstanceOf(
+            '\PodcastSite\Entity\Episode', $episode, 'Built episode is not an Episode instance'
+        );
         $this->assertNotNull($episode, 'Episode entity should have been initialised');
         $this->assertEquals($episodeData['slug'], $episode->getSlug());
         $this->assertEquals($episodeData['publish_date'], $episode->getPublishDate());
