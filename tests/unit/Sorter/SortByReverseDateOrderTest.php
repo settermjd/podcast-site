@@ -15,11 +15,6 @@ class SortByReverseDateOrderTest extends \PHPUnit_Framework_TestCase
     {
     }
 
-    // tests
-    public function testMe()
-    {
-    }
-
     /**
      * @covers ::__invoke
      */
