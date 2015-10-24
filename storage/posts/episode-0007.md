@@ -16,9 +16,9 @@ guests:
 ---
 ### Synopsis
 
-In this episode, I have a fireside chat with Troy Hunt. Troy's a Microsoft MVP for Security, PluralSight author, and public speaker. 
+In this episode, I have a fireside chat with Troy Hunt. Troy's a Microsoft MVP for Security, PluralSight author, and public speaker.
 
-We talk about what it takes to build a brand, and an online profile, over the long term, as well as what it takes to be a being a professional public speaker. 
+We talk about what it takes to build a brand, and an online profile, over the long term, as well as what it takes to be a being a professional public speaker.
 
 It's a very valuable chat, where Troy gives the benefit of what hears learned over the last 6+ years. So join us for this and, as always, **much, much more**.
 
