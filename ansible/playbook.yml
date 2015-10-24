@@ -1,0 +1,155 @@
+---
+- hosts: freethegeek.fm
+  sudo: yes
+  vars:
+    LOGWATCH_EMAIL: matthew@freethegeek.fm
+
+  tasks:
+
+  - name: Update APT package cache
+    apt: update_cache=yes cache_valid_time=3600
+
+  - name: Upgrade APT to the latest packages
+    apt: upgrade=safe
+
+  - name: Adjust APT update intervals
+    copy: src=files/apt_periodic dest=/etc/apt/apt.conf.d/10periodic
+
+  - name: install packages
+    apt: name={{ item }} update_cache=yes state=latest
+    with_items:
+      - git
+      - vim
+      - fail2ban
+      - ufw
+      - aide
+      - unattended-upgrades
+      - logwatch
+      - mcrypt
+      - nginx
+      - php5-cli
+      - php5-curl
+      - php5-fpm
+      - php5-intl
+      - php5-json
+      - php5-mcrypt
+
+  - name: Set firewall default policy
+    ufw: state=enabled policy=deny
+
+  - name: Allow ssh
+    ufw: rule=allow port=22 proto=tcp
+
+  - name: Allow http
+    ufw: rule=allow port=80 proto=tcp
+
+  - name: Allow https
+    ufw: rule=allow port=443 proto=tcp
+
+  - name: Set up Postfix to relay mail
+    debconf: name=postfix
+             question='{{ item.question }}'
+             value='{{ item.value }}'
+             vtype='{{ item.vtype }}'
+    with_items:
+      - { question: 'postfix/mailname', value: '{{ ansible_fqdn }}', vtype: 'string' }
+      - { question: 'postfix/main_mailer_type', value: 'Internet Site', vtype: 'string' }
+
+  - name: Email log summary daily
+    lineinfile: dest=/etc/cron.daily/00logwatch
+                regexp="^/usr/sbin/logwatch"
+                line="/usr/sbin/logwatch --output mail --mailto {{ LOGWATCH_EMAIL }} --detail high"
+                state=present create=yes
+
+  - name: Initialise aide database
+    shell: yes '' | aideinit
+    args:
+      creates: /var/lib/aide/aide.db
+    sudo: yes
+
+  - name: Adjust APT update intervals
+    copy: src=files/apt_periodic dest=/etc/apt/apt.conf.d/10periodic
+
+  - name: Email aide report daily
+    lineinfile: dest=/etc/cron.daily/00aide
+                regexp="^/var/log/aide/chkaide.sh"
+                line="/var/log/aide/chkaide.sh"
+                state=present create=yes
+
+  - name: Configure nginx
+    template: src=files/nginx.conf dest=/etc/nginx/sites-available/default
+    notify:
+      - restart php5-fpm
+      - restart nginx
+
+  - name: ensure php5-fpm cgi.fix_pathinfo=0
+    lineinfile: dest=/etc/php5/fpm/php.ini regexp='^(.*)cgi.fix_pathinfo=' line=cgi.fix_pathinfo=0
+    notify:
+      - restart php5-fpm
+      - restart nginx
+
+  - name: enable php5 mcrypt module
+    shell: php5enmod mcrypt
+    args:
+      creates: /etc/php5/cli/conf.d/20-mcrypt.ini
+
+  - name: create /var/www/ directory
+    file: dest=/var/www/ state=directory owner=www-data group=www-data mode=0700
+
+  - name: install composer
+    shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    args:
+      creates: /usr/local/bin/composer
+
+  - name: Create the git group
+    group: name=git state=present
+
+  - name: Create the git user
+    user: name=git comment="Git user" group=git groups=git,www-data
+
+  - name: Create the git repository directory
+    file: dest=/opt/git/ state=directory 
+          owner=git 
+          group=git 
+          mode=0770
+    sudo: yes
+
+  - name: Create the bare git repository for the project
+    git: >
+      repo=https://github.com/settermjd/podcast-site.git 
+      dest=/opt/git
+      bare=yes
+    sudo: yes
+    sudo_user: git
+
+  - name: copy the post-receive hook to the bare repository
+    template: src=files/git/post-receive.sh 
+              dest=/opt/git/hooks/post-receive 
+              owner=git 
+              group=git
+              mode="0770"
+
+  - name: Clone git repository
+    git: >
+      dest=/var/www/freethegeek.fm
+      repo=https://github.com/settermjd/podcast-site.git
+      update=no
+      accept_hostkey=yes
+    sudo: yes
+    sudo_user: www-data
+    register: cloned
+
+  - name: composer create-project
+    shell: composer install --optimize-autoloader
+    args:
+      chdir: /var/www/freethegeek.fm
+    sudo: yes
+    sudo_user: www-data
+    when: cloned|changed
+
+  handlers:
+    - name: restart php5-fpm
+      service: name=php5-fpm state=restarted
+
+    - name: restart nginx
+      service: name=nginx state=restarted
