@@ -104,7 +104,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     public function getPastEpisodes($includeLatest = true)
     {
         $list = [];
-        $iterator = new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_PAST)));
+        $iterator = new PastEpisodeFilterIterator(
+            new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_PAST))
+        );
 
         foreach ($iterator as $episode) {
             $list[] = $episode;
@@ -202,7 +204,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      * Create an episode value object from the contents of an acceptable markdown file
      *
      * @param \Mni\FrontYAML\Document $document
-     * @return \PodcastSite\Entity\Episode
+     * @return Episode
      */
     public function getEpisodeData($document)
     {
