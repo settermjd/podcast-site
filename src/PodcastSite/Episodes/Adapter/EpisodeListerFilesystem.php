@@ -43,6 +43,21 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      */
     protected $cache;
 
+    /** @var array  */
+    protected $validOptions = [
+        'publishDate' => 'publish_date',
+        'slug' => 'slug',
+        'title' => 'title',
+        'content' => 'content',
+        'link' => 'link',
+        'download' => 'download',
+        'guests' => 'guests',
+        'duration' => 'duration',
+        'fileSize' => 'fileSize',
+        'fileType' => 'fileType',
+        'explicit' => 'explicit',
+    ];
+
     /**
      * @param string $postDirectory
      * @param object $fileParser Yaml/Markdown parser
@@ -208,19 +223,16 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      */
     public function getEpisodeData($document)
     {
-        return [
-            'publishDate' => (array_key_exists('publish_date', $document->getYAML())) ? $document->getYAML()['publish_date'] : '',
-            'slug' => (array_key_exists('slug', $document->getYAML())) ? $document->getYAML()['slug'] : '',
-            'title' => (array_key_exists('title', $document->getYAML())) ? $document->getYAML()['title'] : '',
-            'content' => $document->getContent(),
-            'link' => (array_key_exists('link', $document->getYAML())) ? $document->getYAML()['link'] : '',
-            'download' => (array_key_exists('download', $document->getYAML())) ? $document->getYAML()['download'] : '',
-            'guests' => (array_key_exists('guests', $document->getYAML())) ? $document->getYAML()['guests'] : '',
-            'duration' => (array_key_exists('duration', $document->getYAML())) ? $document->getYAML()['duration'] : '',
-            'fileSize' => (array_key_exists('fileSize', $document->getYAML())) ? $document->getYAML()['fileSize'] : '',
-            'fileType' => (array_key_exists('fileType', $document->getYAML())) ? $document->getYAML()['fileType'] : '',
-            'explicit' => (array_key_exists('explicit', $document->getYAML())) ? $document->getYAML()['explicit'] : ''
-        ];
+        $data = [];
+        foreach ($this->validOptions as $key => $value) {
+            if ($key != 'content') {
+                $data[$key] = (array_key_exists($value, $document->getYAML())) ? $document->getYAML()[$value] : '';
+            } else {
+                $data[$key] = $document->getContent();
+            }
+        }
+
+        return $data;
     }
 
 }
