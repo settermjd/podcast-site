@@ -24,7 +24,8 @@
     "aptoma/twig-markdown": "^1.2",
     "michelf/php-markdown": "^1.5",
     "zetacomponents/feed": "^1.4",
-    "phpspec/nyan-formatters": "^1.0"
+    "phpspec/nyan-formatters": "^1.0",
+    "mockery/mockery": "^0.9.4"
   },
   "require-dev": {
     "codeception/codeception": "*",
