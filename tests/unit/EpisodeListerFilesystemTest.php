@@ -95,6 +95,26 @@ EOF;
         $this->specify("Test data retrieved from getEpisodeData is correct", function () use($service) {
             verify($this->episodeLister->getEpisodeData($service))->equals($this->episodeData);
         });
+    }
 
+    public function testCanSortPastEpisodesCorrectly()
+    {
+        $this->specify("The correct number of past episodes has been made available", function() {
+            verify(count($this->episodeLister->getPastEpisodes(true)))->equals(7);
+        });
+
+        $this->specify("The retrieved past episodes should be sorted in reverse date order", function() {
+            $pastEpisodes = $this->episodeLister->getPastEpisodes(true);
+            reset($pastEpisodes);
+            while ($val = current($pastEpisodes)) {
+                if (($next = next($pastEpisodes)) != false) {
+                    if ($next != false) {
+                        $first = new \DateTime($val->getPublishDate());
+                        $second = new \DateTime($next->getPublishDate());
+                        verify($first > $second)->true();
+                    }
+                }
+            }
+        });
     }
 }
