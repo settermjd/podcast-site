@@ -1,5 +1,5 @@
 ---
-publish_date: 29.10.2015 15:00
+publish_date: 26.10.2015 15:00
 slug: episode-0008
 title: Talking Technical Writing and Simplifying Deployment with Erika Heidi
 fileSize: 40207962
