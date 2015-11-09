@@ -2,9 +2,9 @@
 publish_date: 09.11.2015 15:00
 slug: episode-0009
 title: Episode 9 - Removing False Perceptions About People, The Roland R-05, and Zend Expressive
-fileSize: 40207962
+fileSize: 24482360
 fileType: audio/x-mp3
-duration: 47:46
+duration: 25:25
 explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0009.mp3
 download: FreeTheGeek-Episode0009.mp3
