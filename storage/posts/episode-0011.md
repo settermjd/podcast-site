@@ -1,5 +1,5 @@
 ---
-publish_date: 30.11.2015 15:00
+publish_date: 07.12.2015 15:00
 slug: episode-0011
 title: Episode 11 - Talking Shop with the Musketeers.Me Team (from PHP World)
 fileSize:
