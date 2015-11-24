@@ -1,7 +1,7 @@
 ---
-publish_date: 23.11.2015 15:00
+publish_date: 30.11.2015 15:00
 slug: episode-0010
-title: Episode 10 - Talking Shop with Adam Culp (from PHP World)
+title: Episode 10 - Talking Shop with Stephan Hochdörfer
 fileSize:
 fileType:
 duration:
@@ -9,14 +9,14 @@ explicit: no
 link:
 download:
 guests:
-  “Adam Culp”:
-    email: adam.c@zend.com
-    twitter: @AdamCulp
+  “Stephan Hochdörfer”:
+    email: s.hochdoerfer@bitexpert.de
+    twitter: @shochdoerfer
 
 ---
 ### Synopsis
 
-This episode is still to be recorded, and everything’s still so up in the air. But it should be an interesting discussion between Adam and I about, well, almost anything. Stay tuned for more specifics as they come to hand.
+In this episode I talk about a range of topics with Stephan Hochdörfer. I'll be updating this during the week. So stay tuned for more information. 
 
 ### Related Links
 
