@@ -4,6 +4,12 @@ namespace PodcastSite\Feed;
 
 use PodcastSite\Feed\iTunesFeedCreator;
 
+/**
+ * Class FeedCreatorFactory
+ * @package PodcastSite\Feed
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class FeedCreatorFactory
 {
     private function __construct(){}

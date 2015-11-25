@@ -9,6 +9,12 @@ namespace PodcastSite\Entity\Traits;
  *
  * @package PodcastSite\Entity\Traits
  */
+/**
+ * Class GetExplicit
+ * @package PodcastSite\Entity\Traits
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 trait GetExplicit
 {
     /** @var string */

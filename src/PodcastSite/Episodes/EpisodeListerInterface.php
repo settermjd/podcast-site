@@ -2,6 +2,12 @@
 
 namespace PodcastSite\Episodes;
 
+/**
+ * Interface EpisodeListerInterface
+ * @package PodcastSite\Episodes
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 interface EpisodeListerInterface
 {
     /**
@@ -10,10 +16,22 @@ interface EpisodeListerInterface
      */
     public function getEpisodeList();
 
+    /**
+     * Get the upcoming episodes
+     * @return mixed
+     */
     public function getUpcomingEpisodes();
 
+    /**
+     * Get the past episodes
+     * @return mixed
+     */
     public function getPastEpisodes();
 
+    /**
+     * Get the latest episode
+     * @return mixed
+     */
     public function getLatestEpisode();
 
     /**

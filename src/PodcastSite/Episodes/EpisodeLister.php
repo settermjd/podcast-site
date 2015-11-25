@@ -6,6 +6,8 @@ use PodcastSite\Episodes\Adapter\EpisodeListerFilesystem;
 /**
  * Class EpisodeLister
  * @package PodcastSite\Episodes
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
  */
 class EpisodeLister
 {

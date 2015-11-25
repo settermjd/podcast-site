@@ -9,9 +9,14 @@ use Slim\Middleware;
  *
  * Class GoogleAnalytics
  * @package PodcastSite\Middleware\Analytics
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
  */
 class GoogleAnalytics extends Middleware
 {
+    /**
+     * Render the Google Analytics code at the end of the request body
+     */
     public function call()
     {
         // Run inner middleware and application

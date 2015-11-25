@@ -4,6 +4,12 @@ namespace PodcastSite\Entity;
 
 use PodcastSite\Entity\Traits\GetExplicit;
 
+/**
+ * Class Show
+ * @package PodcastSite\Entity
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class Show
 {
     // import the getExplicit trait

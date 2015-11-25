@@ -9,6 +9,8 @@ use \PodcastSite\Entity\Episode;
  *
  * Class SortByReverseDateOrder
  * @package PodcastSite\Sorter
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
  */
 class SortByReverseDateOrder
 {

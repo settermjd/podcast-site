@@ -2,7 +2,12 @@
 
 namespace PodcastSite\Feed;
 
-
+/**
+ * Interface FeedCreatorInterface
+ * @package PodcastSite\Feed
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 interface FeedCreatorInterface
 {
     /**

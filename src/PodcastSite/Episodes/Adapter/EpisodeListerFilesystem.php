@@ -12,6 +12,8 @@ use PodcastSite\Iterator\PastEpisodeFilterIterator;
 /**
  * Class EpisodeListerFilesystem
  * @package PodcastSite\Episodes\Adapter
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
  */
 class EpisodeListerFilesystem implements EpisodeListerInterface
 {
@@ -19,8 +21,20 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
      * @var string
      */
     const CACHE_KEY_EPISODES_LIST = 'episodes_';
+
+    /**
+     * @var string
+     */
     const CACHE_KEY_SUFFIX_ALL = 'all';
+
+    /**
+     * @var string
+     */
     const CACHE_KEY_SUFFIX_UPCOMING = 'upcoming';
+
+    /**
+     * @var string
+     */
     const CACHE_KEY_SUFFIX_PAST = 'past';
 
     /**
@@ -81,6 +95,9 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         }
     }
 
+    /**
+     * @return array
+     */
     public function getUpcomingEpisodes()
     {
         $list = [];

@@ -5,6 +5,12 @@ namespace PodcastSite\Feed;
 use \PodcastSite\Entity\Show;
 use ezcFeed;
 
+/**
+ * Class iTunesFeedCreator
+ * @package PodcastSite\Feed
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class iTunesFeedCreator implements FeedCreatorInterface
 {
     /**

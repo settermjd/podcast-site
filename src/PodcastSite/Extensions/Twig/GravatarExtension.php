@@ -2,8 +2,18 @@
 
 namespace PodcastSite\Extensions\Twig;
 
+/**
+ * Class GravatarExtension
+ * @package PodcastSite\Extensions\Twig
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class GravatarExtension extends \Twig_Extension
 {
+    /**
+     * Return the list of filters
+     * @return array
+     */
     public function getFilters()
     {
         return array(
@@ -25,6 +35,10 @@ class GravatarExtension extends \Twig_Extension
         return false;
     }
 
+    /**
+     * Get the name of the extension
+     * @return string
+     */
     public function getName()
     {
         return 'podcastsite_guestgravatar';

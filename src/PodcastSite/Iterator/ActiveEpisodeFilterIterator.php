@@ -2,14 +2,27 @@
 
 namespace PodcastSite\Iterator;
 
+/**
+ * Class ActiveEpisodeFilterIterator
+ * @package PodcastSite\Iterator
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class ActiveEpisodeFilterIterator extends \FilterIterator
 {
+    /**
+     * @param \DirectoryIterator $iterator
+     */
     public function __construct(\DirectoryIterator $iterator)
     {
         parent::__construct($iterator);
         $this->rewind();
     }
 
+    /**
+     * Determine what is a valid element in this iterator
+     * @return bool
+     */
     public function accept()
     {
         /** @var \SplFileInfo $item */

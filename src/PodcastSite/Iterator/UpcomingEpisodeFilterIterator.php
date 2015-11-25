@@ -4,8 +4,17 @@ namespace PodcastSite\Iterator;
 
 use PodcastSite\Entity\Episode;
 
+/**
+ * Class UpcomingEpisodeFilterIterator
+ * @package PodcastSite\Iterator
+ * @author Matthew Setter <matthew@matthewsetter.com>
+ * @copyright 2015 Matthew Setter
+ */
 class UpcomingEpisodeFilterIterator extends \FilterIterator
 {
+    /**
+     * @param \Iterator $iterator
+     */
     public function __construct(\Iterator $iterator)
     {
         parent::__construct($iterator);

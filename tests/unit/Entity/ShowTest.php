@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class ShowTest
+ * Class \PodcastSite\Entity\ShowTest
  *
  * @coversDefaultClass \PodcastSite\Entity\Show
  */
