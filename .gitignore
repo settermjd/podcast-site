@@ -1,6 +1,10 @@
 vendor
 .idea
-
+.vagrant
+.phpcomplete_extended
+.padawan
 tests/_output/*
 storage/cache/template-cache/*
+storage/cache/app-cache/*
 node_modules/
+build/logs
