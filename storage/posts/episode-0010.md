@@ -1,5 +1,5 @@
 ---
-publish_date: 30.11.2015 15:00
+publish_date: 07.12.2015 15:00
 slug: episode-0010
 title: Episode 10 - Talking Shop with Stephan Hochdörfer
 fileSize:
