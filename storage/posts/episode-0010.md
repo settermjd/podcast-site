@@ -5,7 +5,7 @@ title: Episode 10 - Talking Shop with Stephan Hochdörfer
 fileSize:
 fileType:
 duration:
-explicit: no
+explicit: yes
 link:
 download:
 guests:
@@ -16,7 +16,10 @@ guests:
 ---
 ### Synopsis
 
-In this episode I talk about a range of topics with Stephan Hochdörfer. I'll be updating this during the week. So stay tuned for more information.
+In this episode I have a fireside chat about a range of topics with Stephan Hochdörfer. We talk about a whole how of things from how he got started with his company, bitExpert AG, what prompted him to get started, the importance of knowing the kind of company you’re creating, and valuing your people above all else. He gave an insight in to how they started their unKonf and what his plans are for the future. Definitely check out this episode!
+
+One quick note; there were network issues which reduced the quality of the audio. I hope this doesn’t put you off, but I want you to know before you get started. If you know how to fix it, please let me know.
 
 ### Related Links
+
 
