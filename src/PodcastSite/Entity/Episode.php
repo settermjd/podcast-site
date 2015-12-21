@@ -156,7 +156,7 @@ class Episode
         // Attempt to extract just the synopsis section, with no other content
         // If you're curious about the regex, use https://regex101.com/ with some
         // sample content to see an breakdown of how it works.
-        if (preg_match('/^### Synopsis(\n\n.*)*(?=###)/m', $this->content, $matches)) {
+        if (preg_match('/### Synopsis(\n.*)+(?=###)/', $this->content, $matches)) {
             // Strip the header
             return trim(preg_replace('/^### Synopsis(\n*)/', '', $matches[0]));
         }
