@@ -9,3 +9,4 @@ storage/cache/template-cache/*
 storage/cache/app-cache/*
 node_modules/
 build/logs
+ansible/
