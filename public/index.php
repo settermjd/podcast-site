@@ -36,7 +36,7 @@ $cache = StorageFactory::factory(array(
         ),
     ),
     'plugins' => array(
-        'exception_handler' => array('throw_exceptions' => false),
+        //'exception_handler' => array('throw_exceptions' => false),
         'serializer'
     ),
 ));
