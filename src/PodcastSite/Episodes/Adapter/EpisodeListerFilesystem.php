@@ -102,8 +102,11 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     {
         $list = [];
         $upcomingEpisodeIterator = new UpcomingEpisodeFilterIterator(
-            new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_UPCOMING))
+            new \ArrayIterator(
+                $this->getEpisodeList(self::CACHE_KEY_SUFFIX_UPCOMING)
+            )
         );
+
         foreach ($upcomingEpisodeIterator as $upcomingEpisode) {
             $list[] = $upcomingEpisode;
         }
@@ -121,7 +124,11 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     public function getPastEpisodes($includeLatest = true)
     {
         $list = [];
-        $iterator = new PastEpisodeFilterIterator(new \ArrayIterator($this->getEpisodeList(self::CACHE_KEY_SUFFIX_PAST)));
+        $iterator = new PastEpisodeFilterIterator(
+            new \ArrayIterator(
+                $this->getEpisodeList(self::CACHE_KEY_SUFFIX_PAST)
+            )
+        );
 
         foreach ($iterator as $episode) {
             $list[] = $episode;
@@ -192,6 +199,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             /** @var \Mni\FrontYAML\Document $document */
             $document = $this->fileParser->parse($fileContent, false);
             if ($document->getYAML()['slug'] === $episodeSlug) {
+                $episode = new Episode($this->getEpisodeData($document));
                 return new Episode($this->getEpisodeData($document));
             }
         }
