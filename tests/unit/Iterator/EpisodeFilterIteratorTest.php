@@ -75,7 +75,7 @@ EOF;
 
         $episode003Content = <<<EOF
 ---
-publish_date: 24.08.2015
+publish_date: %s
 slug: episode-0003
 title: The Mythical Man Month with Paul M. Jones & Speaking Engagements
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0002.mp3
@@ -99,9 +99,12 @@ I've also got updates on what's been happening for me personally in my freelanci
 - [Paul M. Jones](http://paul-m-jones.com/)
 EOF;
 
+        $futureDate = (new \DateTime())->add(new \DateInterval('P3D'))->format('d.m.Y');
+        $episode003Content = sprintf($episode003Content, $futureDate);
+
         $episode004Content = <<<EOF
 ---
-publish_date: 31.08.2015
+publish_date: %s
 slug: episode-0004
 title: Wisdom as a Service World Tour and Human Skills - with Yitzchok Willroth
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0004.mp3
@@ -125,6 +128,9 @@ We talk about what it's like to run the tour, the time involved, the energy requ
 - [ShorePHP User Group](http://shorephp.org/)
 - [NYPHP User Group](http://nyphp.org/)
 EOF;
+
+        $futureDate = (new \DateTime())->add(new \DateInterval('P5D'))->format('d.m.Y');
+        $episode004Content = sprintf($episode004Content, $futureDate);
 
         $this->root = vfsStream::setup();
         // setup the directory structure
@@ -204,7 +210,10 @@ EOF;
             'parser' => new Parser()
         ]);
 
-        $this->assertTrue(count($episodeLister->getPastEpisodes(false)) == 1, "Incorrect past episode count retrieved");
+        $this->assertTrue(
+            count($episodeLister->getPastEpisodes(false)) == 1,
+            "Incorrect past episode count retrieved"
+        );
     }
 
     public function testCanFilterLatestEpisodes()
