@@ -64,4 +64,10 @@ class ShowTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($show->getExplicit() == 'yes', 'Explicit status not correctly set');
     }
 
+    public function testShowIsCleanByDefault()
+    {
+        $show = new \PodcastSite\Entity\Show([]);
+        $this->assertTrue($show->getExplicit() == 'no', 'Explicit status not correctly set');
+    }
+
 }

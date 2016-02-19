@@ -27,6 +27,6 @@ trait GetExplicit
      */
     public function getExplicit()
     {
-        return $this->explicit;
+        return (is_null($this->explicit)) ? 'no' : $this->explicit;
     }
 }
