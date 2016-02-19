@@ -4,7 +4,7 @@ slug: episode-0005
 title: Building Your Brand as a Freelancer - with Gary Hockin (Part One)
 fileSize:
 fileType: audio/x-mp3
-duration:
+duration: 01:02:44
 explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0005.mp3
 download: FreeTheGeek-Episode0005.mp3
@@ -16,7 +16,7 @@ guests:
 ---
 ### Synopsis
 
-In this episode, I have, part one of, a fireside chat with, [Zend Framework](http://framework.zend.com/) aficionado and [Roave](http://roave.com) stalwart, [Gary Hockin](https://twitter.com/@geeh) about the ins and outs of building both a brand and a reputation as a freelancer.
+In this episode, I have, part one of, a fireside chat with, Zend Framework aficionado and Roave stalwart, Gary Hockin about the ins and outs of building both a brand and a reputation as a freelancer.
 
 We talk about a range of tools freelancers, *as well as full time employees*, can use, including social media, speaking at conferences, and getting on podcasts, to build a reputation and brand for themselves, even if they're just starting out.
 

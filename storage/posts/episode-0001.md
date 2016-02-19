@@ -20,6 +20,6 @@ It's one which explains how you need to approach freelancing if you want to succ
 ### Related Links
 
 - [The E-Myth Revisited by Michael E. Gerber](http://www.amazon.co.uk/The-E-Myth-Revisited-Michael-Gerber-ebook/dp/B000RO9VJK)
-- [How to Network – Even if You’re Self-Conscious](http://www.matthewsetter.com/how-to-network-even-if-you-are-self-conscious/)
+- [How to Network – Even if You're Self-Conscious](http://www.matthewsetter.com/how-to-network-even-if-you-are-self-conscious/)
 
 > **Correction:** Thanks to [@asgrim](https://twitter.com/@asgrim) for correcting me about employers rarely, if ever, paying for flights and hotels when sending staff to conferences. That was a slip up on my part. I'd only meant to say that they cover the costs of the ticket.

@@ -13,13 +13,13 @@ guests:
 ---
 ### Synopsis
 
-There’s no guests in this episode. Instead I explore a range of topics, including one quite dear to me - how we can build up preconceptions of what other people think of us.
+There's no guests in this episode. Instead I explore a range of topics, including one quite dear to me - how we can build up preconceptions of what other people think of us.
 
 I explore this and consider how false preconceptions can hinder us both personally and in our careers. With the exploration done, I throw down a challenge to get over them and see life, and see other people as they really are - not how we think they might be.
 
-As well as that, I give a massive plug for the Roland R-05 Wave/MP3 recorder which will be by my side at PHP World Conference where I’ll be chatting with so many amazing people. I also give a shout out for an amazing aspect of Zend Framework 3, which is Zend Expressive.
+As well as that, I give a massive plug for the Roland R-05 Wave/MP3 recorder which will be by my side at PHP World Conference where I'll be chatting with so many amazing people. I also give a shout out for an amazing aspect of Zend Framework 3, which is Zend Expressive.
 
-It’s a quirky solo episode this one, but one I’m sure you’ll get a lot out of.
+It's a quirky solo episode this one, but one I'm sure you'll get a lot out of.
 
 ### Related Links
 
