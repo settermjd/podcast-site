@@ -16,7 +16,7 @@ class Show
     use GetExplicit;
 
     /** @var string */
-    const EPISODE_PREFIX = 'episodes/';
+    const EPISODE_PREFIX = 'episode/';
 
     /** @var string */
     protected $url;
