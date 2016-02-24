@@ -3,8 +3,8 @@
 namespace PodcastSite\Iterator;
 
 /**
- * Class ActiveEpisodeFilterIterator
- * @package PodcastSite\Iterator
+ * Class ActiveEpisodeFilterIterator.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
@@ -20,7 +20,8 @@ class ActiveEpisodeFilterIterator extends \FilterIterator
     }
 
     /**
-     * Determine what is a valid element in this iterator
+     * Determine what is a valid element in this iterator.
+     *
      * @return bool
      */
     public function accept()
@@ -33,10 +34,10 @@ class ActiveEpisodeFilterIterator extends \FilterIterator
         }
 
         if ($item->isDot() || !$item->isFile() || !$item->isReadable()) {
-           return false;
+            return false;
         }
 
-        if (!in_array($item->getExtension(), ["md", "markdown"])) {
+        if (!in_array($item->getExtension(), ['md', 'markdown'])) {
             return false;
         }
 

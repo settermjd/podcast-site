@@ -5,8 +5,8 @@ namespace PodcastSite\Iterator;
 use PodcastSite\Entity\Episode;
 
 /**
- * Class UpcomingEpisodeFilterIterator
- * @package PodcastSite\Iterator
+ * Class UpcomingEpisodeFilterIterator.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
@@ -33,6 +33,6 @@ class UpcomingEpisodeFilterIterator extends \FilterIterator
         $today = new \DateTime();
         $episodeDate = new \DateTime($episode->getPublishDate());
 
-        return ($episodeDate > $today);
+        return $episodeDate > $today;
     }
 }

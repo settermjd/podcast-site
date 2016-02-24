@@ -5,8 +5,8 @@ namespace PodcastSite\Entity;
 use PodcastSite\Entity\Traits\GetExplicit;
 
 /**
- * Class Show
- * @package PodcastSite\Entity
+ * Class Show.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
@@ -54,7 +54,7 @@ class Show
     /**
      * @param array|\Traversable $options
      */
-    public function __construct($options = array())
+    public function __construct($options = [])
     {
         if (!empty($options)) {
             $memberVariables = get_class_vars(__CLASS__);
@@ -87,7 +87,7 @@ class Show
     }
 
     /**
-     * Returns the show title
+     * Returns the show title.
      *
      * @return string
      */
@@ -97,7 +97,7 @@ class Show
     }
 
     /**
-     * Returns the show's subtitle
+     * Returns the show's subtitle.
      *
      * @return string
      */
@@ -107,7 +107,7 @@ class Show
     }
 
     /**
-     * Returns the show description
+     * Returns the show description.
      *
      * @return string
      */
@@ -117,7 +117,7 @@ class Show
     }
 
     /**
-     * Get the show URL
+     * Get the show URL.
      *
      * @return string
      */
@@ -127,7 +127,7 @@ class Show
     }
 
     /**
-     * Get the author information for the show
+     * Get the author information for the show.
      *
      * At this stage I'm implementing it as a simple associative array.
      * However I'm thinking of implementing this as a simple value object
@@ -141,7 +141,7 @@ class Show
     }
 
     /**
-     * Get a list of keywords to tag the show with
+     * Get a list of keywords to tag the show with.
      *
      * @return array|\Traversable
      */
@@ -151,7 +151,7 @@ class Show
     }
 
     /**
-     * Return the main categories for the show
+     * Return the main categories for the show.
      *
      * @return string
      */
@@ -169,7 +169,7 @@ class Show
     }
 
     /**
-     * Get the show's artwork URL
+     * Get the show's artwork URL.
      *
      * @return string
      */
@@ -177,5 +177,4 @@ class Show
     {
         return $this->artwork;
     }
-
 }

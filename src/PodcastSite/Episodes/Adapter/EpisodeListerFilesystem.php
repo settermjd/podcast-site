@@ -10,8 +10,8 @@ use PodcastSite\Iterator\UpcomingEpisodeFilterIterator;
 use PodcastSite\Iterator\PastEpisodeFilterIterator;
 
 /**
- * Class EpisodeListerFilesystem
- * @package PodcastSite\Episodes\Adapter
+ * Class EpisodeListerFilesystem.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
@@ -59,7 +59,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
 
     /**
      * @param string $postDirectory
-     * @param object $fileParser Yaml/Markdown parser
+     * @param object $fileParser    Yaml/Markdown parser
      */
     public function __construct($postDirectory, $fileParser, $cache = null)
     {
@@ -74,20 +74,21 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Return the current available podcast episodes
+     * Return the current available podcast episodes.
      *
      * @return array|\Traversable
      */
     public function getEpisodeList($cacheKeySuffix = self::CACHE_KEY_SUFFIX_ALL)
     {
         if ($this->cache) {
-            $cacheKey = self::CACHE_KEY_EPISODES_LIST . $cacheKeySuffix;
+            $cacheKey = self::CACHE_KEY_EPISODES_LIST.$cacheKeySuffix;
             $result = $this->cache->getItem($cacheKey);
             if ($result) {
                 return $result;
             } else {
                 $result = $this->buildEpisodesList();
                 $ret = $this->cache->setItem($cacheKey, $result);
+
                 return $result;
             }
         } else {
@@ -115,10 +116,12 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Get all past episodes, optionally excluding the latest
+     * Get all past episodes, optionally excluding the latest.
      *
      * @param bool $includeLatest Whether to include the latest episode as well
+     *
      * @todo Need to check the sort order of the episodes and limit them correctly. Currently it's starting oldest to latest, so removing from the wrong end
+     *
      * @return array
      */
     public function getPastEpisodes($includeLatest = true)
@@ -139,14 +142,14 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         usort($list, $sorter);
 
         if (!$includeLatest) {
-           return array_splice($list, 1);
+            return array_splice($list, 1);
         }
 
         return $list;
     }
 
     /**
-     * Get just the first episode
+     * Get just the first episode.
      *
      * @return Episode
      */
@@ -155,12 +158,12 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
         // just get the first one
         $episodes = $this->getPastEpisodes();
         if (!empty($episodes)) {
-           return $episodes[0];
+            return $episodes[0];
         }
     }
 
     /**
-     * Build a list of all episodes, based on the data available in the filesystem
+     * Build a list of all episodes, based on the data available in the filesystem.
      *
      * @return array|\Traversable
      */
@@ -175,7 +178,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Returns the directory being searched by the episode lister
+     * Returns the directory being searched by the episode lister.
      *
      * @return string
      */
@@ -188,7 +191,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Get details of one episode
+     * Get details of one episode.
      *
      * @param \PodcastSite\Entity\Episode|null $episode
      */
@@ -200,17 +203,19 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             $document = $this->fileParser->parse($fileContent, false);
             if ($document->getYAML()['slug'] === $episodeSlug) {
                 $episode = new Episode($this->getEpisodeData($document));
+
                 return new Episode($this->getEpisodeData($document));
             }
         }
 
-        return null;
+        return;
     }
 
     /**
-     * Create an episode value object from the contents of an acceptable markdown file
+     * Create an episode value object from the contents of an acceptable markdown file.
      *
      * @param \SplFileInfo $file
+     *
      * @return \PodcastSite\Entity\Episode
      */
     public function buildEpisode(\SplFileInfo $file)
@@ -224,9 +229,10 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
     }
 
     /**
-     * Create an episode value object from the contents of an acceptable markdown file
+     * Create an episode value object from the contents of an acceptable markdown file.
      *
      * @param \Mni\FrontYAML\Document $document
+     *
      * @return \PodcastSite\Entity\Episode
      */
     public function getEpisodeData($document)
@@ -242,8 +248,7 @@ class EpisodeListerFilesystem implements EpisodeListerInterface
             'duration' => (array_key_exists('duration', $document->getYAML())) ? $document->getYAML()['duration'] : '',
             'fileSize' => (array_key_exists('fileSize', $document->getYAML())) ? $document->getYAML()['fileSize'] : '',
             'fileType' => (array_key_exists('fileType', $document->getYAML())) ? $document->getYAML()['fileType'] : '',
-            'explicit' => (array_key_exists('explicit', $document->getYAML())) ? $document->getYAML()['explicit'] : ''
+            'explicit' => (array_key_exists('explicit', $document->getYAML())) ? $document->getYAML()['explicit'] : '',
         ];
     }
-
 }

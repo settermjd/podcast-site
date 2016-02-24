@@ -2,22 +2,23 @@
 
 namespace PodcastSite\Feed;
 
-use \PodcastSite\Entity\Show;
+use PodcastSite\Entity\Show;
 use ezcFeed;
 
 /**
- * Class iTunesFeedCreator
- * @package PodcastSite\Feed
+ * Class iTunesFeedCreator.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
 class iTunesFeedCreator implements FeedCreatorInterface
 {
     /**
-     * Generate a feed file from one or more Episode objects
+     * Generate a feed file from one or more Episode objects.
      *
-     * @param \PodcastSite\Entity\Show $show Contains information about the show itself
+     * @param \PodcastSite\Entity\Show      $show        Contains information about the show itself
      * @param \PodcastSite\Entity\Episode[] $episodeList A list of Episode objects
+     *
      * @return ezcFeed
      */
     public function generateFeed(Show $show, $episodeList = [])
@@ -66,14 +67,14 @@ class iTunesFeedCreator implements FeedCreatorInterface
             $author->email = $show->getAuthor()['email'];
 
             $link = $item->add('link');
-            $link->href = $show->getUrl() . $show->getEpisodePrefix() . $episode->getSlug();
+            $link->href = $show->getUrl().$show->getEpisodePrefix().$episode->getSlug();
 
             $enclosure = $item->add('enclosure');
             $enclosure->url = $episode->getLink();
             $enclosure->length = $episode->getEpisodeFileSize(); // bytes
             $enclosure->type = $episode->getEpisodeFileType();
 
-            $iTunes = $item->addModule( 'iTunes' );
+            $iTunes = $item->addModule('iTunes');
             $iTunes->duration = $episode->getShowDuration();
             $iTunes->keywords = $this->cDataEncapsulate(implode(',', $show->getKeywords()));
             $iTunes->subtitle = $episode->getShortSynopsis();
@@ -85,13 +86,14 @@ class iTunesFeedCreator implements FeedCreatorInterface
     }
 
     /**
-     * Simple encapsulation of string in CDATA tag
+     * Simple encapsulation of string in CDATA tag.
      *
      * @param $data
+     *
      * @return string
      */
     public function cDataEncapsulate($data)
     {
-        return sprintf("%s", htmlentities($data));
+        return sprintf('%s', htmlentities($data));
     }
 }

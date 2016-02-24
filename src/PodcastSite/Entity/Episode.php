@@ -5,10 +5,9 @@ namespace PodcastSite\Entity;
 use PodcastSite\Entity\Traits\GetExplicit;
 
 /**
- * A simple value object for holding details about an Episode
+ * A simple value object for holding details about an Episode.
  *
  * Class Episode
- * @package PodcastSite\Entity
  */
 class Episode
 {
@@ -74,20 +73,20 @@ class Episode
     /**
      * @param array|\Traversable $options
      */
-    public function __construct($options = array())
+    public function __construct($options = [])
     {
         if (!empty($options)) {
             $memberVariables = get_class_vars(__CLASS__);
             foreach ($options as $key => $value) {
-               if (array_key_exists($key, $memberVariables) && !empty($value)) {
-                   $this->$key = $value;
-               }
+                if (array_key_exists($key, $memberVariables) && !empty($value)) {
+                    $this->$key = $value;
+                }
             }
         }
     }
 
     /**
-     * Returns a \DateTime object, which can be used to determine the publish date
+     * Returns a \DateTime object, which can be used to determine the publish date.
      *
      * @return \DateTime
      */
@@ -101,7 +100,7 @@ class Episode
      */
     public function getSlug()
     {
-       return $this->slug;
+        return $this->slug;
     }
 
     /**
@@ -109,7 +108,7 @@ class Episode
      */
     public function getTitle()
     {
-       return $this->title;
+        return $this->title;
     }
 
     /**
@@ -117,7 +116,7 @@ class Episode
      */
     public function getContent()
     {
-       return $this->content;
+        return $this->content;
     }
 
     /**
@@ -137,7 +136,7 @@ class Episode
     }
 
     /**
-     * Returns a comma-separated list of guests' email addresses
+     * Returns a comma-separated list of guests' email addresses.
      *
      * @return string
      */
@@ -147,7 +146,7 @@ class Episode
     }
 
     /**
-     * Retrieves the synopsis from the Markdown content
+     * Retrieves the synopsis from the Markdown content.
      *
      * @return string|bool
      */
@@ -165,7 +164,7 @@ class Episode
     }
 
     /**
-     * Retrieves the a short version of the synopsis from the Markdown content
+     * Retrieves the a short version of the synopsis from the Markdown content.
      *
      * @return string|bool
      */
@@ -179,7 +178,7 @@ class Episode
     }
 
     /**
-     * Retrieves the related links section from the Markdown content
+     * Retrieves the related links section from the Markdown content.
      *
      * @return string|bool
      */
@@ -221,5 +220,4 @@ class Episode
     {
         return $this->duration;
     }
-
 }

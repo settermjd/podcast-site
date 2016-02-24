@@ -16,11 +16,15 @@ guests:
 ---
 ### Synopsis
 
-In this episode I have a fireside chat about all things TDD and testing with the sagely Mr Tom Oram, otherwise known as @tomphp. 
+In this episode I have a fireside chat about all things TDD and testing with the sagely Mr Tom Oram, otherwise known as @tomphp.
 
 Tom shares his insights in to what testing really is, which is a little different to what I thought it was. Amongst a host of other gems, Tom said that having test coverage is a by-product of working in a test-driven manner. Interesting. Along with his personal experience and insights, Tom shares a host of other links to all manner of testing resources. Whether that's to mutation testing, hexagonal architecture, SoCraTes UK, or being a true software craftsman.
 
 If you've been pondering getting in to testing, but are unsure if the payoff justifies the investment, after our fireside chat, I'm more than confident that you'll know that the investment will pay you back many times over. So grab your favourite beverage, your comfy chair, and settle in for countless gems on test driven development.
+
+### Key Takeaways
+
+-
 
 ### Related Links
 

@@ -1,11 +1,12 @@
 <?php
+
 namespace PodcastSite\Episodes;
 
 use PodcastSite\Episodes\Adapter\EpisodeListerFilesystem;
 
 /**
- * Class EpisodeLister
- * @package PodcastSite\Episodes
+ * Class EpisodeLister.
+ *
  * @author Matthew Setter <matthew@matthewsetter.com>
  * @copyright 2015 Matthew Setter
  */
@@ -13,13 +14,13 @@ class EpisodeLister
 {
     /**
      * @param array|\Traversable|\Iterator $options
+     *
      * @return \PodcastSite\Episodes\Adapter\EpisodeListerFilesystem
      */
-    public static function factory($options = array())
+    public static function factory($options = [])
     {
-        switch ($options['type'])
-        {
-            case ('filesystem'):
+        switch ($options['type']) {
+            case 'filesystem':
             default:
                 return new EpisodeListerFilesystem(
                     $options['path'],
