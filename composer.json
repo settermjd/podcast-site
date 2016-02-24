@@ -43,6 +43,11 @@
     "psr-4": {
       "PodcastSite\\": "src/PodcastSite"
     },
+    "autoload-dev": {
+      "psr-4": {
+        "PodcaastSite\\Test\\": "tests"
+      }
+    },
     "psr-0": {"": "src"}
   },
   "scripts": {
