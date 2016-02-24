@@ -31,6 +31,7 @@
     "codeception/verify": "^0.2.7",
     "codeception/c3": "2.*",
     "codeclimate/php-test-reporter": "^0.1.2",
+    "fabpot/php-cs-fixer": "^1.11",
     "mikey179/vfsStream": "^1.5",
     "mockery/mockery": "^0.9.4",
     "phpspec/phpspec": "~2.0",
@@ -45,12 +46,5 @@
     "psr-0": {"": "src"}
   },
   "scripts": {
-    "post-install-cmd": [
-      "./bin/post-install.sh",
-      "Codeception\\c3\\Installer::copyC3ToRoot"
-    ],
-    "post-update-cmd": [
-      "Codeception\\c3\\Installer::copyC3ToRoot"
-    ]
   }
 }
