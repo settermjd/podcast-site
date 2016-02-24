@@ -9,5 +9,7 @@ cs: composer
 	vendor/bin/php-cs-fixer fix --verbose --diff
 
 test:
-	bin/codecept run
+	bin/codecept run unit
+	bin/codecept run functional
+	bin/codecept run acceptance
 
