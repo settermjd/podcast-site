@@ -6,7 +6,7 @@ composer:
 	composer update
 
 cs: composer
-	vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff
+	vendor/bin/php-cs-fixer fix --verbose --diff
 
 test:
 	bin/codecept run
