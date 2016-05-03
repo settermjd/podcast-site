@@ -1,5 +1,5 @@
 ---
-publish_date: 02.05.2017 16:00
+publish_date: 02.05.2016 16:00
 slug: episode-0017
 title: Episode 17 - Talking Conferences and Security with Chris Cornutt
 fileSize: 89669508
