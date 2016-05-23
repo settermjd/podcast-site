@@ -22,7 +22,7 @@ It’s a chat which I feel privileged to have had, primarily because it can be s
 
 He also shared a host of links to some excellent resources, should you or someone you know, be in the same position; links which you can find in the related links section.
 
-Grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat with Chris and I.
+Grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat with Matthew and I.
 
 ### Related Links
 
