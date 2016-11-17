@@ -17,15 +17,11 @@ In this episode I decided to go a little off track and have a bit of a rant, a b
 
 In part two, the more serious part of the episode, I share my key learnings on how to get started as a freelancer, the essential things that you need to know. Everything from how to find the right path, to the key apps you need, to some of the core steps you need to take.
 
-Grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat with Matthew and I.
+Grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat.
 
 ### Related Links
 
-- [@elazar](https://twitter.com/@elazar)
-- [@wheniwork](https://twitter.com/@wheniwork)
-- [Open Sourcing Mental Illness](https://osmihelp.org)
-- [php[tek] 2016](https://tek.phparch.com)
-- [Beyond Blue](https://www.beyondblue.org.au)
-- [Youth Beyond Blue](https://www.youthbeyondblue.com)
-- [#hackthestigma](https://hackthestigma.github.io)
-- [@kayladnls](https://twitter.com/@kayladnls)
+- [FreeAgent](https://www.freeagent.com)
+- [HarvestApp](https://www.getharvest.com)
+- [Moo.com](https://www.moo.com/)
+- [The Essentials Tools You Need To Teach Online](https://www.matthewsetter.com/the-online-teaching-essentials/)
