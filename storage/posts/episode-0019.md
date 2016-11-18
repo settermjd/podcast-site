@@ -1,5 +1,5 @@
 ---
-publish_date: 23.11.2016 17:00
+publish_date: 17.11.2016 17:00
 slug: episode-0019
 title: Episode 19 - Talking Trump, Brexit, and Getting Started as a Freelancer
 fileSize: 47355030
