@@ -2,9 +2,9 @@
 publish_date: 03.01.2017 15:00
 slug: episode-0021
 title: Episode 21 - Talking With Dan Allen Asciidoc Project Lead
-fileSize: 18218340
+fileSize: 77471162
 fileType: audio/x-mp3
-duration: 00:18:58
+duration: 01:20:42
 explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0021.mp3
 download: FreeTheGeek-Episode0021.mp3
