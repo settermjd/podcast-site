@@ -13,7 +13,7 @@ guests:
 ---
 ### Synopsis
 
-In this episode I decided to go a little off track and have a bit of a rant, a bit of an “letting go” session in light of the recent US election and Brexit. I’m no fan of either, and I share why in the first half of the episode.
+In this episode I decided to go a little off track and have a bit of a rant, a bit of an "letting go" session in light of the recent US election and Brexit. I'm no fan of either, and I share why in the first half of the episode.
 
 In part two, the more serious part of the episode, I share my key learnings on how to get started as a freelancer, the essential things that you need to know. Everything from how to find the right path, to the key apps you need, to some of the core steps you need to take.
 

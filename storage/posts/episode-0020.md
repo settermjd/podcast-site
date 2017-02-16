@@ -13,21 +13,21 @@ guests:
 ---
 ### Synopsis
 
-In this episode we pick up where we left off in [episode 19](/episode/episode-0019), with a slight segway. But, instead of starting to look at how to use Twitter, and other social media tools, let’s talk about something more important.
+In this episode we pick up where we left off in [episode 19](/episode/episode-0019), with a slight segway. But, instead of starting to look at how to use Twitter, and other social media tools, let's talk about something more important.
 
-In this episode let’s talk about finding perspective and balance. There’s quite a bit to cover, but I tried to condense it to the essentials. Today, let’s talk about finding a balance between the amount of work you have, the quality of said work, and the amount you get paid for it.
+In this episode let's talk about finding perspective and balance. There's quite a bit to cover, but I tried to condense it to the essentials. Today, let's talk about finding a balance between the amount of work you have, the quality of said work, and the amount you get paid for it.
 
-To help you do that, if you’re having trouble, I’ll ask you a series of questions:
+To help you do that, if you're having trouble, I'll ask you a series of questions:
 
 - How much money do you need?
 - How much do you need to work to earn that money?
 
-Then to balance these questions, to keep them in perspective, I’ll ask a few more, including:
+Then to balance these questions, to keep them in perspective, I'll ask a few more, including:
 
 - How much is your health worth?
 - How much is your family worth?
 
-There’s a lot going on. So, grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat.
+There's a lot going on. So, grab your favourite beverage and your comfy chair, and get ready for a rousing fireside chat.
 
 ### Related Links
 
