@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ show.getTitle() }} - {{ show.getSubtitle() }}">
     <meta name="author" content="{{ show.getTitle() }}">
     <meta name='designer' content="{{ show.getTitle() }}">
     <meta name="keywords" content="{{ show.getKeywords()|join(',') }}">
     <meta name='HandheldFriendly' content='True'>
-    <title>{{ show.getTitle() }} - {{ show.getSubtitle() }}</title>
+    <meta name="description" content="{{ show.getTitle() }} {{ show.getSubtitle() }}">
+    <title>{{ show.getTitle() }} {{ show.getSubtitle() }}</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" href="/rss" title="Free the Geek RSS Feed"/>
 
