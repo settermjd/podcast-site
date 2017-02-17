@@ -14,7 +14,7 @@
 
 <div class="row full-pretext">
     <div class="col-md-8">
-        <p class="lead">Free the Geek.fm - The podcast about building a rewarding career as a professional software developer.</p>
+        <p class="lead">{{ show.getSubtitle() }}</p>
     </div>
     <div class="col-md-4" style="text-align: right;">
         {% include "core/social-media-links.twig" %}
@@ -23,7 +23,7 @@
 
     <div class="row mobile-pretext">
         <div class="col-md-12">
-            <p class="lead">Free the Geek.fm - The podcast about building a rewarding career as a professional software developer.</p>
+            <p class="lead">{{ show.getSubtitle() }}</p>
         </div>
     </div>
 

@@ -21,7 +21,7 @@ class About
         $I = $this->tester;
 
         $I->amOnPage('/about');
-        $I->seeInTitle('Free the Geek.fm with Matthew Setter. The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover');
+        $I->seeInTitle('Free the Geek.fm with Matthew Setter. The podcast about building a rewarding career as a professional software developer and technical writer.');
 
         $I->seeLink("About", "/about");
         $I->seeLink("Contact", "/contact");

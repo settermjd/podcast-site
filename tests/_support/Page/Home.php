@@ -21,7 +21,8 @@ class Home
         $I = $this->tester;
 
         $I->amOnPage('/');
-        $I->seeInTitle('Free the Geek.fm with Matthew Setter. The podcast about the business of freelancing as a software developer, writer, content producer, and all round PHP lover');
+        $I->seeInTitle('Free the Geek.fm with Matthew Setter. The podcast about building a rewarding career as a professional software developer and technical writer.');
+        $I->canSee('The podcast about building a rewarding career as a professional software developer and technical writer.', 'p[class="lead"]');
 
 // Test the links
         $I->seeLink("About", "/about");
