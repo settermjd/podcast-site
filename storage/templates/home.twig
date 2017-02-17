@@ -86,15 +86,16 @@
     <hr />
 
     <div class="row">
-        <div class="col-md-6" id="upcoming-episodes">
-            <h3>Upcoming Episodes</h3>
-            {% for episode in upcomingEpisodes %}
+        <div class="col-md-6" id="past-episodes">
+            <h3>Past Episodes</h3>
+            {% for episode in pastEpisodes %}
                 <div class="well">
                     <div class="media">
                         <div class="media-body">
-                            <h3 class="media-heading">{{ episode.getTitle() }}</h3>
+                            <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
                             <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                            <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
+                            <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                            <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
                             {% if episode.getGuests() %}
                                 <h4>Guest(s)</h4>
                                 {% for guestName, guestData in episode.getGuests() %}
@@ -111,17 +112,15 @@
                 </div>
             {% endfor %}
         </div>
-
-        <div class="col-md-6" id="past-episodes">
-            <h3>Past Episodes</h3>
-            {% for episode in pastEpisodes %}
+        <div class="col-md-6" id="upcoming-episodes">
+            <h3>Upcoming Episodes</h3>
+            {% for episode in upcomingEpisodes %}
                 <div class="well">
                     <div class="media">
                         <div class="media-body">
-                            <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
+                            <h3 class="media-heading">{{ episode.getTitle() }}</h3>
                             <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                            <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
-                            <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
+                            <p>{% markdown %}{{ episode.getSynopsis() }}{% endmarkdown %}</p>
                             {% if episode.getGuests() %}
                                 <h4>Guest(s)</h4>
                                 {% for guestName, guestData in episode.getGuests() %}
