@@ -1,27 +1,17 @@
 <?php
 namespace Page;
 
-class About
+class About extends BasePage
 {
     // include url of current page
     public static $URL = '/about';
-
-    /**
-     * @var AcceptanceTester
-     */
-    protected $tester;
-
-    public function __construct(\AcceptanceTester $I)
-    {
-        $this->tester = $I;
-    }
 
     public function checkAboutPage()
     {
         $I = $this->tester;
 
         $I->amOnPage('/about');
-        $I->seeInTitle('Free the Geek.fm with Matthew Setter. The podcast about building a rewarding career as a professional software developer and technical writer.');
+        $I->seeInTitle(sprintf('%s %s', self::SHOW_NAME, self::STRAPLINE));
 
         $I->seeLink("About", "/about");
         $I->seeLink("Contact", "/contact");
