@@ -17,6 +17,7 @@ class Home extends BasePage
 // Test the links
         $I->seeLink("About", "/about");
         $I->seeLink("Contact", "/contact");
+        $I->seeLink("For Guests", "/for-guests");
 
         $I->see("Latest Episode");
         $I->see("Upcoming Episodes");

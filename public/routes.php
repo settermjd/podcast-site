@@ -29,6 +29,18 @@ $app->get('/about', function () use ($app) {
 })->name('about');
 
 /**
+ * The for guests page, with information about being aguest
+ */
+$app->get('/for-guests', function () use ($app) {
+    $app->render(
+        'for-guests.twig', [
+            'show' => $app->show,
+            'activePage' => 'for-guests'
+        ]
+    );
+});
+
+/**
  * The contact page
  */
 $app->get('/contact', function () use ($app) {

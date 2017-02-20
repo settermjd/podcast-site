@@ -15,6 +15,7 @@ class About extends BasePage
 
         $I->seeLink("About", "/about");
         $I->seeLink("Contact", "/contact");
+        $I->seeLink("For Guests", "/for-guests");
 
         $I->see("In a Nutshell");
         $I->see("Why Did I Launch It?");
