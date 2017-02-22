@@ -1,7 +1,6 @@
 <footer class="footer">
         <p class="text-muted">
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.<br />
-            Created by <a href="http://www.matthewsetter.com" target="_blank">Matthew Setter</a> {{ "now"|date("Y") }} using <a href="http://slimframework.com" target="_blank">the Slim Framework</a>.
+            copyright <a href="http://www.matthewsetter.com" target="_blank">Matthew Setter</a> {{ "now"|date("Y") }} / <a href="/about">About</a> / <a href="/contact">Contact</a> / <a href="/for-guests">For Guests</a>
         </p>
 </footer>
 
@@ -21,6 +20,23 @@
 
 <!-- Custom Functions JavaScript -->
 <script src="/js/functions.js"></script>
+
+<script>window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));</script>
 
 </body>
 

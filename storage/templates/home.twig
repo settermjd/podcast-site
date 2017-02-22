@@ -3,87 +3,71 @@
 <body id="page-top">
 
 <div class="container">
+    {#
+    {% include "core/main-nav.twig" %}
+    #}
 
-{% include "core/main-nav.twig" %}
-
-<header>
-    <div class="header-content">
-        <div class="header-content-inner"></div>
-    </div>
-</header>
-
-<div class="row full-pretext">
-    <div class="col-md-8">
-        <p class="lead">{{ show.getSubtitle() }}</p>
-    </div>
-    <div class="col-md-4" style="text-align: right;">
-        {% include "core/social-media-links.twig" %}
-    </div>
-</div>
-
-    <div class="row mobile-pretext">
-        <div class="col-md-12">
-            <p class="lead">{{ show.getSubtitle() }}</p>
-        </div>
-    </div>
-
-    <div class="row mobile-pretext">
-        <div class="col-md-12" style="text-align: center;">
-            {% include "core/social-media-links.twig" %}
-        </div>
-    </div>
-
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron"></div>
-
-    <hr />
-
-    <div class="well full">
-        <div id="mailinglist_signup">
-            <h3>Don’t miss an episode!</h3>
-            <p>Drop your email in the box below and join the Free the Geek community. You'll get every episode straight to your inbox, <strong>PLUS exclusive content</strong> only available by email. No spam, and you can unsubscribe at any time.</p>
-            <form action="http://maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&id=932a5500ab"
-                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                  class="validate" target="_blank" novalidate>
-                <input type="email" class="form-control input-lg" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your Email Address" required>
-                <div style="position: absolute; left: -5000px;"><input type="text" name="b_daba1ae6c6f01f207afaf7402_ce7c0037c1" tabindex="-1"
-                                                                       value=""></div>
-                <div class="clear"><input type="submit" value="Sign Me Up!" name="subscribe"
-                                          id="mc-embedded-subscribe" class="btn btn-block btn-lg subscribe-button-itunes btn-success"></div>
-            </form>
-        </div>
-    </div>
-
-    <hr />
+    {% include "core/top-banner.twig" %}
 
     <div class="row">
         <div class="col-md-12" id="latest-episode">
             <h2>Latest Episode</h2>
-                <div class="well">
-                    <div class="media">
-                        <div class="media-body">
-                            <h3 class="media-heading"><a href="/episode/{{ latestEpisode.getSlug() }}">{{ latestEpisode.getTitle() }}</a></h3>
-                            <p class="publish-date">{{ latestEpisode.getPublishDate() }}</p>
-                            <audio style="width: 100%;" src="{{ latestEpisode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
-                            <p>{% markdown %}{{ latestEpisode.getSynopsis() }}{% endmarkdown %}</p>
-                            {% if latestEpisode.getGuests() %}
-                                <h4>Guest(s)</h4>
-                                {% for guestName, guestData in latestEpisode.getGuests() %}
-                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
-                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                             width="64px" height="64px" alt="" data-toggle="tooltip"
-                                             data-placement="bottom" title=""
-                                             data-original-title="{{ guestName }}">
-                                    </a>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
+            <div class="well">
+                <div class="media">
+                    <div class="media-body">
+                        <h3 class="media-heading"><a
+                                    href="/episode/{{ latestEpisode.getSlug() }}">{{ latestEpisode.getTitle() }}</a>
+                        </h3>
+                        <p class="publish-date">{{ latestEpisode.getPublishDate() }}</p>
+                        <audio style="width: 100%;" src="{{ latestEpisode.link }}" type="audio/mp3"
+                               preload="none" controls="control"></audio>
+                        <p>{% markdown %}{{ latestEpisode.getSynopsis() }}{% endmarkdown %}</p>
+                        {% if latestEpisode.getGuests() %}
+                            <h4>Guest(s)</h4>
+                            {% for guestName, guestData in latestEpisode.getGuests() %}
+                                <a href="https://twitter.com/{{ guestData.twitter }}"
+                                   target="_blank">
+                                    <img src="{{ guestData.email|guestGravatar }}"
+                                         class="img-circle"
+                                         width="64px" height="64px" alt="" data-toggle="tooltip"
+                                         data-placement="bottom" title=""
+                                         data-original-title="{{ guestName }}">
+                                </a>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 
-    <hr />
+    <hr/>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="well full">
+        <div id="mailinglist_signup">
+            <h3>Don’t miss an episode!</h3>
+            <p>Drop your email in the box below and join the Free the Geek community. You'll get
+                every episode straight to your inbox, <strong>PLUS exclusive content</strong> only
+                available by email. No spam, and you can unsubscribe at any time.</p>
+            <form action="http://maltblue.us2.list-manage.com/subscribe/post?u=daba1ae6c6f01f207afaf7402&id=932a5500ab"
+                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                  class="validate" target="_blank" novalidate>
+                <input type="email" class="form-control input-lg" value="" name="EMAIL"
+                       class="email" id="mce-EMAIL" placeholder="Your Email Address" required>
+                <div style="position: absolute; left: -5000px;"><input type="text"
+                                                                       name="b_daba1ae6c6f01f207afaf7402_ce7c0037c1"
+                                                                       tabindex="-1"
+                                                                       value=""></div>
+                <div class="clear"><input type="submit" value="Sign Me Up!" name="subscribe"
+                                          id="mc-embedded-subscribe"
+                                          class="btn btn-block btn-lg subscribe-button-itunes btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr/>
 
     <div class="row">
         <div class="col-md-6" id="past-episodes">
@@ -92,16 +76,22 @@
                 <div class="well">
                     <div class="media">
                         <div class="media-body">
-                            <h3 class="media-heading"><a href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a></h3>
+                            <h3 class="media-heading"><a
+                                        href="/episode/{{ episode.getSlug() }}">{{ episode.getTitle() }}</a>
+                            </h3>
                             <p class="publish-date">{{ episode.getPublishDate() }}</p>
-                            <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3" preload="none" controls="control"></audio>
+                            <audio style="width: 100%;" src="{{ episode.link }}" type="audio/mp3"
+                                   preload="none" controls="control"></audio>
                             <p>{% markdown %}{{ episode.getShortSynopsis() }}{% endmarkdown %}</p>
                             {% if episode.getGuests() %}
                                 <h4>Guest(s)</h4>
                                 {% for guestName, guestData in episode.getGuests() %}
-                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
-                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                    <a href="https://twitter.com/{{ guestData.twitter }}"
+                                       target="_blank">
+                                        <img src="{{ guestData.email|guestGravatar }}"
+                                             class="img-circle"
+                                             style="width: 64px; height: 64px;" alt=""
+                                             data-toggle="tooltip"
                                              data-placement="bottom" title=""
                                              data-original-title="{{ guestName }}">
                                     </a>
@@ -124,9 +114,12 @@
                             {% if episode.getGuests() %}
                                 <h4>Guest(s)</h4>
                                 {% for guestName, guestData in episode.getGuests() %}
-                                    <a href="https://twitter.com/{{ guestData.twitter }}" target="_blank">
-                                        <img src="{{ guestData.email|guestGravatar }}" class="img-circle"
-                                             style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                                    <a href="https://twitter.com/{{ guestData.twitter }}"
+                                       target="_blank">
+                                        <img src="{{ guestData.email|guestGravatar }}"
+                                             class="img-circle"
+                                             style="width: 64px; height: 64px;" alt=""
+                                             data-toggle="tooltip"
                                              data-placement="bottom" title=""
                                              data-original-title="{{ guestName }}">
                                     </a>
@@ -136,6 +129,20 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="row social-icons">
+        <div class="col-md-12">
+            Your Host <br/>
+            <img src="http://www.gravatar.com/avatar/0f7160372a5015b6bee3d069a28ce2db"
+                 class="img-circle" style="width: 64px; height: 64px;" alt="" data-toggle="tooltip"
+                 data-placement="bottom" title="" data-original-title="Paul M. Jones"><br/>
+            Matthew Setter<br/>
+            <a class="twitter-follow-button"
+               href="https://twitter.com/settermjd">Follow @settermjd</a>
         </div>
     </div>
 

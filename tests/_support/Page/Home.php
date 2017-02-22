@@ -31,7 +31,6 @@ class Home extends BasePage
         $I->seeLink('', "https://itunes.apple.com/podcast/free-geek.fm-matthew-setter/id1018923368?l=en&mt=2");
 
         $I->seeLink("Matthew Setter", "http://www.matthewsetter.com");
-        $I->seeLink("the Slim Framework", "http://slimframework.com");
         $I->dontSeeElement("//div[@id='upcoming-episodes']//h3[@class='media-heading']/a");
 
     }
