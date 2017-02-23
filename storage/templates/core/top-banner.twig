@@ -5,13 +5,13 @@
 </header>
 
 <div class="row banner">
-    <img src="/img/avatar1 small.png"/>
-    <h1>Free the Geek</h1>
+    <a href="/" title="Free the Geek - Home"><img src="/img/avatar1 small.png"/></a>
+    <h1><a href="/" title="Free the Geek - Home">Free the Geek</a></h1>
 </div>
 
 <div class="row full-pretext">
     <div class="col-md-12">
-        <p class="lead">{{ show.getSubtitle() }}<br/> Every episode, Matthew Setter is joined by a guest to discuss being a freelancer, writing technical documentation, and great software.</p>
+        <p class="lead">{{ show.getSubtitle() }}<br/> Every episode, Matthew Setter is joined by a guest to discuss being a freelancer, writing technical documentation, creating great software, and podcasting.</p>
     </div>
 </div>
 <div class="row social-icons">
@@ -22,12 +22,7 @@
 
 <div class="row mobile-pretext">
     <div class="col-md-12">
-        <p class="lead">{{ show.getSubtitle() }}</p>
+        <p class="lead">{{ show.getSubtitle() }}<br/> Every episode, Matthew Setter is joined by a guest to discuss being a freelancer, writing technical documentation, creating great software, and podcasting.</p>
     </div>
 </div>
 
-<div class="row mobile-pretext social-icons">
-    <div class="col-md-12">
-        {% include "core/social-media-links.twig" %}
-    </div>
-</div>
