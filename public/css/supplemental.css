@@ -118,6 +118,17 @@ div.full-pretext div p.lead {
 }
 
 /*
+ * Episode styling
+ */
+div.well.episode {
+    padding-top: 5px;
+}
+
+div.well.episode h2 {
+    margin-top: 15px;
+}
+
+/*
  * List styling
  */
 div.content ul li {
