@@ -1,7 +1,7 @@
 ---
-publish_date: 28.03.2017 15:00
+publish_date: 28.02.2017 15:00
 slug: episode-0022
-title: Episode 22 - Talking Online Training and Growing an Online Presence with Wes Bos.
+title: Episode 22 - Talking Online Training and Growing an Online Presence with Wes Bos
 fileSize: 60777467
 fileType: audio/x-mp3
 duration: 01:03:13
