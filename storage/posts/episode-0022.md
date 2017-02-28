@@ -43,5 +43,5 @@ So grab your favorite beverage, put your feet up, and let’s ponder on these qu
 - [React For Beginners](https://reactforbeginners.com/)
 - [Sublime Text Power User](https://sublimetextbook.com/)
 - [Deep Work](http://calnewport.com/books/deep-work/)
-- [Anything You Wnat - Derek Sivers](https://sivers.org/a)
+- [Anything You Want - Derek Sivers](https://sivers.org/a)
 - [The E-Myth](https://www.amazon.com/E-Myth-Revisited-Small-Businesses-About/dp/0887307280/ref=pd_sim_14_1?_encoding=UTF8&psc=1&refRID=YS7RJEF845YBKF548YN3)
