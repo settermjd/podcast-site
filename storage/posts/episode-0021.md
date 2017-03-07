@@ -20,7 +20,7 @@ In this episode I sit down with Asciidoc project Lead, and all round good fella 
 
 Dan share's so much valuable insight into why Asciidoc is the premiere format for writing, regardless of the type of work you do, how the format came to life, some of the tooling available, plus so much more.
 
-If you’re just getting in to technical writing, love documenting your code, but want to spend less time doing it, or just want to find a tool chain that demands less of you, but gives you so much more, then grab your favourite beverage, put your feet up, and tune in!
+If you're just getting in to technical writing, love documenting your code, but want to spend less time doing it, or just want to find a tool chain that demands less of you, but gives you so much more, then grab your favourite beverage, put your feet up, and tune in!
 
 ### Related Links
 

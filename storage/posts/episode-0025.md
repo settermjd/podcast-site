@@ -18,9 +18,9 @@ guests:
 
 In this episode, I talk to Chris Fidao (aka @fideloper) about building communities, online courses, Docker and loads more.
 
-Here’s the skinny. When I was looking for help with a Docker tutorial I wrote, I asked around who the Docker experts in the PHP community were. His was one of two names that came up.
+Here's the skinny. When I was looking for help with a Docker tutorial I wrote, I asked around who the Docker experts in the PHP community were. His was one of two names that came up.
 
-When I did some research on him, I discovered that he’d been building an online community, as well as online courses, for some time. It was clear that I had to talk to him, to pick his brains, to find out what he knew about it all.
+When I did some research on him, I discovered that he'd been building an online community, as well as online courses, for some time. It was clear that I had to talk to him, to pick his brains, to find out what he knew about it all.
 
 So grab your favourite beverage, put your feet up, and come find out how to do all these things – and so much more.
 

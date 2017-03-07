@@ -29,7 +29,7 @@ So grab your favourite beverage, put your feet up, and come find out how Ophelie
 
 - [SitePoint](https://www.sitepoint.com/)
 - [Flippa](https://flippa.com/)
-- [Ophelie’s Website](http://ophelielechat.com/)
+- [Ophelie's Website](http://ophelielechat.com/)
 - [Ophelie on Twitter](https://twitter.com/OphelieLechat)
 - [Awesome Melbourne](https://twitter.com/awesomemelb)
-- [SitePoint’s Author Documentation](https://github.com/sitepoint-editors/author-documentation/blob/master/docs/Process-Peer%20Review-What%20Is%20Peer%20Review.md)
+- [SitePoint's Author Documentation](https://github.com/sitepoint-editors/author-documentation/blob/master/docs/Process-Peer%20Review-What%20Is%20Peer%20Review.md)

@@ -16,20 +16,20 @@ guests:
 ---
 ### Synopsis
 
-In this episode, I have the pleasure of speaking with Wes Bos. If you’re not familiar with Wes, he’s a designer, developer, entrepreneur, speaker, and teacher.
+In this episode, I have the pleasure of speaking with Wes Bos. If you're not familiar with Wes, he's a designer, developer, entrepreneur, speaker, and teacher.
 
-He’s the author of such standout courses as _JavaScript30_, _ES6 for Everyone_, _React For Beginners_, and the author of _Sublime Text Power User_.
-Hopefully, you’re familiar with at least one.
+He's the author of such standout courses as _JavaScript30_, _ES6 for Everyone_, _React For Beginners_, and the author of _Sublime Text Power User_.
+Hopefully, you're familiar with at least one.
 
-During the fireside chat, Wes shared so much gold with me, gold that, if you’re interested in creating online courses, or already are, I know you’re going to love.
+During the fireside chat, Wes shared so much gold with me, gold that, if you're interested in creating online courses, or already are, I know you're going to love.
 
 Here are a few points to listen out for:
 
-- Learn to cut the fat and don’t ramp up
+- Learn to cut the fat and don't ramp up
 - People like to relate to you and to get to know you.
 - Know your audience well.
 
-So grab your favorite beverage, put your feet up, and let’s ponder on these questions and so many others that go along with them.
+So grab your favorite beverage, put your feet up, and let's ponder on these questions and so many others that go along with them.
 
 ### Related Links
 
