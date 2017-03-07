@@ -16,9 +16,9 @@ guests:
 ---
 ### Synopsis
 
-In this episode I wonderful chat with Matthew Turland about what it’s like speaking at conferences and mental health - especially within the IT community.
+In this episode I wonderful chat with Matthew Turland about what it's like speaking at conferences and mental health - especially within the IT community.
 
-It’s a chat which I feel privileged to have had, primarily because it can be such a sensitive topic for so many people around the world. Matthew was very kind to open up to me and share with me some of his struggles, and how he’s dealt with them over the years.
+It's a chat which I feel privileged to have had, primarily because it can be such a sensitive topic for so many people around the world. Matthew was very kind to open up to me and share with me some of his struggles, and how he's dealt with them over the years.
 
 He also shared a host of links to some excellent resources, should you or someone you know, be in the same position; links which you can find in the related links section.
 

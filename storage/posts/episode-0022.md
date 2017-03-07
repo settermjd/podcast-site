@@ -16,8 +16,7 @@ guests:
 ---
 ### Synopsis
 
-In this episode, I have the pleasure of speaking with Wes Bos.
-If you’re not familiar with Wes, he’s a designer, developer, entrepreneur, speaker, and teacher.
+In this episode, I have the pleasure of speaking with Wes Bos. If you’re not familiar with Wes, he’s a designer, developer, entrepreneur, speaker, and teacher.
 
 He’s the author of such standout courses as _JavaScript30_, _ES6 for Everyone_, _React For Beginners_, and the author of _Sublime Text Power User_.
 Hopefully, you’re familiar with at least one.
