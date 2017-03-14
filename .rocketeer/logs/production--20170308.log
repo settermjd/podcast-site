@@ -1,0 +1,9 @@
+20170308112514
+20170308112846
+20170308144857
+$ ln -s /var/www/deploy/podcast-site/releases/20170308112514 /var/www/deploy/podcast-site/current-temp
+$ mv -Tf /var/www/deploy/podcast-site/current-temp /var/www/deploy/podcast-site/current
+ln -s /var/www/deploy/podcast-site/releases/20170308112514 /var/www/deploy/podcast-site/current-temp
+mv -Tf /var/www/deploy/podcast-site/current-temp /var/www/deploy/podcast-site/current
+
+|=> <fg=green>Rolling back to release 20170308112514</fg=green>
