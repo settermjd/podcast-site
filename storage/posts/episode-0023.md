@@ -1,7 +1,7 @@
 ---
 publish_date: 14.03.2017 15:00
 slug: episode-0023
-title: Episode 23 - Talking About Getting Developers to Communicate (and more) With Opélie Lechat
+title: Episode 23 - Talking About Getting Developers to Communicate (and more) With Opelie Lechat
 fileSize: 53750415
 fileType: audio/x-mp3
 duration: 01:12:12
