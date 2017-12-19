@@ -13,15 +13,15 @@ guests:
 ---
 ### Synopsis
 
-In this episode, I'm keen to talk with you about career changes. This is something that I’m currently going through and have been through in the past. It’s not uncommon, especially in the tech field.
+In this episode, I'm keen to talk with you about career changes. This is something that I'm currently going through and have been through in the past. It's not uncommon, especially in the tech field.
 
-So in this episode I’m sharing some pointers, links, stories, and all-round good information to help you make the change, if you’re planning to do so.
+So in this episode I'm sharing some pointers, links, stories, and all-round good information to help you make the change, if you're planning to do so.
 
-Here’s some highlights:
+Here's some highlights:
 
 - A personal story about how I found my first mentor, when I had no idea where I wanted to go.
 - I also help you to find some for yourself.
-- Questions to help you find focus, what’s important to you, and whether you should "follow your passion".
+- Questions to help you find focus, what's important to you, and whether you should "follow your passion".
 - Suggestions for what to do to stand out from the crowd.
 - Suggestions to avoid burnout.
 
