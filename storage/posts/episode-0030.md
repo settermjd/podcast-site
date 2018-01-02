@@ -1,11 +1,11 @@
 ---
-publish_date: 19.12.2017 15:00
+publish_date: 02.01.2018 15:00
 slug: episode-0030
 title: Episode 30 - Talking Freelancing, Running Your Own Business, and Public Speaking with Robert Basic
-fileSize: 60191624
+fileSize: 42385828
 fileType: audio/x-mp3
-duration: 01:01:54
-explicit: yes
+duration: 00:43:50
+explicit: no
 link: http://traffic.libsyn.com/thegeekyfreelancer/FreeTheGeek-Episode0030.mp3
 download: FreeTheGeek-Episode0030.mp3
 guests:
@@ -30,3 +30,4 @@ So grab your favourite beverage, put your feet up, and come hear from one of the
 - [Robert’s Website](https://robertbasic.com)
 - [PHP Serbia CFP](https://cfp.phpsrbija.rs)
 - [Why Aren't You Speaking?](http://matthewturland.com/2016/12/07/why-arent-you-speaking/)
+
